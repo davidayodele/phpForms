@@ -45,4 +45,22 @@ echo($driver['Charlie']);
 print("<br>");
 print_r($driver);
 echo('<br>============ End Arrays ============');
+
+//======= Loops ===============
+print("<br>");
+echo('============ Loops ==============<br>');
+/*=====For Loops=====
+- Cases: Definite, iteration length is known
+- Params: initializer, condition, increment
+- Flow: Initialization -> Condition check -> Event execution -> Interation
+*/
+print('<br>')
+for($i = 0; i < 10; $i++){
+  if($i % 2 ==0 ){
+      echo($i);
+  }
+}
+print('<br>')
+echo('<br>============ End Loops ============');
+
 ?>
