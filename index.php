@@ -159,7 +159,7 @@ do {
       print_r($counts2);
       print('<br>');
   }
-  $counts2[2]--; //prefix iteration (execution first)
+  $counts2[2]--; //postfix iteration (execution last)
 } while ($counts2[2] >= $counts2[0]);
 
 print('<br>');
@@ -170,15 +170,14 @@ print('<br>');
 - Flow: Iteration -> Event execution
 */
 print('<br>');
-$counts2 = [1, 5, 9];
-do {
-  if($counts2[2] % 2 != 0){
-      print_r($counts2);
-      print('<br>');
-  }
-  $counts2[2]--; //prefix iteration (execution first)
-} while ($counts2[2] >= $counts2[0]);
-
+$months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul'];
+$month_nums = ['01', '02', '03', '04', '05', '06', '07'];
+$months_ext = array_map(null, $months, $month_nums);
+//print_r($months_ext);
+foreach ($months_ext as $month_index => $month) {
+  echo($month[0]. ' - ' .$month[1]);
+  echo('<br>');
+}
 print('<br>');
 echo('<br>============ End Loops ============');
 ?>
