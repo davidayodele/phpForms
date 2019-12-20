@@ -180,4 +180,41 @@ foreach ($months_ext as $month_index => $month) {
 }
 print('<br>');
 echo('<br>============ End Loops ============');
+
+//======= Functions ===============
+print("<br>");
+echo('============ Functions ==============<br>');
+/*===== void type =====
+*/
+
+print('<br>');
+function primesTo100(){
+  $i=1;
+  L1:
+  while ($i<=100) {
+    for ($j=2; $j<$i; $j++){
+      if ($i % $j == 0){
+        $i++; // if i is composite, iterate over i & exit j loop
+        goto L1;
+      }
+    }
+    echo($i . ', '); // otherwise, spit out i (should be prime) and iterate i
+    $i++;
+  }
+}
+echo('Primes to 100:<br>');
+primesTo100();
+print('<br>');
+
+/*===== Pass by ref =====
+*/
+print('<br>');
+print('<br>');
+
+/*===== Pass by val =====
+*/
+print('<br>');
+print('<br>');
+
+echo('<br>============ End Functions ============');
 ?>
