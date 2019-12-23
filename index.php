@@ -16,6 +16,7 @@ echo("<br>");
 print("<br>");
 echo("I am mixed text after a dbl break: $str1 $str2");
 echo('<br>');
+echo('I am mixed text after a dbl break: $str1 $str2'); // Does not work w/ single quotes!!!
 echo('============ End Strings ==============<br>');
 
 //======= Arrays ===============
@@ -209,11 +210,29 @@ print('<br>');
 /*===== Pass by ref =====
 */
 print('<br>');
-$primeSize
-function primesTo100($size){
-  $i=1;
+
+$num = 1;
+$primeSize = 100;
+
+function add3r(&$n) {
+    $n += 3;
+}
+
+function add3($n) {
+    $n += 3;
+}
+add3($num);
+echo("Add 3, pass by val:<br> $num"); // num is unmodified in pass by val (val of variable)
+print('<br>');
+add3r($num);
+echo("Add 3, pass by ref:<br> $num"); // num is modified in pass by ref (ref to var)
+print('<br><br>');
+
+$max = 1500;
+function primesToMax($Max){
+  $i=2;
   L1:
-  while ($i<=100) {
+  while ($i<=$Max) {
     for ($j=2; $j<$i; $j++){
       if ($i % $j == 0){
         $i++; // if i is composite, iterate over i & exit j loop
@@ -224,14 +243,44 @@ function primesTo100($size){
     $i++;
   }
 }
-echo('Primes to 100:<br>');
-
+echo("Primes to $max:<br>");
+echo("start time: ");
+//echo(date('Y-m-d H:i:s.') . gettimeofday()['usec'] . "<br>");
+echo(date('H:i:s.') . gettimeofday()['usec'] . "<br>");
+primesToMax($max);
+echo("<br>stop time: ");
+echo(date('H:i:s.') . gettimeofday()['usec'] . "<br>");
 print('<br>');
 
-/*===== Pass by val =====
+/*===== Sieve of Eratosthenes =====
 */
-print('<br>');
-print('<br>');
+
+function Sieve($n) {
+    // Create a boolean array of primes "prime[0..n]" & init all items as True
+    // A value in prime[i] will become False if i is not prime
+    $prime = array_fill(0, $n+1, true);
+
+    for ($p = 2; $p*$p <= $n; $p++) {
+        // If prime[p] is not changed,
+        // then it is a prime
+        if ($prime[$p] == true) {
+
+            // Update all multiples of p
+            for ($i = $p*$p; $i <= $n; $i += $p)
+                $prime[$i] = false;
+        }
+    }
+
+    // Print all prime numbers
+    for ($p = 2; $p <= $n; $p++)
+        if ($prime[$p])
+            echo($p.", ");
+}
+
+$sieveMax = 30;
+echo("Sieve max =  ".$sieveMax."<br>");
+echo("Primes:<br>");
+Sieve($sieveMax);
 
 echo('<br>============ End Functions ============');
 ?>
