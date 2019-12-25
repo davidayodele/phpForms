@@ -255,6 +255,7 @@ print('<br>');
 /*===== Sieve of Eratosthenes =====
 */
 echo('<br>===== Sieve of Eratosthenes =====<br>');
+
 function Sieve($n) {
     // Create a boolean array of primes "prime[0..n]" & init all items as True
     // A value in prime[i] will become False if i is not prime
@@ -278,6 +279,7 @@ function Sieve($n) {
 $sieveMax = 30;
 echo("Sieve max =  ".$sieveMax."<br>");
 echo("Primes:<br>");
+
 Sieve($sieveMax);
 
 echo('<br>============ End Functions ============');
