@@ -255,24 +255,32 @@ print('<br>');
 /*===== Sieve of Eratosthenes =====
 */
 echo('<br>===== Sieve of Eratosthenes =====<br>');
-function Sieve($n) {
-    // Create a boolean array of primes "prime[0..n]" & init all items as True
-    // A value in prime[i] will become False if i is not prime
-    $prime = array_fill(0, $n+1, true);
-    for ($p = 2; $p*$p <= $n; $p++) {
-        // If prime[p] is not changed,
-        // then it is a prime
-        if ($prime[$p] == true) {
-            // Update all multiples of p
-            for ($i = $p*$p; $i <= $n; $i += $p)
-                $prime[$i] = false;
-        }
+function Sieve($range) {
+// Creates a boolean array to store prime checks "primeChecks[0..n]" & inits
+// all n's as True. An n in primeChecks[n] will become False iff n is composite
+  $primeChecks = array_fill(0, $range+1, true); // array_fill(starting index, fill range, fill val)
+  // range+1 used to ensure last value is checked
+  for ($n = 2; $n*$n <= $range; $n++) {
+  // Starting with the 1st prime, upto the square of the last, increment by 1
+    if ($primeChecks[$n] == true) {
+    // skip the inner loop if n is false (non-prime), otherwise continue
+      for ($i = $n*$n; $i <= $range; $i += $n) { // inc by n, not by 1
+        $primeChecks[$i] = false; // sets val to false if a factor exists
+        // $i += $n is the 1st crux of the algorithm as this makes the loop
+        // an iteration through multiples of n. $i = $n*$n is the 2nd crux as
+        // this means we only enter the loop at perfect squares, starting with 4,
+        // and inc by 2. $prime[$i] = false is the 3rd crux as this essentially 
+        // stores "primality data" in the array.
+      }
     }
-
-    // Print all prime numbers
-    for ($p = 2; $p <= $n; $p++)
-        if ($prime[$p])
-            echo($p.", ");
+  }
+  // after loop completion, our array will contain true vals where no mult of
+  // n was encountered in the inner loop. We now, print the "true" indices
+  for ($n = 2; $n <= $range; $n++){
+    if ($primeChecks[$n]){
+      echo($n.", ");
+    }
+  }
 }
 
 $sieveMax = 30;
