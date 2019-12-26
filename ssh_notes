@@ -1,0 +1,28 @@
+1) Create .ssh directory
+mkdir .ssh
+
+2) Add .ssh dir to .gitignore
+echo "./ssh" >> .gitignore
+
+3) Generate keys
+ssh-keygen
+
+4) display pub and copy to github
+cat .ssh/rsa_key.pub
+
+5) start ssh-agent
+eval `ssh-agent or eval ssh-agent
+OR
+eval $(ssh-agent -s)
+
+6) Add private key to agent
+ssh-add /privkeyfile or ssh-add .ssh/privkeyfile or ssh.add .ssh/privkeyfile
+
+7) Set remote origin to non-https
+git remote set-url origin git@github.com:davidayodele/phpForms.git
+
+8) Double check directory files
+explorer .
+
+9) Proceed with push
+git push
