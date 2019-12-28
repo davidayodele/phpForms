@@ -228,7 +228,7 @@ add3r($num);
 echo("Add 3, pass by ref:<br> $num"); // num is modified in pass by ref (ref to var)
 print('<br><br>');
 
-$max = 1500;
+$max = 3000;
 function primesToMax($Max){
   $i=2;
   L1:
@@ -246,15 +246,21 @@ function primesToMax($Max){
 echo("Primes to $max:<br>");
 echo("start time: ");
 //echo(date('Y-m-d H:i:s.') . gettimeofday()['usec'] . "<br>");
-echo(date('H:i:s.') . gettimeofday()['usec'] . "<br>");
+$starttime = gettimeofday()['usec'];
+echo(date('H:i:s.'). $starttime . "<br>");
 primesToMax($max);
 echo("<br>stop time: ");
-echo(date('H:i:s.') . gettimeofday()['usec'] . "<br>");
+$endtime = gettimeofday()['usec'];
+echo(date('H:i:s.'). $endtime . "<br>");
+$speed = $endtime - $starttime > 0 ? $endtime - $starttime : "> 1ms"; // ternary operator
+echo("execution speed: ". $speed. " microsec");
 print('<br>');
 
 /*===== Sieve of Eratosthenes =====
 */
 echo('<br>===== Sieve of Eratosthenes =====<br>');
+
+<<<<<<< HEAD
 
 function Sieve($n) {
     // Create a boolean array of primes "prime[0..n]" & init all items as True
@@ -268,19 +274,127 @@ function Sieve($n) {
             for ($i = $p*$p; $i <= $n; $i += $p)
                 $prime[$i] = false;
         }
+=======
+function Sieve($range) {
+// Creates a boolean array to store prime checks "primeChecks[0..n]" & inits
+// all n's as True. An n in primeChecks[n] will become False iff n is composite
+  $primeChecks = array_fill(0, $range+1, true); // array_fill(starting index, fill range, fill val)
+  // range+1 used to ensure last value is checked
+  for ($n = 2; $n*$n <= $range; $n++) {
+  // Starting with the 1st prime, upto the square of the last, increment by 1
+    if ($primeChecks[$n] == true) {
+    // skip the inner loop if n is false (non-prime), otherwise continue
+      for ($i = $n*$n; $i <= $range; $i += $n) { // inc by n, not by 1
+        $primeChecks[$i] = false; // sets val to false if a factor exists
+        // $i += $n is the 1st crux of the algorithm as this makes the loop
+        // an iteration through multiples of n. $i = $n*$n is the 2nd crux as
+        // this means we only enter the loop at perfect squares, starting with 4,
+        // and inc by 2. $prime[$i] = false is the 3rd crux as this essentially
+        // stores "primality data" in the array.
+      }
+>>>>>>> f5d6deb6879e6ea8f71be6fd411e8632504c3802
     }
-
-    // Print all prime numbers
-    for ($p = 2; $p <= $n; $p++)
-        if ($prime[$p])
-            echo($p.", ");
+  }
+  // after loop completion, our array will contain true vals where no mult of
+  // n was encountered in the inner loop. We now, print the "true" indices
+  for ($n = 2; $n <= $range; $n++){
+    if ($primeChecks[$n]){
+      echo($n.", ");
+    }
+  }
 }
 
-$sieveMax = 30;
+$sieveMax = 3000;
+$starttime2 = gettimeofday()['usec'];
+echo("<br>start time: ". date('H:i:s.'). $starttime2 . "<br>");
+
 echo("Sieve max =  ".$sieveMax."<br>");
 echo("Primes:<br>");
 
 Sieve($sieveMax);
 
+$endtime2 = gettimeofday()['usec'];
+echo("<br>stop time: ".date('H:i:s.'). $endtime2 . "<br>");
+$speed2 = $endtime2 - $starttime2 > 0 ? $endtime2 - $starttime2 : "> 1ms";
+echo("execution speed: ". $speed2. " microsec");
+print('<br>');
 echo('<br>============ End Functions ============');
+
+//======= Conditionals ===============
+print("<br>");
+echo('============ Conditionals ==============<br>');
+/*===== Equivalence types =====
+Exactly (un)equal (type and value): ===, !==
+*/
+echo('<br>==== Equivalence types ====<br>');
+$int1 = 100;
+$dbl1 = 100.0;
+
+echo("<br>integer1 = ". $int1);
+echo("<br>double1 = ". $dbl1);
+
+if ($int1 == $dbl1) {
+  echo("<br>". $int1 ." equals (==) ". $dbl1);
+} else {
+  echo("<br>". $int1 ." does not equal (==) ". $dbl1);
+}
+
+if ($int1 === $dbl1) {
+  echo("<br>". $int1 ." equals (===)". $dbl1);
+} else {
+  echo("<br>". $int1 ." does not equal (===)". $dbl1);
+}
+
+/*===== Logical operators =====
+Logical And: &&, AND
+Logical Or: ||, OR
+Logical Xor: XOR
+*/
+echo('<br><br>==== Logical operators ====<br>');
+
+$int2 = 101;
+$dbl2 = 109.5;
+
+echo("<br>integer2 = ". $int2);
+echo("<br>double2 = ". $dbl2);
+
+if ($int2 > $int1) {
+  echo("<br>integer2 > integer1");
+}
+if ($int2 > $int1 OR $int2 == $dbl1) {
+  echo("<br>integer2 < integer1 OR integer2 == double1");
+}
+if ($int1 === $dbl1 || $int1 !== $dbl1) {
+  echo("<br>integer1 === integer1 || integer1 !== double1");
+}
+if ($int2 > $int1 AND $dbl2 > $dbl1) {
+  echo("<br>integer2 > integer1 AND double2 > double1");
+}
+if ($int2 < $int1 XOR $dbl2 > $dbl1) {
+  echo("<br>integer2 < integer1 XOR double2 > double1");
+}
+echo('<br><br>==== Switch statements ====<br>');
+$myGrade = 62.3;
+
+function grader($grade){
+    switch($grade) {
+      case $grade >= 90 && $grade < 100: echo("<br>Your grade is A");
+      break;
+      case $grade >= 80 && $grade < 90: echo("<br>Your grade is B");
+      break;
+      case $grade >= 70 && $grade < 80: echo("<br>Your grade is C");
+      break;
+      case $grade >= 60 && $grade < 70: echo("<br>Your grade is D");
+      break;
+      case $grade < 60: echo("<br>Your grade is F");
+      break;
+      default: echo("<br>Your grade is outside normal range");
+    }
+}
+
+grader($myGrade);
+//======= End Conditionals ===============
+echo('<br>============ End Conditionals ==============<br>');
+
+
 ?>
