@@ -1,3 +1,36 @@
+<?php
+  // To clear all inputs, simply alter the URL instead usinng refresh
+  $err_msg = '';
+  $err_msg_class = '';
+  // Check for form submit using filters
+  // if a POST(input) var named 'submit' exists... do something. Thus, the name
+  // attribute for sommething in the form must be 'submit'
+  if(filter_has_var(INPUT_POST, 'submit')){
+    //echo("Contact form submitted");
+    // Store the form data
+    $name = htmlspecialchars($_POST['name']); // htmlspecialchars used to mitigate JS injection
+    $email = htmlspecialchars($_POST['email']);
+    $msg = htmlspecialchars($_POST['msg']);
+
+    //Do some validation
+    if(!empty($email) && !empty($name) && !empty($msg)){ // same as setting attr required="true" in html
+      // Passed
+      if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+          echo("Email validated.<br>");
+          echo("Form info received!<br>");
+          $err_msg = 'Thanks, '.$name. '!';
+          $err_msg_class = 'alert-success';
+      } else { // Will not usually exec if HTML attr type="email" is used
+        echo("Invalid email: ".$email."<br>");
+      }
+
+    } else { // This code will almost never execute as HTML5 required="true" will catch first
+      // Failed
+      $err_msg = 'Please complete all fields';
+      $err_msg_class = 'alert-danger';
+    }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -43,29 +76,36 @@
     </div>
     </nav>
     <br>
+
     <div class="container">
-    <form>
+    <form method="POST" action="<?php echo($_SERVER['PHP_SELF']); ?>">
     <div class="form-group">
     <label>
     Name
     </label>
-    <input type="text" name="name" class="form-control" value="">
+    <input type="text" name="name" class="form-control" value="<?php echo(isset($_POST['name']) ? $name : ""); ?>" required="true">
     </div>
     <div class="form-group">
     <label>
     Email
     </label>
-    <input type="text" name="email" class="form-control" value="">
+    <input type="email" name="email" class="form-control" value="<?php echo(isset($_POST['email']) ? $email : ""); ?>" required="true">
     </div>
     <div class="form-group">
     <label>
     Message
     </label>
-    <input type="text" name="msg" class="form-control" value="">
+    <textarea name="msg" class="form-control" value="<?php echo(isset($_POST['msg']) ? $msg : ""); ?>" required>
+    </textarea>
     </div>
     <br>
     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
+    <?php if($err_msg != ''): ?>
+    <div class="alert <?php echo($err_msg_class); ?>">
+    <?php echo($err_msg); ?>
+    </div>
+    <?php endif; ?>
     </div>
 
   </body>
