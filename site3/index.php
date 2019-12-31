@@ -2,6 +2,9 @@
   // To clear all inputs, simply alter the URL instead usinng refresh
   $err_msg = '';
   $err_msg_class = '';
+  date_default_timezone_set('America/Phoenix');
+  $time = date("m-d-Y h:i:s A");
+
   // Check for form submit using filters
   // if a POST(input) var named 'submit' exists... do something. Thus, the name
   // attribute for sommething in the form must be 'submit'
@@ -10,18 +13,46 @@
     // Store the form data
     $name = htmlspecialchars($_POST['name']); // htmlspecialchars used to mitigate JS injection
     $email = htmlspecialchars($_POST['email']);
-    $msg = htmlspecialchars($_POST['msg']);
+    $msg = htmlspecialchars(trim($_POST['msg']));
 
     //Do some validation
-    if(!empty($email) && !empty($name) && !empty($msg)){ // same as setting attr required="true" in html
+    if(!empty($email) && !empty($name) && strlen(trim($_POST['msg']))){ // same as setting attr required="true" in html
       // Passed
       if(filter_var($email, FILTER_VALIDATE_EMAIL)){
           echo("Email validated.<br>");
           echo("Form info received!<br>");
           $err_msg = 'Thanks, '.$name. '!';
           $err_msg_class = 'alert-success';
+
+          // Prepare email
+          $toField = 'starcanyonschool@gmail.com';
+          $subjField = 'Form submission by '.$name;
+          $bodyField = "<h3>Form Details:</h3><br>
+                        <h4>Time</h4>: <p>$time</p><br>
+                        <h4>Name</h4>: <p>$name</p><br>
+                        <h4>Message</h4>: <p>$msg</p><br>";
+
+          // Email headers (analogous to envelope info)
+          $mailHeader = "MIME-Version: 1.0"."\r\n";
+          $mailHeader .="Content-Type:text/html;charset=UTF-8"."\r\n";
+
+          // Variable header info
+          $mailHeader .= "From: ".$name. "<".$email.">". "\r\n";
+
+          // Send Email using mail() function
+          // mail ( string $to , string $subject , string $message [, mixed $additional_headers
+          // [, string $additional_parameters ]] ) : bool
+
+          if(mail($toField, $subjField, $bodyField, $mailHeader)){
+            $err_msg .= " Your messae has been sent";
+          } else {
+            $err_msg_class = 'alert-danger';
+            $err_msg .= " Error sending message, please retry.";
+          }
+
       } else { // Will not usually exec if HTML attr type="email" is used
         echo("Invalid email: ".$email."<br>");
+        echo("Message: ".$msg."<br>");
       }
 
     } else { // This code will almost never execute as HTML5 required="true" will catch first
@@ -95,7 +126,8 @@
     <label>
     Message
     </label>
-    <textarea name="msg" class="form-control" value="<?php echo(isset($_POST['msg']) ? $msg : ""); ?>" required>
+    <textarea name="msg" class="form-control" required>
+    <?php echo(isset($_POST['msg']) ? trim($msg) : null); ?>
     </textarea>
     </div>
     <br>
