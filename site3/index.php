@@ -44,10 +44,10 @@
           // [, string $additional_parameters ]] ) : bool
 
           if(mail($toField, $subjField, $bodyField, $mailHeader)){
-            $err_msg .= " Your messae has been sent";
+            $err_msg .= " Your messae has been sent!";
           } else {
             $err_msg_class = 'alert-danger';
-            $err_msg .= " Error sending message, please retry.";
+            $err_msg .= " Error sending your message, please retry.";
           }
 
       } else { // Will not usually exec if HTML attr type="email" is used
