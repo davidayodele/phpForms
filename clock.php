@@ -1,3 +1,10 @@
+<script src="http://player.vimeo.com/api/player.js"></script>
+
+<iframe src="http://player.vimeo.com/video/381079119?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe src="https://player.vimeo.com/video/381960404?background=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<iframe src="https://player.vimeo.com/video/76979871?background=1&autopause=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 <div class="clock_container">
 <div class="time_text">"Now is our time" - Sheryl Sandberg.</div>
 <svg class="clock" width="200" height="200"> <!-- Adapted from Mia Park (https://codepen.io/sansolmom/pen/abzwMoe) -->
