@@ -1,10 +1,11 @@
 <script src="http://player.vimeo.com/api/player.js"></script>
 <!-- https://codepen.io/sansolmom/pen/abzwMoe -->
+<!--
 <iframe src="http://player.vimeo.com/video/381079119?background=1" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 <iframe src="https://player.vimeo.com/video/381960404?background=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <iframe src="https://player.vimeo.com/video/76979871?background=1&autopause=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
+-->
 <div class="clock_container">
 <div class="time_text">"Now is our time" - Sheryl Sandberg.</div>
 <svg class="clock" width="200" height="200"> <!-- Adapted from Mia Park (https://codepen.io/sansolmom/pen/abzwMoe) -->
@@ -45,7 +46,10 @@
 </svg>
 <div id="aznow_clock"></div>
 </div>
-
+<br>
+<br>
+<div id="test"></div>
+</div>
 <style type="text/css">
 
 .clock_container {
@@ -136,36 +140,26 @@ var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 
 function checkTime() {
   var date2 = new Date();
-  var sufix = '';
+  var suffix = '';
   var hours = ('0' + date.getHours()).slice(-2);
   var minutes = ('0' + date.getMinutes()).slice(-2);
   var day = date2.getDate();
   var month = monthNames[date2.getMonth()];
   var weekday = dayNames[date2.getDay()];
-  if (day > 3 && day < 21) sufix = 'th';
-  switch (day % 10) {
-    case 1:
-      sufix = "st";
-    case 2:
-      sufix = "nd";
-    case 3:
-      sufix = "rd";
-    case 4:
-      sufix = "th";
-    case 5:
-      sufix = "th";
-    case 6:
-      sufix = "th";
-    case 7:
-      sufix = "th";
-    case 8:
-      sufix = "th";
-    case 9:
-      sufix = "th";
-    default:
-      sufix = " ";
+
+  if (day < 4 || day > 20) {
+    if(day == 1 || day == 31) {
+      suffix = 'st';
+    } else if(day == 2) {
+      suffix = 'nd';
+    } else if(day == 3) {
+      suffix = 'rd';
+    }
+  } else {
+    suffix = "th";
   }
-  document.getElementById('aznow_clock').innerHTML = "<span class='date'>" + weekday  + ', ' + month + ' ' + day + sufix + ".</span>";
+
+  document.getElementById('aznow_clock').innerHTML = "<span class='date'>" + weekday  + ', ' + month + ' ' + day + "<sup>" + suffix + "</sup>.</span>";
 }
 
 checkTime();
