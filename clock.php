@@ -97,7 +97,7 @@ div#aznow_clock {
 
 
 <script type="text/javascript">
-
+/*==== Adapted from Mia Park @ https://codepen.io/sansolmom/pen/abzwMoe ====*/
 var hands = [];
 hands.push(document.querySelector('#secondhand > *'));
 hands.push(document.querySelector('#minutehand > *'));
