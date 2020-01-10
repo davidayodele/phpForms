@@ -1,8 +1,10 @@
 <!-- [embedyt] https://www.youtube.com/embed?listType=playlist&amp;list=PL32YNK-xcb82ubTmvNwqpiccyX-zEZV-6[/embedyt] -->
 
-
 <hr>
 <div class="video-container" id="player">
+<!-- Make sure ?enablejsapi=1 is on URL -->
+<!-- <iframe id="video" src="https://www.youtube.com/embed/AASd5ewKNSw?enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>-->
+<iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
 </div>
 <div>
 <br>
@@ -75,6 +77,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
+document.getElementById('video').src = "https://www.youtube.com/embed/" + playlist[1] + "?enablejsapi=1&html5=1";
 
 function onYouTubeIframeAPIReady() {  // creates an <iframe> (and YouTube player) after the API code downloads
     player = new YT.Player('player', {
