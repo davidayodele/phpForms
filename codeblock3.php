@@ -1,5 +1,3 @@
-<!-- [embedyt] https://www.youtube.com/embed?listType=playlist&amp;list=PL32YNK-xcb82ubTmvNwqpiccyX-zEZV-6[/embedyt] -->
-
 <hr>
 <div class="video-container" id="player">
 <!-- Make sure ?enablejsapi=1 is on URL -->
