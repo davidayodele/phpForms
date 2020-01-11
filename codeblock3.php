@@ -16,7 +16,7 @@
 .video-container {
     position: relative;
     padding-bottom: 0px; /* 16:9 */
-    padding-top: 10px; /* size of chrome */
+    padding-top: 10px; /* For sizing in chrome */
     height: 400px;
     width: 100%;
 }
@@ -24,7 +24,7 @@
 .video-container_sm {
     position: relative;
     padding-bottom: 0px; /* 16:9 */
-    padding-top: 5px; /* size of chrome */
+    padding-top: 5px; /* For sizing in chrome */
     height: 181px;
     width: 322px;
 }
