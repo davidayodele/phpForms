@@ -1,4 +1,11 @@
-<hr>
+<!-- Carousel: https://codepen.io/vishnu1991/pen/pEbwAa, http://jsfiddle.net/ANRHT/6/, 
+            https://www.youtube.com/watch?v=nf55pmywQKs
+            https://www.youtube.com/watch?v=Fdf5aTYRW0E
+            https://www.youtube.com/watch?v=QV7ke4a7Lvc,
+            https://www.youtube.com/watch?v=Tf_VWOSKOQ4&list=PLVz2XdJiJQxwAhzEZSpDqXlfT7XvNPDIE
+            http://jsfiddle.net/ANRHT/6/
+            https://codepen.io/martinwolf/pen/dyLAC
+-->
 <div class="video-container" id="player">
 <!-- Make sure ?enablejsapi=1 is on URL -->
 <!-- <iframe id="video" src="https://www.youtube.com/embed/AASd5ewKNSw?enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>-->
