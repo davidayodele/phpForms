@@ -1,6 +1,7 @@
 <!-- [embedyt] https://www.youtube.com/embed?listType=playlist&amp;list=PL32YNK-xcb82ubTmvNwqpiccyX-zEZV-6[/embedyt] -->
 
 <hr>
+
 <div class="video-container" id="player">
 <!-- Make sure ?enablejsapi=1 is on URL -->
 <!-- <iframe id="video" src="https://www.youtube.com/embed/AASd5ewKNSw?enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>-->
@@ -11,6 +12,7 @@
 <button class="btn btn-default btn-xl js-scroll-trigger" onclick="nextVideo()">Next</button>
 </div>
 <br>
+
 <hr>
 
 <style type="text/css">
