@@ -1,10 +1,12 @@
+[rev_slider alias="slider-1"][/rev_slider]
 
+<style type="text/css">
+/* ====== Notes =====
 
 #top #main .avia-section .template-page {
     margin-top: -35px;
 }
 
-/* ====== Notes =====
 <!-- 
 Carousel: https://codepen.io/vishnu1991/pen/pEbwAa, http://jsfiddle.net/ANRHT/6/, 
 https://www.youtube.com/watch?v=nf55pmywQKs
@@ -25,6 +27,11 @@ AMTI Bookmark! -->
 */
 
 /*==== Header & Nav ====*/
+#top .av_header_glassy.av_header_transparency .social_bookmarks li, #top .av_header_glassy.av_header_transparency .social_bookmarks li a {
+    border-color: rgba(255,255,255,0.25);
+    color: #000 !important;
+}
+
 .logo img {
     /*
     padding: 0;
@@ -47,13 +54,13 @@ AMTI Bookmark! -->
 }
 
 .header_color .av-hamburger-inner, .header_color .av-hamburger-inner::before, .header_color .av-hamburger-inner::after {
-    background-color: #fff;
+    background-color: #000;
 }
 
 #top .av_header_glassy.av_header_transparency .header_bg {
-    background-color: #000 !important;
-    opacity: 0.1;
-    filter: alpha(opacity=10);
+    background-color: #fff !important;
+    opacity: 0.15;
+    filter: alpha(opacity=15);
 }
 
 .html_header_transparency #top .avia-builder-el-0 .container, .html_header_transparency #top .avia-builder-el-0 .slideshow_caption {
@@ -65,4 +72,4 @@ AMTI Bookmark! -->
     box-shadow: 0 0 2px 1px rgba(0,0,0,0.1) !important;
 }
 /*==== End Header & Nav ====*/
-
+</style>
