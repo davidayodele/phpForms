@@ -4,6 +4,26 @@
     margin-top: -35px;
 }
 
+/* ====== Notes =====
+<!-- 
+Carousel: https://codepen.io/vishnu1991/pen/pEbwAa, http://jsfiddle.net/ANRHT/6/, 
+https://www.youtube.com/watch?v=nf55pmywQKs
+https://www.youtube.com/watch?v=Fdf5aTYRW0E
+https://www.youtube.com/watch?v=QV7ke4a7Lvc,
+https://www.youtube.com/watch?v=Tf_VWOSKOQ4&list=PLVz2XdJiJQxwAhzEZSpDqXlfT7XvNPDIE
+http://jsfiddle.net/ANRHT/6/
+https://codepen.io/martinwolf/pen/dyLAC
+
+AMTI Bookmark! -->
+<!-- notes: blue: #273C69, red: #B8272E, yellow: EAC34D
+
+
+5) canyons-382549197 1) downtown-384405427 2) entrance-384669026 3) actv-384674057 4) floor-384675996,384908547
+6) applause-384689797 
+-->
+
+*/
+
 /*==== Header & Nav ====*/
 .logo img {
     /*
