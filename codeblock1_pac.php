@@ -104,9 +104,26 @@ AMTI Bookmark! -->
     color: #273C69 !important;
 }
 /*==== End Header, nav, & line menu ====*/
-</style>
 
+
+/*==== Core Issues Section ====*/
+.av-subheading p:last-child {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/*==== End Core Issues Section ====*/
+
+
+
+
+
+
+/*
 @media max-width: 660px
 #top .av_header_glassy.av_header_transparency #header_main {
     background-color: rgba(0, 0, 0, 1);
 }
+*/
+</style>
+
