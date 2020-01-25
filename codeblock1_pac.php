@@ -26,6 +26,46 @@ AMTI Bookmark! -->
 
 */
 
+
+/*==== Mobile section 1 ====*/
+@media only screen and (max-width: 990px) {
+    .avia-builder-el-first .av-section-color-overlay-wrap {
+        top: -20px;
+    }
+
+    .avia-builder-el-first .av-section-color-overlay-wrap {
+        margin-top: -160px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .avia-builder-el-first .av-section-color-overlay-wrap {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 692px) {
+
+    .avia-section-large .content, .avia-section-large .sidebar {
+        padding-top: 0px !important;
+    }
+
+    span.hr-inner.inner-border-av-border-thin {
+        width: 140px !important;
+    }
+
+    #top h1 strong, #top h2 strong, #top h3 strong, #top h4 strong, #top h5 strong, #top h6 strong {
+
+        font-size: 12.5vw !important;
+    }
+
+}
+
+/*==== End Mobile section 1 ====*/
+
+
 /*==== Header, nav, & line menu ====*/
 #top .av_header_glassy.av_header_transparency .social_bookmarks li, #top .av_header_glassy.av_header_transparency .social_bookmarks li a {
     border-color: rgba(255,255,255,0.25);
@@ -180,6 +220,18 @@ div#av_section_2 {
     font-weight: normal;
 }
 
+.avia-builder-el-54 .avia_textblock {
+    font-weight: normal;
+}
+
+.avia-builder-el-58 .avia_textblock {
+    font-weight: normal;
+}
+
+.avia-builder-el-62 .avia_textblock {
+    font-weight: normal;
+}
+
 .main_color .hr-short .hr-inner-style, .main_color .hr-short .hr-inner {
     background-color: #000;
 }
@@ -188,7 +240,7 @@ div#av_section_2 {
 .main_color, .main_color div, .main_color header, .main_color main, .main_color aside, .main_color footer, .main_color article, .main_color nav, .main_color section, .main_color span, .main_color applet, .main_color object, .main_color iframe, .main_color h1, .main_color h2, .main_color h3, .main_color h4, .main_color h5, .main_color h6, .main_color p, .main_color blockquote, .main_color pre, .main_color a, .main_color abbr, .main_color acronym, .main_color address, .main_color big, .main_color cite, .main_color code, .main_color del, .main_color dfn, .main_color em, .main_color img, .main_color ins, .main_color kbd, .main_color q, .main_color s, .main_color samp, .main_color small, .main_color strike, .main_color strong, .main_color sub, .main_color sup, .main_color tt, .main_color var, .main_color b, .main_color u, .main_color i, .main_color center, .main_color dl, .main_color dt, .main_color dd, .main_color ol, .main_color ul, .main_color li, .main_color fieldset, .main_color form, .main_color label, .main_color legend, .main_color table, .main_color caption, .main_color tbody, .main_color tfoot, .main_color thead, .main_color tr, .main_color th, .main_color td, .main_color article, .main_color aside, .main_color canvas, .main_color details, .main_color embed, .main_color figure, .main_color fieldset, .main_color figcaption, .main_color footer, .main_color header, .main_color hgroup, .main_color menu, .main_color nav, .main_color output, .main_color ruby, .main_color section, .main_color summary, .main_color time, .main_color mark, .main_color audio, .main_color video, #top .main_color .pullquote_boxed, .responsive #top .main_color .avia-testimonial, .responsive #top.avia-blank #main .main_color.container_wrap:first-child, #top .main_color.fullsize .template-blog .post_delimiter, .main_color .related_posts.av-related-style-full a {
     border-color: unset;
 }
-/*==== Endorsement Process ====*/
+/*==== End Endorsement Process ====*/
 
 
 
@@ -280,6 +332,42 @@ div#av_section_2 {
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
 }
+
+.avia-builder-el-28 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-32 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-36 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-40 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-44 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-48 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
 /*=== End Core Issues Text ===*/
 
 /*=== Core issues icons ===*/
@@ -346,6 +434,47 @@ div#av_section_2 {
     filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
 }
 
+.avia-builder-el-28 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-32 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-36 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-40 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-44 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-48 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
 .avia-builder-el-37 .av-icon-char {
     font-weight: normal;
     color: #fff;
@@ -455,6 +584,61 @@ to-left.flex_column_div.av-zero-column-padding.avia-builder-el-41.el_after_av_on
     background-color: rgba(0, 0, 0, 0.65) !important;
     padding: 15px 5px 0px 15px !important;
     box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33) !important;
+}
+
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.first.avia-builder-el-28.el_after_av_heading.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-32.el_after_av_one_third.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-34.el_after_av_one_third.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-36.el_after_av_one_third.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-38.el_after_av_one_third.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.first.avia-builder-el-40.el_after_av_one_third.el_before_av_one_third.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-44.el_after_av_one_third.el_before_av_one_third.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-44.el_after_av_one_third.avia-builder-el-last.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-48.el_after_av_one_third.avia-builder-el-last.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
 }
 
 .avia-builder-el-33 p {
