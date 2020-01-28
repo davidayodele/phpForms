@@ -260,21 +260,6 @@ print('<br>');
 */
 echo('<br>===== Sieve of Eratosthenes =====<br>');
 
-<<<<<<< HEAD
-
-function Sieve($n) {
-    // Create a boolean array of primes "prime[0..n]" & init all items as True
-    // A value in prime[i] will become False if i is not prime
-    $prime = array_fill(0, $n+1, true);
-    for ($p = 2; $p*$p <= $n; $p++) {
-        // If prime[p] is not changed,
-        // then it is a prime
-        if ($prime[$p] == true) {
-            // Update all multiples of p
-            for ($i = $p*$p; $i <= $n; $i += $p)
-                $prime[$i] = false;
-        }
-=======
 function Sieve($range) {
 // Creates a boolean array to store prime checks "primeChecks[0..n]" & inits
 // all n's as True. An n in primeChecks[n] will become False iff n is composite
@@ -292,7 +277,6 @@ function Sieve($range) {
         // and inc by 2. $prime[$i] = false is the 3rd crux as this essentially
         // stores "primality data" in the array.
       }
->>>>>>> f5d6deb6879e6ea8f71be6fd411e8632504c3802
     }
   }
   // after loop completion, our array will contain true vals where no mult of
