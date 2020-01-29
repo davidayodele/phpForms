@@ -382,3 +382,5 @@ echo('<br>============ End Conditionals ==============<br>');
 
 
 ?>
+<script type="text/javascript" id="main_script" src="prac.js" async="">
+</script>
