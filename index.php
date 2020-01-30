@@ -384,3 +384,104 @@ echo('<br>============ End Conditionals ==============<br>');
 ?>
 <script type="text/javascript" id="main_script" src="prac.js" async="">
 </script>
+
+<div role="button" class="retro-btn">
+<a class="btn">
+<span class="btn-inner">
+<span class="content-wrapper">
+<span class="btn-content">
+<span class="btn-content-inner" label="Retro Button">
+</span>
+</span>
+</span>
+</span>
+</a>
+</div>
+
+<style type="text/css">
+.retro-btn .btn .btn-inner .content-wrapper .btn-content {
+    background-image: initial;
+    background-color: #26a69a;
+    color: #ebf1f8;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 3px;
+    text-indent: 0;
+    z-index: 3;
+    overflow: hidden;
+    padding: 0 16px;
+    -webkit-transition: border .185s ease-out,background .185s ease-out,color .185s ease-out,-webkit-transform .185s ease-out;
+    transition: border .185s ease-out,background .185s ease-out,color .185s ease-out,-webkit-transform .185s ease-out;
+    transition: border .185s ease-out,transform .185s ease-out,background .185s ease-out,color .185s ease-out;
+    transition: border .185s ease-out,transform .185s ease-out,background .185s ease-out,color .185s ease-out,-webkit-transform .185s ease-out;
+}
+
+.retro-btn .btn .btn-inner .content-wrapper {
+    position: relative;
+    font-family: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    height: calc(100% - 3px);
+    margin-top: -3px;
+}
+.retro-btn .btn .btn-inner {
+    display: block;
+    height: 100%;
+}
+
+.retro-btn .btn, .retro-btn .btn:focus {
+    outline-color: 0;
+    outline-style: none;
+    outline-width: 0;
+}
+
+.retro-btn .btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 3px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+    font-style: normal;
+    letter-spacing: 0;
+    text-rendering: auto;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity .1s ease-out;
+    transition: opacity .1s ease-out;
+    z-index: 5;
+    -webkit-font-smoothing: antialiased;
+    width: 240px;
+    height: 46px;
+    font-size: 12px;
+    line-height: 24px;
+    background-color: transparent;
+    text-decoration-color: initial;
+    border-color: initial;
+    -webkit-tap-highlight-color: transparent;
+}
+
+</style>
