@@ -93,5 +93,79 @@ console.log(n);
 n.unshift(0);
 console.log(`\nArray n after n.unshift(0) = ${n} \n or`);
 console.log(n);
+// Checking/Searching
+console.log(`\nArray.isArray(m) = ${Array.isArray(m)} \n or`);
+console.log(Array.isArray(m));
+console.log(`\nm.indexOf('A') = ${m.indexOf('A')} \n or`);
+console.log(m.indexOf('A'));
 
 console.log('\n// ======= End Arrays =========\n');
+
+console.log('\n// ======= Objects =========\n');
+
+let person = {
+    fName: "David",
+    lName: "Robinson",
+    height: 72,
+    hobbies: ['basketball', 'wrestling', 'football'],
+    address: {
+        street: "546 Chesterfield Road",
+        city: "Pittsburgh",
+        state: "Pennsylvania"
+    }
+}
+
+console.log(`Person object = ${person} \nor`);
+console.log(person);
+console.log(`person.fName = ${person.fName}\nperson.address.city = ${person.address.city}\nperson.hobbies.indexOf("football") = ${person.hobbies.indexOf("football")}\nperson.hobbies[2] = ${person.hobbies[2]}\n`)
+
+// Object Destructuring
+let {fName, address: {city}, hobbies} = person;
+console.log(`\Destructured object vars: \nfName = ${fName} \ncity = ${city} \nhobbies = ${hobbies}`);
+
+// Object appending 
+person.dob = new Date(1981, 01, 01, 22, 59, 59); // always year, month, day, hour, min, sec...
+console.log(`person with appended dob = new Date(1981, 01, 01, 22, 59, 59) = ${person} or:`);
+console.log(person);
+
+// Object Arrays
+let users = [
+    {
+        id: 1,
+        name: "Alice",
+        dob: new Date(1990, 02, 28),
+        admin: false
+    }, 
+
+    {
+        id: 2,
+        name: "Bob",
+        dob: new Date(1973, 06, 11),
+        admin: false
+    },
+
+    {
+        id: 3,
+        name: "Cindy",
+        dob: new Date(1998, 04, 05),
+        admin: true
+    },
+];
+
+console.log(`Object array users = ${users} \nor`);
+console.log(users);
+console.log(`User 3's name & dob = ${users[2].name} & ${users[2].dob}`);
+
+// Object arrays as JSON
+let usersJSON = JSON.stringify(users);
+console.log(`\nJSON.stringify(users) = ${usersJSON} \nor`);
+console.log(usersJSON);
+
+console.log('\n// ======= End Objects =========\n');
+
+console.log('\n// ======= Loops =========\n');
+
+console.log('\n// ======= End Loops =========\n');
+
+
+

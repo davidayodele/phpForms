@@ -17,6 +17,7 @@
       "filter" => FILTER_CALLBACK,
       "options" => "ucwords"
     ],
+    
     "height" => [
       "filter" => FILTER_VALIDATE_INT,
       "options" => [
