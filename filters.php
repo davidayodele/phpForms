@@ -14,10 +14,10 @@
 
   $filters = [
     "usrname" => [
-      "filter" => FILTER_CALLBACK,
-      "options" => "ucwords"
+      "filter" => FILTER_CALLBACK, // Callback allows for use of custom functions
+      "options" => "ucwords"       // ucwords is predefined func that capitalizes start of each word
     ],
-    
+
     "height" => [
       "filter" => FILTER_VALIDATE_INT,
       "options" => [

@@ -47,6 +47,10 @@
       function stopVideo() {
         player.stopVideo();
       }
+
+
+      player.cuePlaylist({'PL32YNK-xcb82ubTmvNwqpiccyX-zEZV-6'});
+      
     </script>
   </body>
 </html>
