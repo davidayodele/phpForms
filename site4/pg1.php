@@ -9,7 +9,6 @@ if(isset($_POST['submit_btn'])) {
 
     header('Location: pg2.php'); //directs http header to new loc
 } 
-
 ?>
 
 <!DOCTYPE html>
