@@ -673,9 +673,33 @@ to-left.flex_column_div.av-zero-column-padding.avia-builder-el-41.el_after_av_on
 }
 /*==== End Core Issues Section ====*/
 
+/*==== TV Stream ====*/
+div#player {
+    width: 100% !important;
+}
 
+#player-wrap {
+    width: 100%;
+}
+
+#player-section {
+    float: left;
+    width: 92% !important;
+    background-color: transparent !important;
+}
+/*==== End TV Stream ====*/
 
 /*==== Calendar ====*/
+
+/*---- Featured Event ----*/
+<br>
+<hr>
+<iframe src="https://docs.google.com/viewer?url=http://aznow.org/wp-content/uploads/2020/02/Equal-Rights-amendment-task-force-AZ-invites-you-to.pdf&amp;embedded=true" width="100%" height="500px" frameborder="0">
+</iframe>
+<hr>
+<br>
+/*---- End Featured Event ----*/
+
 span.simcal-day-label.simcal-day-number {
     font-weight: normal;
 }
