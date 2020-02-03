@@ -55,11 +55,18 @@ class User {
         return $this->usrname."<br>";
     }
 
+    public function toString() {        
+        return $this->usrname."<br>".$this->fName."<br>".$this->lName."<br>".$this->email."<br>".$this->phone."<br>";
+    }
+
 }
 
 
 $usr1 = new User("dayodele", "dayodele@email.com");
 
-echo $usr1->get_email();
+echo $usr1->get_email()."<br>";
+echo $usr1->toString();
+
+
 
 ?>
