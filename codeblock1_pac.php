@@ -204,6 +204,9 @@ div#av_section_2 {
     background-color: rgba(0, 0, 0, 0.65) !important;
 }
 
+figcaption.av-inner-masonry-content.site-background:hover {
+    background-color: rgba(0, 0, 0, 0.33) !important;
+}
 /*==== End Endorsements ====*/
 
 
