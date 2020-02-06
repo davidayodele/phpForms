@@ -115,26 +115,26 @@
     pointer-events:none
 }
 .swiper-button-prev,.swiper-container-rtl .swiper-button-next{
-    background-image:url('https://raw.githubusercontent.com/davidayodele/phpForms/master/chevron-circle-down-solid_yel.svg');
+    background-image:url('https://aznow.org/wp-content/uploads/2020/02/chevron-circle-down-solid_yel_200x200.png');
     left:10px;
     right:auto
 }
 .swiper-button-prev.swiper-button-black,.swiper-container-rtl .swiper-button-next.swiper-button-black{
-    background-image:url('https://raw.githubusercontent.com/davidayodele/phpForms/master/chevron-circle-down-solid_yel.svg');
+    background-image:url('https://aznow.org/wp-content/uploads/2020/02/chevron-circle-down-solid_yel_200x200.png');
 }
 .swiper-button-prev.swiper-button-white,.swiper-container-rtl .swiper-button-next.swiper-button-white{
-    background-image:url('https://raw.githubusercontent.com/davidayodele/phpForms/master/chevron-circle-down-solid_yel.svg');
+    background-image:url('https://aznow.org/wp-content/uploads/2020/02/chevron-circle-down-solid_yel_200x200.png');
 }
 .swiper-button-next,.swiper-container-rtl .swiper-button-prev{
-    background-image:url('https://raw.githubusercontent.com/davidayodele/phpForms/master/chevron-circle-down-solid_yel.svg');
+    background-image:url('https://aznow.org/wp-content/uploads/2020/02/chevron-circle-down-solid_yel_200x200.png');
     right:10px;
     left:auto
 }
 .swiper-button-next.swiper-button-black,.swiper-container-rtl .swiper-button-prev.swiper-button-black{
-    background-image:url('https://raw.githubusercontent.com/davidayodele/phpForms/master/chevron-circle-down-solid_yel.svg');
+    background-image:url('https://aznow.org/wp-content/uploads/2020/02/chevron-circle-down-solid_yel_200x200.png');
 }
 .swiper-button-next.swiper-button-white,.swiper-container-rtl .swiper-button-prev.swiper-button-white{
-    background-image:url('https://raw.githubusercontent.com/davidayodele/phpForms/master/chevron-circle-down-solid_yel.svg');
+    background-image:url('https://aznow.org/wp-content/uploads/2020/02/chevron-circle-down-solid_yel_200x200.png');
 }
 .swiper-pagination{
     position:absolute;
