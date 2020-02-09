@@ -66,7 +66,4 @@ $usr1 = new User("dayodele", "dayodele@email.com");
 
 echo $usr1->get_email()."<br>";
 echo $usr1->toString();
-
-
-
 ?>
