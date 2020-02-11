@@ -7,7 +7,7 @@ class User {
     private $email;
     private $phone;
     
-    // Constructor
+    // Constructor (must be named __construct)
     public function __construct($usrname, $email) {
         $this->usrname = $usrname;
         $this->email = $email;
@@ -56,7 +56,7 @@ class User {
     }
 
     public function toString() {        
-        return $this->usrname."<br>".$this->fName."<br>".$this->lName."<br>".$this->email."<br>".$this->phone."<br>";
+        return ("<br>username: ".$this->usrname."<br>"."First Name: ".$this->fName."<br>"."Last Name: ".$this->lName."<br>"."Email: ".$this->email."<br>"."Phone: ".$this->phone."<br>");
     }
 
 }
@@ -65,5 +65,10 @@ class User {
 $usr1 = new User("dayodele", "dayodele@email.com");
 
 echo $usr1->get_email()."<br>";
+echo $usr1->toString();
+
+$usr1->set_phone("(412)624-5015");
+$usr1->set_email("test@test.com");
+
 echo $usr1->toString();
 ?>
