@@ -50,6 +50,7 @@
 <br>
 <div id="test"></div>
 </div>
+
 <style type="text/css">
 
 .clock_container {
@@ -93,8 +94,6 @@ div#aznow_clock {
 }
 
 </style>
-
-
 
 <script type="text/javascript">
 /*==== Adapted from Mia Park @ https://codepen.io/sansolmom/pen/abzwMoe ====*/
@@ -147,6 +146,7 @@ function checkTime() {
   var month = monthNames[date2.getMonth()];
   var weekday = dayNames[date2.getDay()];
 
+// ==== Suffix logic ====
   if (day < 4 || day > 20) {
     if(day == 1 || day == 31) {
       suffix = 'st';
@@ -158,6 +158,7 @@ function checkTime() {
   } else {
     suffix = "th";
   }
+  // ==== End suffix logic ====
 
   document.getElementById('aznow_clock').innerHTML = "<span class='date'>" + weekday  + ', ' + month + ' ' + day + "<sup>" + suffix + "</sup>.</span>";
 }
