@@ -61,13 +61,13 @@ class User {
 
 }
 
-
 $usr1 = new User("dayodele", "dayodele@email.com");
 
 echo $usr1->get_email()."<br>";
 echo $usr1->toString();
-
-$usr1->set_phone("(412)624-5015");
+$usr1->set_fName("David");
+$usr1->set_lName("Ayodele");
+$usr1->set_phone("(555)555-5555");
 $usr1->set_email("test@test.com");
 
 echo $usr1->toString();
