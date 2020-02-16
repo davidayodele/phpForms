@@ -34,3 +34,6 @@ $Right =[System.Security.AccessControl.FileSystemRights]::FullControl
 $Control =[System.Security.AccessControl.AccessControlType]::Allow
 $acl.AddAccessRule($ace)
 
+Set-Acl ".ssh/phpForms_key" $acl
+(Get-Acl ".ssh/phpForms_key").access
+====== End PowerShell SSH ========
