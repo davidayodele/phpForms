@@ -29,10 +29,16 @@ git push
 
 ====== PowerShell ========
 $acl =Get-Acl ".ssh/phpForms_key"
-$Right =[System.Security.AccessControl.FileSystemRights]::FullControl
-$Control =[System.Security.AccessControl.AccessControlType]::Allow
+$Right = [System.Security.AccessControl.FileSystemRights]::FullControl
+$Control = [System.Security.AccessControl.AccessControlType]::Allow
+$Deny = [System.Security.AccessControl.AccessControlType]::Deny
+
+$acl.AddAccessRule($Deny)
 $acl.AddAccessRule($ace)
 
 Set-Acl ".ssh/phpForms_key" $acl
 (Get-Acl ".ssh/phpForms_key").access
+
+Start-Service ssh-agent
+ssh-add .ssh/phpForms_key
 ====== End PowerShell ========
