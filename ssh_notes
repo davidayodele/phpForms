@@ -36,6 +36,36 @@ $Deny = [System.Security.AccessControl.AccessControlType]::Deny
 $acl.AddAccessRule($Deny)
 $acl.AddAccessRule($ace)
 
+Get-ItemProperty -Path .ssh/phpForms_key | Select-Object IsReadOnly
+Set-ItemProperty -Path .ssh/phpForms_key -Name IsReadOnly -Value $true
+
+### Removing permissions
+$current_rules = $acl.Access | where IsInherited -eq $false #Gets all non inherited rules.
+
+#To target a specific user or group as an example.
+$targetrule = $rules | where IdentityReference -eq "MyDomain\MyUserAccount" #Leave domain off for local accounts.
+
+$acl.RemoveAccessRule($current_rules)
+$acl | Set-Acl -Path .ssh/phpForms_key
+
+
+### Grant Administrators full control
+$administrators = [System.Security.Principal.NTAccount] "Administrators"
+$admins_permission = $administrators,"FullControl","ObjectInherit,ContainerInherit","None","Allow"
+$admins_only_rule = New-Object System.Security.AccessControl.FileSystemAccessRule $admins_permission
+$acl.AddAccessRule($admins_only_rule)
+
+OR
+
+$inherit =[system.security.accesscontrol.InheritanceFlags]"ContainerInherit,ObjectInherit"
+$propagation =[system.security.accesscontrol.PropagationFlags]"None"
+$open_accessrule = New-Object System.Security.AccessControl.FileSystemAccessRule("Everyone","FullControl", $inherit, $Propagation ,,,"Allow")
+$acl.RemoveAccessRuleAll($open_accessrule)
+set-acl -aclobject $acl .ssh/phpForms_key
+
+### Set the ACL
+$acl | Set-Acl .ssh/phpForms_key
+
 Set-Acl ".ssh/phpForms_key" $acl
 (Get-Acl ".ssh/phpForms_key").access
 
