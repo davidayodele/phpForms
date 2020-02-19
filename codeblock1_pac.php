@@ -20,7 +20,7 @@ AMTI Bookmark! -->
 <!-- notes: blue: #273C69, red: #B8272E, yellow: EAC34D, dgray: #47484a;
 
 
-5) canyons-382549197 1) downtown-384405427 2) entrance-384669026 3) actv-384674057 4) floor-384675996,384908547
+5) canyons-382549197 (short-fading: 392367627) 1) downtown-384405427 2) entrance-384669026 3) actv-384674057 4) floor-384675996,384908547
 6) applause-384689797 
 -->
 
