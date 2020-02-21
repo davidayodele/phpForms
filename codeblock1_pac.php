@@ -8,6 +8,13 @@
 }
 
 <!-- 
+https://developer.mozilla.org/en-US/docs/Web/CSS/border-image
+https://stackoverflow.com/questions/5801425/enabling-ssl-with-xampp
+https://gist.github.com/nguyenanhtu/33aa7ffb6c36fdc110ea8624eeb51e69
+https://fontawesome.com/cheatsheet
+https://codepoints.net/U+26E8
+https://codepen.io/ibrahimjabbari/pen/ozinB
+
 Carousel: https://codepen.io/vishnu1991/pen/pEbwAa, http://jsfiddle.net/ANRHT/6/, 
 https://www.youtube.com/watch?v=nf55pmywQKs
 https://www.youtube.com/watch?v=Fdf5aTYRW0E
