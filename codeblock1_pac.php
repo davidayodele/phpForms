@@ -7,6 +7,31 @@
     margin-top: -35px;
 }
 
+Home
+Contact Representatives
+Support
+News
+Endorsements
+
+https://www.flaticon.com/authors/neungstockr
+
+clipboard, pampplet, satchell, brochure
+
+Ballot forms, Election forms, Event/Conference, Petition form, Campaign signs
+
+Date forecast:
+https://codepen.io/Preeti-Samukhrao/pen/MWYxaNr
+
+Selected dates:
+https://codepen.io/Preeti-Samukhrao/pen/eYmXpqM
+
+Cool futuristic clock:
+https://codepen.io/sarawut-wongsanga/pen/abzQyJv
+
+Cool date UI
+https://codepen.io/khadkamhn/pen/BNwxEa
+
+
 <!-- 
 https://developer.mozilla.org/en-US/docs/Web/CSS/border-image
 https://stackoverflow.com/questions/5801425/enabling-ssl-with-xampp
