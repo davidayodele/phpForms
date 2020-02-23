@@ -6,14 +6,11 @@
 #top #main .avia-section .template-page {
     margin-top: -35px;
 }
-
-Home
-Contact Representatives
-Support
-News
-Endorsements
+Responsive Iframes:
+https://benmarshall.me/responsive-iframes/
 
 https://www.flaticon.com/authors/neungstockr
+https://www.flaticon.com/search?word=badge
 
 clipboard, pampplet, satchell, brochure
 
