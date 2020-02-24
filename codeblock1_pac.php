@@ -1,7 +1,5 @@
-[rev_slider alias="slider-1"][/rev_slider]
-
 <style type="text/css">
-/* ====== Notes =====
+/* ====== Notes ===== [rev_slider alias="slider-1"][/rev_slider]
 
 #top #main .avia-section .template-page {
     margin-top: -35px;
@@ -11,6 +9,9 @@ https://benmarshall.me/responsive-iframes/
 
 https://www.flaticon.com/authors/neungstockr
 https://www.flaticon.com/search?word=badge
+
+https://thenounproject.com/term/chevron/11891/   
+wzx7jrmzpg@montokop.pw, No...!
 
 clipboard, pampplet, satchell, brochure
 
@@ -306,7 +307,19 @@ div#av_section_2 {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
+.avia-builder-el-42 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
 .avia-builder-el-45 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-46 p {
     font-weight: normal;
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
@@ -319,6 +332,12 @@ div#av_section_2 {
 }
 
 .avia-builder-el-29 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.avia-builder-el-30 p {
     font-weight: normal;
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
@@ -365,6 +384,12 @@ div#av_section_2 {
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
 }
+
+.avia-builder-el-50 p {
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
 /*=== End Core Issues Text ===*/
 
 /*=== Core issues icons only ===*/
@@ -404,6 +429,13 @@ div#av_section_2 {
 }
 
 .avia-builder-el-29 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-30 .av-icon-char {
     color: #fff;
     ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
@@ -478,6 +510,13 @@ div#av_section_2 {
     filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
 }
 
+.avia-builder-el-42 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
 .avia-builder-el-43 .av-icon-char {
     font-weight: normal;
     color: #fff;
@@ -498,6 +537,13 @@ div#av_section_2 {
     filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
 }
 
+.avia-builder-el-46 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
 .avia-builder-el-48 .av-icon-char {
     color: #fff;
     ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
@@ -506,6 +552,13 @@ div#av_section_2 {
 }
 
 .avia-builder-el-49 .av-icon-char {
+    color: #fff;
+    ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
+    filter: drop-shadow(0.5px 1.5px 0.5px rgba(0,0,0,0.65));
+}
+
+.avia-builder-el-50 .av-icon-char {
     color: #fff;
     ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0.5, OffY=0.5, Color='#000')";
@@ -534,6 +587,12 @@ to-left.flex_column_div.av-zero-column-padding.avia-builder-el-41.el_after_av_on
 }
 
 .flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.first.avia-builder-el-29.el_after_av_heading.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.first.avia-builder-el-30.el_after_av_heading.el_before_av_one_third.avia_start_animation.avia_start_delayed_animation {
     background-color: rgba(0, 0, 0, 0.65);
     padding: 15px 5px 0px 15px;
     box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
@@ -575,6 +634,12 @@ to-left.flex_column_div.av-zero-column-padding.avia-builder-el-41.el_after_av_on
     box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
 }
 
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.first.avia-builder-el-42.el_after_av_one_third.el_before_av_one_third.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
 .flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-43.el_after_av_one_third.avia-builder-el-last.column-top-margin.avia_start_animation.avia_start_delayed_animation {
     background-color: rgba(0, 0, 0, 0.65);
     padding: 15px 5px 0px 15px;
@@ -582,6 +647,12 @@ to-left.flex_column_div.av-zero-column-padding.avia-builder-el-41.el_after_av_on
 }
 
 .flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-45.el_after_av_one_third.el_before_av_one_third.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-46.el_after_av_one_third.el_before_av_one_third.column-top-margin.avia_start_animation.avia_start_delayed_animation {
     background-color: rgba(0, 0, 0, 0.65);
     padding: 15px 5px 0px 15px;
     box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
@@ -661,6 +732,12 @@ to-left.flex_column_div.av-zero-column-padding.avia-builder-el-41.el_after_av_on
 }
 
 .flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-49.el_after_av_one_third.avia-builder-el-last.column-top-margin.avia_start_animation.avia_start_delayed_animation {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 15px 5px 0px 15px;
+    box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
+}
+
+.flex_column.av_one_third.av-animated-generic.right-to-left.flex_column_div.av-zero-column-padding.avia-builder-el-50.el_after_av_one_third.avia-builder-el-last.column-top-margin.avia_start_animation.avia_start_delayed_animation {
     background-color: rgba(0, 0, 0, 0.65);
     padding: 15px 5px 0px 15px;
     box-shadow: 0.5px 0.5px 5px 1px rgba(0, 0, 0, 0.33);
