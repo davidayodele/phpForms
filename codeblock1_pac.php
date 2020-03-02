@@ -5,6 +5,60 @@
     margin-top: -35px;
 }
 Responsive Iframes:
+<div class="iframe-container">
+  <iframe width="1425" height="559" src="https://www.youtube.com/embed/BS4ojxHC1EM"></iframe>
+</div>
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+.iframe-container iframe {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+OR
+
+<div style="--aspect-ratio: 16/9;">
+  <iframe 
+    src="https://css-tricks.com"
+    width="1600"
+    height="900"
+    frameborder="0"
+  >
+  </iframe>
+</div>
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: auto;
+} 
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+
+
 https://benmarshall.me/responsive-iframes/
 
 https://www.flaticon.com/authors/neungstockr
