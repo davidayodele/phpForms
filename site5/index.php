@@ -1,14 +1,45 @@
 <?php
-if(isset($_POST['submit_btn'])) {
-    echo("submit field is set <br>");
+session_start(); //storing session data for vars only
+date_default_timezone_set('America/Phoenix');
 
-    session_start();
+$pos_time = array(10);
+$pos_loc = array(10);
+$pos_type = array(10);
+$pos_pay = array(10);
+$pos_desc = array(10);
+$_SESSION['i_g'] = 0;
+
+if(isset($_POST['submit_btn'])) {
     $_SESSION['name_g'] = htmlentities($_POST['name']); // creates global server-side var 
     $_SESSION['email_g'] = htmlentities($_POST['email']);
     $_SESSION['phone_g'] = htmlentities($_POST['phone']);
+    $_SESSION['msg_g'] = htmlentities($_POST['msg']);
 
-    header('Location: pg2.php'); //directs http header to new loc
+    $_SESSION['pos_loc_g'] = htmlentities($_POST['pos_loc']); // creates global server-side var 
+    $_SESSION['pos_type_g'] = htmlentities($_POST['pos_type']);
+    $_SESSION['pos_pay_g'] = htmlentities($_POST['pos_pay']);
+    $_SESSION['pos_desc_g'] = htmlentities($_POST['pos_desc']);
+    $_SESSION['pos_time_g'] = time();
+
+    $name = $_SESSION['name_g'];
+    $email = $_SESSION['email_g'];
+    $phone = $_SESSION['phone_g'];
+    $msg = $_SESSION['msg_g'];
+    
+    if ($_SESSION['i_g'] < 11) {
+        $pos_loc[$_SESSION['i_g']] = $_SESSION['pos_loc_g'];
+        $pos_type[$_SESSION['i_g']] = $_SESSION['pos_type_g'];
+        $pos_pay[$_SESSION['i_g']] = $_SESSION['pos_pay_g'];
+        $pos_desc[$_SESSION['i_g']] = $_SESSION['pos_desc_g'];
+        $pos_time[$_SESSION['i_g']] = $_SESSION['pos_time_g'];
+
+        $_SESSION['i_g'] = $_SESSION['i_g'] + 1;
+    } else {
+        $_SESSION['i_g'] = 0;
+    }
+    /* header('Location: pg2.php'); //directs http header to new loc */
 } 
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +56,7 @@ if(isset($_POST['submit_btn'])) {
     <title>Postings Main</title>
 </head>
 <body>
-<form method="POST" action="<?php echo($_SERVER['PHP_SELF']); ?>">
+<form method="POST" action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>"> 
 <input type="text" name="name" placeholder="Enter Name">
 <br>
 <input type="email" name="email" placeholder="Enter Email">
@@ -33,6 +64,16 @@ if(isset($_POST['submit_btn'])) {
 <input type="tel" name="phone" placeholder="Enter Phone">
 <br>
 <textarea name="msg" placeholder="Enter your msg">
+</textarea>
+<br>
+<br>
+<input type="text" name="pos_loc" placeholder="Enter position location">
+<br>
+<input type="text" name="pos_type" placeholder="Enter position type">
+<br>
+<input type="text" name="pos_pay" placeholder="Enter position pay">
+<br>
+<textarea name="pos_desc" placeholder="Enter position description">
 </textarea>
 <br>
 <input type="submit" name="submit_btn" value="Submit">
@@ -43,7 +84,7 @@ if(isset($_POST['submit_btn'])) {
 <hr>
 <br>
 <br>
-
+<?php echo($_SESSION['i_g']); ?>
 <!-- 
 ==============
 Postings Board
@@ -94,25 +135,20 @@ Postings Board
     <table class="sortable">
         <thead>
             <tr>
-                <th>Locations</th>
-                <th>Posting Type</th>
-                <th>Date</th>
-                <th>Price</th>
-                <th></th>
+                <th>Location</th>
+                <th>Position Type</th>
+                <th>Post Date</th>
+                <th>Pay</th>
+                <th>Description</th>
             </hr>
         </thead>
         <tbody>
             <tr>
-                <td>Kansas City, MO</td>
-                <td>For Sale</td>
-                <td>02/25/2016</td>
-                <td>$300</td>
-                <td>
-                    <div class="item">
-                        <span class="category">Real Estate</span>
-                        <a class="title" href="">Item title viverra tortor nec condimentum nunc sem eget arcu</a>
-                    </div>
-                </td>
+                <td><?php echo($pos_loc[0]); ?></td>
+                <td><?php echo($pos_type[0]); ?></td>
+                <td><?php echo($pos_time[0]); ?></td>
+                <td><?php echo($pos_pay[0]); ?></td>
+                <td><?php echo($pos_desc[0]); ?></td>
             </tr>
             <tr>
                 <td>Institute, WV</td>
