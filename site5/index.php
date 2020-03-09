@@ -1,4 +1,8 @@
 <?php
+
+define('scsn', TRUE);
+require_once 'db.php';
+
 session_start(); //storing session data for vars only
 date_default_timezone_set('America/Phoenix');
 
@@ -7,7 +11,16 @@ $pos_loc = array(10);
 $pos_type = array(10);
 $pos_pay = array(10);
 $pos_desc = array(10);
-$_SESSION['i_g'] = 0;
+
+$query1 = "SELECT * FROM postings;";
+$query1_output = mysqli_query($conn, $query1);
+
+if (mysqli_num_rows($query1_output) > 0) {
+    if(mysqli_fetch_assoc($query1_output)) {
+        $i = mysqli_fetch_assoc($query1_output)['post_id'];
+    }
+}
+$_SESSION['i_g'] = $i;
 
 if(isset($_POST['submit_btn'])) {
     $_SESSION['name_g'] = htmlentities($_POST['name']); // creates global server-side var 
@@ -34,6 +47,11 @@ if(isset($_POST['submit_btn'])) {
         $pos_time[$_SESSION['i_g']] = $_SESSION['pos_time_g'];
 
         $_SESSION['i_g'] = $_SESSION['i_g'] + 1;
+
+        $query2 = "INSERT INTO postings (user_name, user_email, user_phone, post_loc, post_type, post_time, post_pay, post_desc) VALUES ($name, $email, $phone, $post_loc[$i], $post_type[$i], $post_time[$i], $post_pay[$i], $post_desc[$i]);";
+        
+        mysqli_query($conn, $query2);
+
     } else {
         $_SESSION['i_g'] = 0;
     }
