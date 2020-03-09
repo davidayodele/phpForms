@@ -1,10 +1,7 @@
 <?php
 
 define('scsn', TRUE);
-require_once 'db.php';
-
-session_start(); //storing session data for vars only
-date_default_timezone_set('America/Phoenix');
+include 'db.php';
 
 $pos_time = array(10);
 $pos_loc = array(10);
@@ -12,14 +9,37 @@ $pos_type = array(10);
 $pos_pay = array(10);
 $pos_desc = array(10);
 
-$query1 = "SELECT * FROM postings;";
+$i = 0;
+$query0 = "INSERT INTO postings1 (pos_id) VALUES ($i);";
+$query0_output = mysqli_query($conn, $query0);
+
+if ($query0_output) {
+    echo "INIT QUERY SUCCESSFUL<br>";
+    $i = mysqli_fetch_assoc($query0_output)['post_id'];
+    echo "post_id: ".$i."<br>";
+} else {
+    echo "INIT QUERY ERROR<br>";
+}
+
+$query1 = "SELECT * FROM postings1;";
 $query1_output = mysqli_query($conn, $query1);
 
-if (mysqli_num_rows($query1_output) > 0) {
-    if(mysqli_fetch_assoc($query1_output)) {
-        $i = mysqli_fetch_assoc($query1_output)['post_id'];
-    }
+if ($query1_output) {
+    echo "QUERY #1 SUCCESSFUL<br>";
+    $i = mysqli_fetch_assoc($query1_output)['post_id'];
+    echo "post_id: ".$i."<br>";
+} else {
+    echo "QUERY #1 ERROR<br>";
 }
+
+if (mysqli_num_rows($query1_output) > 0) {
+    if(mysqli_fetch_assoc($query1_output)) {                
+        echo "post_id: ".$i."<br>";
+    }
+} else {
+    $i = 0;
+}
+
 $_SESSION['i_g'] = $i;
 
 if(isset($_POST['submit_btn'])) {
@@ -38,7 +58,28 @@ if(isset($_POST['submit_btn'])) {
     $email = $_SESSION['email_g'];
     $phone = $_SESSION['phone_g'];
     $msg = $_SESSION['msg_g'];
+
+    $pos_loc[$i] = $_SESSION['pos_loc_g'];
+    $pos_type[$i] = $_SESSION['pos_type_g'];
+    $pos_pay[$i] = $_SESSION['pos_pay_g'];
+    $pos_desc[$i] = $_SESSION['pos_desc_g'];
+    $pos_time[$i] = $_SESSION['pos_time_g'];
+
+    //$_SESSION['i_g'] = $_SESSION['i_g'] + 1;
+
+    $query2 = "INSERT INTO postings1 (user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES ($name, $email, $phone, $pos_loc[$i], $pos_type[$i], $pos_time[$i], $pos_pay[$i], $pos_desc[$i]);";
     
+    $query2_output = mysqli_query($conn, $query2);
+    
+    if($query2_output){
+        echo "QUERY #2 SUCCESSFUL<br>";
+        $i = mysqli_fetch_assoc($query2_output)['post_id'];
+        echo "post_id: ".$i."<br>";
+    } else {
+        echo "QUERY #2 ERROR<br>";
+    }
+
+    /*
     if ($_SESSION['i_g'] < 11) {
         $pos_loc[$_SESSION['i_g']] = $_SESSION['pos_loc_g'];
         $pos_type[$_SESSION['i_g']] = $_SESSION['pos_type_g'];
@@ -55,7 +96,11 @@ if(isset($_POST['submit_btn'])) {
     } else {
         $_SESSION['i_g'] = 0;
     }
+    
     /* header('Location: pg2.php'); //directs http header to new loc */
+
+    mysqli_free_result($query0_output, $query1_output, $query2_output);
+    mysqli_close($conn);
 } 
 
 ?>
