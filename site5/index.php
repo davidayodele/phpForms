@@ -11,23 +11,25 @@ $pos_desc = array(10);
 
 $i = 0;
 $query0 = "INSERT INTO postings1 (pos_id) VALUES ($i);";
-$query0_output = mysqli_query($conn, $query0);
+$query0_result = mysqli_query($conn, $query0);
 
-if ($query0_output) {
+if ($query0_result > 0) {
     echo "INIT QUERY SUCCESSFUL<br>";
-    $i = mysqli_fetch_all($query0_output, MYSQLI_ASSOC);
-    echo "post_id: ".$i."<br>";
+    $query0_array = mysqli_fetch_all($query0_result, MYSQLI_ASSOC);
+    //echo "post_id: ".$i."<br>";
+    print_r($query0_array);
 } else {
     echo "INIT QUERY ERROR<br>";
 }
 
 $query1 = "SELECT * FROM postings1;";
-$query1_output = mysqli_query($conn, $query1);
+$query1_result = mysqli_query($conn, $query1);
 
-if ($query1_output) {
+if ($query1_result > 0) {
     echo "QUERY #1 SUCCESSFUL<br>";
-    $i = mysqli_fetch_all($query1_output, MYSQLI_ASSOC);
-    echo "post_id: ".$i."<br>";
+    $query1_array = mysqli_fetch_all($query1_result, MYSQLI_ASSOC);
+    //echo "post_id: ".$i."<br>";
+    print_r($query1_array);
 } else {
     echo "QUERY #1 ERROR<br>";
 }
@@ -67,13 +69,13 @@ if(isset($_POST['submit_btn'])) {
 
     $query2 = "INSERT INTO postings1 (user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES ($name, $email, $phone, $pos_loc[$i], $pos_type[$i], $pos_time[$i], $pos_pay[$i], $pos_desc[$i]);";
     
-    $query2_output = mysqli_query($conn, $query2);
+    $query2_result = mysqli_query($conn, $query2);
     
-    if($query2_output){
+    if($query2_result > 0){
         echo "QUERY #2 SUCCESSFUL<br>";
-        $i = mysqli_fetch_all($query2_output, MYSQLI_ASSOC);
+        $query2_array = mysqli_fetch_all($query2_result, MYSQLI_ASSOC);
         //echo "pos_id: ".$i."<br>";
-        print_r($i);
+        print_r($query2_array);
     } else {
         echo "QUERY #2 ERROR<br>";
     }
@@ -98,7 +100,7 @@ if(isset($_POST['submit_btn'])) {
     
     /* header('Location: pg2.php'); //directs http header to new loc */
 
-    mysqli_free_result($query0_output, $query1_output, $query2_output);
+    mysqli_free_result($query0_result, $query1_result, $query2_result);
     mysqli_close($conn);
 } 
 
