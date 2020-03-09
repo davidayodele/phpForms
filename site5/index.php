@@ -15,7 +15,7 @@ $query0_output = mysqli_query($conn, $query0);
 
 if ($query0_output) {
     echo "INIT QUERY SUCCESSFUL<br>";
-    $i = mysqli_fetch_assoc($query0_output)['post_id'];
+    $i = mysqli_fetch_all($query0_output, MYSQLI_ASSOC);
     echo "post_id: ".$i."<br>";
 } else {
     echo "INIT QUERY ERROR<br>";
@@ -26,16 +26,14 @@ $query1_output = mysqli_query($conn, $query1);
 
 if ($query1_output) {
     echo "QUERY #1 SUCCESSFUL<br>";
-    $i = mysqli_fetch_assoc($query1_output)['post_id'];
+    $i = mysqli_fetch_all($query1_output, MYSQLI_ASSOC);
     echo "post_id: ".$i."<br>";
 } else {
     echo "QUERY #1 ERROR<br>";
 }
 
-if (mysqli_num_rows($query1_output) > 0) {
-    if(mysqli_fetch_assoc($query1_output)) {                
-        echo "post_id: ".$i."<br>";
-    }
+if ($i > 0) {
+    echo "post_id: ".$i."<br>";
 } else {
     $i = 0;
 }
@@ -73,8 +71,9 @@ if(isset($_POST['submit_btn'])) {
     
     if($query2_output){
         echo "QUERY #2 SUCCESSFUL<br>";
-        $i = mysqli_fetch_assoc($query2_output)['post_id'];
-        echo "post_id: ".$i."<br>";
+        $i = mysqli_fetch_all($query2_output, MYSQLI_ASSOC);
+        //echo "pos_id: ".$i."<br>";
+        print_r($i);
     } else {
         echo "QUERY #2 ERROR<br>";
     }
