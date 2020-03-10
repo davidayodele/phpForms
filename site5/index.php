@@ -25,14 +25,15 @@ if ($query1_result) {
     $query1_array = mysqli_fetch_array($query1_result, MYSQLI_ASSOC);
     //echo "post_id: ".$i."<br>";
     print_r($query1_array);
-    echo $query1_array['pos_id']."<br>";
+    echo "<br>";
+    echo "query1_array['pos_id']: ".$query1_array['pos_id']."<br>";
     $i = $query1_array['pos_id'];
 } else {
     echo "QUERY #1 ERROR<br>";
 }
 
 if ($i > 0) {
-    echo "post_id: ".$i."<br>";
+    echo "post_id: ".$i."<br><br>";
 } else {
     $i = 0;
 }
@@ -40,6 +41,7 @@ if ($i > 0) {
 $_SESSION['i_g'] = $i;
 
 if(isset($_POST['submit_btn'])) {
+    $i++;
     $_SESSION['name_g'] = htmlentities($_POST['name']); // creates global server-side var 
     $_SESSION['email_g'] = htmlentities($_POST['email']);
     $_SESSION['phone_g'] = htmlentities($_POST['phone']);
@@ -63,6 +65,8 @@ if(isset($_POST['submit_btn'])) {
     $pos_time[$i] = $_SESSION['pos_time_g'];
 
     //$_SESSION['i_g'] = $_SESSION['i_g'] + 1;
+    echo "name: ".$name.", email: ".$email.", phone: ".$phone."<br>";
+    echo "pos_loc[$i]: ".$pos_loc[$i].", pos_type[$i]: ".$pos_type[$i].", pos_time[$i]: ".$pos_time[$i].", pos_pay[$i]: ".$pos_pay[$i].", pos_desc[$i]: ".$pos_desc[$i]."<br><br>";
 
     $query2 = "INSERT INTO postings3 (user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES ($name, $email, $phone, $pos_loc[$i], $pos_type[$i], $pos_time[$i], $pos_pay[$i], $pos_desc[$i]);";
     
@@ -73,6 +77,7 @@ if(isset($_POST['submit_btn'])) {
         $query2_array = mysqli_fetch_array($query2_result, MYSQLI_ASSOC);
         //echo "pos_id: ".$i."<br>";
         print_r($query2_array);
+        echo "<br>";
     } else {
         echo "QUERY #2 ERROR<br>";
     }
