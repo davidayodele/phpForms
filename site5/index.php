@@ -29,7 +29,7 @@ if ($query1_result) {
     echo "query1_array['pos_id']: ".$query1_array['pos_id']."<br>";
     $i = $query1_array['pos_id'];
 } else {
-    echo "QUERY #1 ERROR<br>";
+    echo "QUERY #1 ERROR: ".mysqli_error($conn)."<br>";
 }
 
 if ($i > 0) {
@@ -79,7 +79,7 @@ if(isset($_POST['submit_btn'])) {
         print_r($query2_array);
         echo "<br>";
     } else {
-        echo "QUERY #2 ERROR<br>";
+        echo "QUERY #2 ERROR: ".mysqli_error($conn)."<br>";
     }
 
     /*
