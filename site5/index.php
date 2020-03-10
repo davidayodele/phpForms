@@ -9,27 +9,24 @@ $pos_type = array(10);
 $pos_pay = array(10);
 $pos_desc = array(10);
 
-$i = 0;
-$query0 = "INSERT INTO postings1 (pos_id) VALUES ($i);";
-$query0_result = mysqli_query($conn, $query0);
+//$query0 = "INSERT INTO postings2 (pos_id) VALUES ($i);";
+//$query0_result = mysqli_query($conn, $query0);
 
-if ($query0_result > 0) {
-    echo "INIT QUERY SUCCESSFUL<br>";
-    $query0_array = mysqli_fetch_all($query0_result, MYSQLI_ASSOC);
-    //echo "post_id: ".$i."<br>";
-    print_r($query0_array);
-} else {
-    echo "INIT QUERY ERROR<br>";
-}
+//var_dump($query0_result);
+//$query0_array = mysqli_fetch_array($query0_result, MYSQLI_ASSOC) or die("Error: ".mysqli_error($conn));
+//echo "post_id: ".$i."<br>";
+//print_r($query0_array);
 
-$query1 = "SELECT * FROM postings1;";
+$query1 = "SELECT * FROM postings3;";
 $query1_result = mysqli_query($conn, $query1);
 
-if ($query1_result > 0) {
+if ($query1_result) {
     echo "QUERY #1 SUCCESSFUL<br>";
-    $query1_array = mysqli_fetch_all($query1_result, MYSQLI_ASSOC);
+    $query1_array = mysqli_fetch_array($query1_result, MYSQLI_ASSOC);
     //echo "post_id: ".$i."<br>";
     print_r($query1_array);
+    echo $query1_array['pos_id']."<br>";
+    $i = $query1_array['pos_id'];
 } else {
     echo "QUERY #1 ERROR<br>";
 }
@@ -67,13 +64,13 @@ if(isset($_POST['submit_btn'])) {
 
     //$_SESSION['i_g'] = $_SESSION['i_g'] + 1;
 
-    $query2 = "INSERT INTO postings1 (user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES ($name, $email, $phone, $pos_loc[$i], $pos_type[$i], $pos_time[$i], $pos_pay[$i], $pos_desc[$i]);";
+    $query2 = "INSERT INTO postings3 (user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES ($name, $email, $phone, $pos_loc[$i], $pos_type[$i], $pos_time[$i], $pos_pay[$i], $pos_desc[$i]);";
     
     $query2_result = mysqli_query($conn, $query2);
     
-    if($query2_result > 0){
+    if($query2_result){
         echo "QUERY #2 SUCCESSFUL<br>";
-        $query2_array = mysqli_fetch_all($query2_result, MYSQLI_ASSOC);
+        $query2_array = mysqli_fetch_array($query2_result, MYSQLI_ASSOC);
         //echo "pos_id: ".$i."<br>";
         print_r($query2_array);
     } else {
@@ -100,7 +97,8 @@ if(isset($_POST['submit_btn'])) {
     
     /* header('Location: pg2.php'); //directs http header to new loc */
 
-    mysqli_free_result($query0_result, $query1_result, $query2_result);
+    mysqli_free_result($query1_result);
+    mysqli_free_result($query2_result);
     mysqli_close($conn);
 } 
 
@@ -215,28 +213,18 @@ Postings Board
                 <td><?php echo($pos_desc[0]); ?></td>
             </tr>
             <tr>
-                <td>Institute, WV</td>
-                <td>Announcement</td>
-                <td>02/23/2016</td>
-                <td></td>
-                <td>
-                    <div class="item">
-                        <span class="category"></span>
-                        <a class="title" href="">Item title viverra tortor nec condimentum nunc sem eget arcu</a>
-                    </div>
-                </td>
+                <td><?php echo($pos_loc[1]); ?></td>
+                <td><?php echo($pos_type[1]); ?></td>
+                <td><?php echo($pos_time[1]); ?></td>
+                <td><?php echo($pos_pay[1]); ?></td>
+                <td><?php echo($pos_desc[1]); ?></td>
             </tr>
             <tr>
-                <td>Kansas City, MO</td>
-                <td>For Sale</td>
-                <td>02/16/2016</td>
-                <td>$100</td>
-                <td>
-                    <div class="item">
-                        <span class="category">Home Goods</span>
-                        <a class="title" href="">Ex enim finibus turpis, sed elementum purus mi vei nisl</a>
-                    </div>
-                </td>
+                <td><?php echo($pos_loc[2]); ?></td>
+                <td><?php echo($pos_type[2]); ?></td>
+                <td><?php echo($pos_time[2]); ?></td>
+                <td><?php echo($pos_pay[2]); ?></td>
+                <td><?php echo($pos_desc[2]); ?></td>
             </tr>
             <tr>
                 <td>Kansas City, MO</td>
