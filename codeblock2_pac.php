@@ -1,4 +1,3 @@
-<a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/NOWPACAZ?ref_src=twsrc%5Etfw">Tweets by NOWPACAZ</a> 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <style type="text/css">
@@ -84,16 +83,22 @@ img#donate_btn:hover {
     color: #000 !important;
     text-shadow: none;
 }
+
+@media only screen and (max-width: 692px) {
+    .av-masonry-entry .av-inner-masonry-content {
+        top: 0px !important;
+    }
+}
 /*==== End Endorsements ====*/
 
 /*==== Mobile section 1 ====*/
 @media only screen and (max-width: 990px) {
     .avia-builder-el-first .av-section-color-overlay-wrap {
-        top: -20px;
+        top: -20px !important;
     }
 
     .avia-builder-el-first .av-section-color-overlay-wrap {
-        margin-top: -160px;
+        margin-top: -160px !important;
     }
 }
 
@@ -101,7 +106,7 @@ img#donate_btn:hover {
 @media only screen and (max-width: 768px) {
 
     .avia-builder-el-first .av-section-color-overlay-wrap {
-        margin-top: 0px;
+        margin-top: 0px !important;
     }
 }
 
@@ -116,7 +121,6 @@ img#donate_btn:hover {
     }
 
     #top h1 strong, #top h2 strong, #top h3 strong, #top h4 strong, #top h5 strong, #top h6 strong {
-
         font-size: 12.5vw !important;
     }
 
