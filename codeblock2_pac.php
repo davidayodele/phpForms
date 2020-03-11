@@ -1,5 +1,3 @@
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 <style type="text/css">
 /*
 .ls-wrapper.find_my_leg:hover {
@@ -82,6 +80,10 @@ img#donate_btn:hover {
     margin-top: 0;
     color: #000 !important;
     text-shadow: none;
+}
+
+[title~="Coconino County Board"] {
+    font-size: 80% !important;
 }
 
 @media only screen and (max-width: 692px) {
