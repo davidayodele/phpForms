@@ -68,16 +68,17 @@ if(isset($_POST['submit_btn'])) {
     echo "name: ".$name.", email: ".$email.", phone: ".$phone."<br>";
     echo "pos_loc[$i]: ".$pos_loc[$i].", pos_type[$i]: ".$pos_type[$i].", pos_time[$i]: ".$pos_time[$i].", pos_pay[$i]: ".$pos_pay[$i].", pos_desc[$i]: ".$pos_desc[$i]."<br><br>";
 
-    $query2 = "INSERT INTO postings3 (user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES ($name, $email, $phone, $pos_loc[$i], $pos_type[$i], $pos_time[$i], $pos_pay[$i], $pos_desc[$i]);";
+    //query values must be in single quotes, all fields must be set!
+    $query2 = "INSERT INTO postings3 (pos_id, user_name, user_email, user_phone, pos_loc, pos_type, pos_time, pos_pay, pos_desc) VALUES (0, '$name', '$email', '$phone', '$pos_loc[$i]', '$pos_type[$i]', '$pos_time[$i]', '$pos_pay[$i]', '$pos_desc[$i]');";
     
     $query2_result = mysqli_query($conn, $query2);
-    
+
     if($query2_result){
         echo "QUERY #2 SUCCESSFUL<br>";
-        $query2_array = mysqli_fetch_array($query2_result, MYSQLI_ASSOC);
-        //echo "pos_id: ".$i."<br>";
+        /* $query2_array = mysqli_fetch_array($query2_result, MYSQLI_ASSOC);
+        echo "pos_id: ".$i."<br>";
         print_r($query2_array);
-        echo "<br>";
+        echo "<br>"; */
     } else {
         echo "QUERY #2 ERROR: ".mysqli_error($conn)."<br>";
     }
@@ -102,9 +103,9 @@ if(isset($_POST['submit_btn'])) {
     
     /* header('Location: pg2.php'); //directs http header to new loc */
 
-    mysqli_free_result($query1_result);
-    mysqli_free_result($query2_result);
-    mysqli_close($conn);
+    //mysqli_free_result($query1_result);
+    //mysqli_free_result($query2_result);
+    mysqli_close($conn); //memory freed on connection close.
 } 
 
 ?>
@@ -126,9 +127,9 @@ if(isset($_POST['submit_btn'])) {
 <form method="POST" action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>"> 
 <input type="text" name="name" placeholder="Enter Name">
 <br>
-<input type="email" name="email" placeholder="Enter Email">
+<input type="text" name="email" placeholder="Enter Email">
 <br>
-<input type="tel" name="phone" placeholder="Enter Phone">
+<input type="text" name="phone" placeholder="Enter Phone">
 <br>
 <textarea name="msg" placeholder="Enter your msg">
 </textarea>
