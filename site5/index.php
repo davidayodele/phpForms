@@ -26,8 +26,23 @@ if ($query1_result) {
     //echo "post_id: ".$i."<br>";
     print_r($query1_array);
     echo "<br>";
+    echo "rows: ".sizeof($query1_array['pos_id'])."<br>";
     echo "query1_array['pos_id']: ".$query1_array['pos_id']."<br>";
     $i = $query1_array['pos_id'];
+    /*  $j = 
+
+    $pos_time[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_time'];
+    $pos_loc[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_loc'];
+    $pos_type[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_type'];
+    $pos_pay[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_pay'];
+    $pos_desc[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_desc'];
+
+    $pos_time[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_time'];
+    $pos_loc[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_loc'];
+    $pos_type[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_type'];
+    $pos_pay[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_pay'];
+    $pos_desc[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_desc'];  */
+
 } else {
     echo "QUERY #1 ERROR: ".mysqli_error($conn)."<br>";
 }
