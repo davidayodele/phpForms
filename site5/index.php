@@ -26,9 +26,9 @@ if ($query1_result) {
     //echo "post_id: ".$i."<br>";
     print_r($query1_array);
     echo "<br>";
-    echo "rows: ".sizeof($query1_array['pos_id'])."<br>";
+    echo "rows: ".mysqli_num_rows($query1_result)."<br>";
     echo "query1_array['pos_id']: ".$query1_array['pos_id']."<br>";
-    $i = $query1_array['pos_id'];
+    $i = count($query1_array['pos_id']);
     /*  $j = 
     $pos_time[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_time'];
     $pos_loc[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_loc'];
@@ -114,9 +114,12 @@ if(isset($_POST['submit_btn'])) {
     } else {
         $_SESSION['i_g'] = 0;
     }
+    
+    /* header('Location: pg2.php'); //directs http header to new loc */
 
     //mysqli_free_result($query1_result);
     //mysqli_free_result($query2_result);
+
     mysqli_close($conn); //memory freed on connection close.
 } 
 
