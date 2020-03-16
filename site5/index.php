@@ -34,18 +34,66 @@ if ($query1_result) {
     echo "rows: ".($i - $i + 3)."<br>";
     echo "query1_array[0]: ".$query1_array[3]['pos_pay']."<br>";
     
-    /*  $j = 
-    $pos_time[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_time'];
-    $pos_loc[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_loc'];
-    $pos_type[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_type'];
-    $pos_pay[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_pay'];
-    $pos_desc[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_desc'];
+    
+    $pos_time[$i - $i] = $query1_array[$i - 1]['pos_time'];
+    $pos_loc[$i - $i] = $query1_array[$i - 1]['pos_loc'];
+    $pos_type[$i - $i] = $query1_array[$i - 1]['pos_type'];
+    $pos_pay[$i - $i] = $query1_array[$i - 1]['pos_pay'];
+    $pos_desc[$i - $i] = $query1_array[$i - 1]['pos_desc'];
 
-    $pos_time[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_time'];
-    $pos_loc[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_loc'];
-    $pos_type[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_type'];
-    $pos_pay[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_pay'];
-    $pos_desc[length($query1_array) - length($query1_array) - 1] = $query1_array['pos_desc'];  */
+    $pos_time[$i - $i + 1] = $query1_array[$i - 2]['pos_time'];
+    $pos_loc[$i - $i + 1] = $query1_array[$i - 2]['pos_loc'];
+    $pos_type[$i - $i + 1] = $query1_array[$i - 2]['pos_type'];
+    $pos_pay[$i - $i + 1] = $query1_array[$i - 2]['pos_pay'];
+    $pos_desc[$i - $i + 1] = $query1_array[$i - 2]['pos_desc'];
+
+    $pos_time[$i - $i + 2] = $query1_array[$i - 3]['pos_time'];
+    $pos_loc[$i - $i + 2] = $query1_array[$i - 3]['pos_loc'];
+    $pos_type[$i - $i + 2] = $query1_array[$i - 3]['pos_type'];
+    $pos_pay[$i - $i + 2] = $query1_array[$i - 3]['pos_pay'];
+    $pos_desc[$i - $i + 2] = $query1_array[$i - 3]['pos_desc'];
+
+    $pos_time[$i - $i + 3] = $query1_array[$i - 4]['pos_time'];
+    $pos_loc[$i - $i + 3] = $query1_array[$i - 4]['pos_loc'];
+    $pos_type[$i - $i + 3] = $query1_array[$i - 4]['pos_type'];
+    $pos_pay[$i - $i + 3] = $query1_array[$i - 4]['pos_pay'];
+    $pos_desc[$i - $i + 3] = $query1_array[$i - 4]['pos_desc'];
+    /*
+    $pos_time[$i - $i + 4] = $query1_array[$i - 5]['pos_time'];
+    $pos_loc[$i - $i + 4] = $query1_array[$i - 5]['pos_loc'];
+    $pos_type[$i - $i + 4] = $query1_array[$i - 5]['pos_type'];
+    $pos_pay[$i - $i + 4] = $query1_array[$i - 5]['pos_pay'];
+    $pos_desc[$i - $i + 4] = $query1_array[$i - 5]['pos_desc'];
+
+    $pos_time[$i - $i + 5] = $query1_array[$i - 5]['pos_time'];
+    $pos_loc[$i - $i + 5] = $query1_array[$i - 5]['pos_loc'];
+    $pos_type[$i - $i + 5] = $query1_array[$i - 5]['pos_type'];
+    $pos_pay[$i - $i + 5] = $query1_array[$i - 5]['pos_pay'];
+    $pos_desc[$i - $i + 5] = $query1_array[$i - 5]['pos_desc'];
+
+    $pos_time[$i - $i + 6] = $query1_array[$i - 6]['pos_time'];
+    $pos_loc[$i - $i + 6] = $query1_array[$i - 6]['pos_loc'];
+    $pos_type[$i - $i + 6] = $query1_array[$i - 6]['pos_type'];
+    $pos_pay[$i - $i + 6] = $query1_array[$i - 6]['pos_pay'];
+    $pos_desc[$i - $i + 6] = $query1_array[$i - 6]['pos_desc'];
+
+    $pos_time[$i - $i + 7] = $query1_array[$i - 7]['pos_time'];
+    $pos_loc[$i - $i + 7] = $query1_array[$i - 7]['pos_loc'];
+    $pos_type[$i - $i + 7] = $query1_array[$i - 7]['pos_type'];
+    $pos_pay[$i - $i + 7] = $query1_array[$i - 7]['pos_pay'];
+    $pos_desc[$i - $i + 7] = $query1_array[$i - 7]['pos_desc'];
+
+    $pos_time[$i - $i + 8] = $query1_array[$i - 8]['pos_time'];
+    $pos_loc[$i - $i + 8] = $query1_array[$i - 8]['pos_loc'];
+    $pos_type[$i - $i + 8] = $query1_array[$i - 8]['pos_type'];
+    $pos_pay[$i - $i + 8] = $query1_array[$i - 8]['pos_pay'];
+    $pos_desc[$i - $i + 8] = $query1_array[$i - 8]['pos_desc'];
+
+    $pos_time[$i - $i + 9] = $query1_array[$i - 9]['pos_time'];
+    $pos_loc[$i - $i + 9] = $query1_array[$i - 9]['pos_loc'];
+    $pos_type[$i - $i + 9] = $query1_array[$i - 9]['pos_type'];
+    $pos_pay[$i - $i + 9] = $query1_array[$i - 9]['pos_pay'];
+    $pos_desc[$i - $i + 9] = $query1_array[$i - 9]['pos_desc']; */
 
 } else {
     echo "QUERY #1 ERROR: ".mysqli_error($conn)."<br>";
@@ -60,7 +108,9 @@ if ($i > 0) {
 $_SESSION['i_g'] = $i;
 
 if(isset($_POST['submit_btn'])) {
+  
     $i++;
+
     $_SESSION['name_g'] = htmlentities($_POST['name']); // creates global server-side var 
     $_SESSION['email_g'] = htmlentities($_POST['email']);
     $_SESSION['phone_g'] = htmlentities($_POST['phone']);
@@ -253,12 +303,19 @@ Postings Board
                 <td><?php echo($pos_desc[2]); ?></td>
             </tr>
             <tr>
+                <td><?php echo($pos_loc[3]); ?></td>
+                <td><?php echo($pos_type[3]); ?></td>
+                <td><?php echo($pos_time[3]); ?></td>
+                <td><?php echo($pos_pay[3]); ?></td>
+                <td><?php echo($pos_desc[3]); ?></td>
+            </tr> <!--
+            <tr>
                 <td>Kansas City, MO</td>
                 <td>For Sale</td>
                 <td>02/25/2016</td>
                 <td>$300</td>
                 <td>Real Estate | <a href="">Item title viverra tortor nec condimentum nunc sem eget arcu</a></td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
     <div class="bb-pagination">
