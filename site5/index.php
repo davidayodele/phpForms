@@ -22,13 +22,18 @@ $query1_result = mysqli_query($conn, $query1);
 
 if ($query1_result) {
     echo "QUERY #1 SUCCESSFUL<br>";
-    $query1_array = mysqli_fetch_array($query1_result, MYSQLI_ASSOC);
+    $query1_array = mysqli_fetch_all($query1_result, MYSQLI_ASSOC);
     //echo "post_id: ".$i."<br>";
     print_r($query1_array);
+    $i = mysqli_num_rows($query1_result);
     echo "<br>";
-    echo "rows: ".mysqli_num_rows($query1_result)."<br>";
-    echo "query1_array['pos_id']: ".$query1_array['pos_id']."<br>";
-    $i = count($query1_array['pos_id']);
+    echo "rows: ".$i."<br>";
+    echo "rows: ".($i - $i)."<br>";
+    echo "rows: ".($i - $i + 1)."<br>";
+    echo "rows: ".($i - $i + 2)."<br>";
+    echo "rows: ".($i - $i + 3)."<br>";
+    echo "query1_array[0]: ".$query1_array[3]['pos_pay']."<br>";
+    
     /*  $j = 
     $pos_time[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_time'];
     $pos_loc[length($query1_array) - length($query1_array) - 0] = $query1_array['pos_loc'];
