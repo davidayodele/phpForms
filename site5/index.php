@@ -111,7 +111,7 @@ if(isset($_POST['submit_btn'])) {
   
     $i++;
 
-    $_SESSION['name_g'] = htmlentities($_POST['name']); // creates global server-side var 
+    $_SESSION['name_g'] = htmlentities($_POST['entry.1201581312']); // creates global server-side var 
     $_SESSION['email_g'] = htmlentities($_POST['email']);
     $_SESSION['phone_g'] = htmlentities($_POST['phone']);
     $_SESSION['msg_g'] = htmlentities($_POST['msg']);
@@ -194,27 +194,140 @@ if(isset($_POST['submit_btn'])) {
     <title>Postings Main</title>
 </head>
 <body>
-<form method="POST" action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>"> 
-<input type="text" name="name" placeholder="Enter Name">
+
+
+<!-- Jobs form -->
+<form class="contact-form" id="contactForm" action="" method="POST" onsubmit="return validateFormOnSubmit(this); event.preventDefault();">
+<!--
+<div class="contact-form-success alert alert-success d-none">
+  <strong>Success!</strong> Your message has been sent to us.
+</div>
+<div class="contact-form-error alert alert-danger d-none">
+  <strong>Error!</strong> There was an error sending your message.
+  <span class="mail-error-message d-block"></span>
+</div>
+-->
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <input type="text" value="" data-msg-required="Please enter your first name." maxlength="200" class="form-control" name="entry.773136042" id="name1" placeholder="First Name" required="true">
+  </div>
+  <div class="form-group col-md-6">
+    <input type="text" value="" data-msg-required="Please enter your last name." maxlength="200" class="form-control" name="entry.70725064" id="name2" placeholder="Last Name" required="true">
+  </div>
+  <div class="form-group col-md-6">
+    <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="200" class="form-control" name="entry.1603947973" id="email" placeholder="E-mail" required="true">
+  </div><div class="form-group col-md-6">
+    <input type="tel" value="" data-msg-required="Please enter your phone number." maxlength="15" class="form-control" name="entry.36247717" id="phone" placeholder="Phone" required="true">
+  </div>												
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <input type="text" value="" data-msg-required="Please enter your street address (e.g. 8900 N Central)" maxlength="500" class="form-control" name="entry.947737773" id="addr" placeholder="Street Address (e.g. 848 E Libra Dr)" required="addr">
+  </div>
+  <div class="form-group col-md-6">
+    <input type="text" value="" data-msg-required="Please enter your city." maxlength="100" class="form-control" name="entry.403997107" id="city" placeholder="City" required="true">
+  </div>
+  <div class="form-group col-md-6">
+    <input type="text" value="" data-msg-required="Please enter your zip code." maxlength="10" class="form-control" name="entry.817721318" id="zip" placeholder="Zip" required="true">
+  </div><div class="form-group col-md-6">
+    <input type="text" value="" data-msg-required="Please enter your age." maxlength="3" class="form-control" name="entry.109205054" id="age" placeholder="Age" required="true">
+  </div>												
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label class="code_yrs" for="entry_1201581312">Years of Programming Experience:</label>
+    <select name="entry.1201581312" id="code_yrs" class="" placeholder="Years of Programming Experience" required="true">
+    <option value=""></option>
+    <option value="0-1">0-1</option> 
+    <option value="1-5">1-5</option> 
+    <option value="5+">5+</option>
+    </select>
+  </div>
+  <div class="form-group col-md-6">
+    <label class="diploma" for="entry_1724034531">High School Diploma or Equivalent?</label>
+    <select name="entry.1724034531" id="diploma" class="" placeholder="High School Diploma or Equivalent?" required="true">	
+    <option value=""></option>
+    <option value="Yes">Yes</option> 
+    <option value="No">No</option>
+    </select>
+  </div>
+  <div class="form-group col-md-6">
+    <label class="diploma" for="entry_647945894">Years of College or Post-Secondary Schooling:</label>
+    <select name="entry.647945894" id="college_yrs" class="" placeholder="Years of College (or Post-Secondary Schooling)" required="true">
+    <option value=""></option>
+    <option value="0-1">0-1</option> 
+    <option value="1-4">1-4</option> 
+    <option value="4+">4+</option>
+    </select>
+  </div>
+  <div class="form-group col-md-6">
+    <label class="diploma" for="entry_2036387017">SAT Math (800 scale) Scores (if taken):</label>
+    <select name="entry.2036387017" id="sat_rng" class="" placeholder="SAT Math (800 scale) Scores (if taken)" required="false">
+    <option value=""></option>
+    <option value="<400"><400</option> 
+    <option value="400-600">400-600</option> 
+    <option value=">600">>600</option>
+    </select>
+  </div>												
+</div>
+
+<div class="form-row">
+  <div class="form-group col">
+    <textarea maxlength="10000" data-msg-required="Please enter a link or text only" rows="5" class="form-control" name="entry.927317673" id="resume" placeholder="Résumé/CV/LinkedIn (Text or link only)" required></textarea>
+  </div>
+</div>
+<center>
+<div class="form-row mt-2">
+  <div class="form-group col">
+    <div class="g-recaptcha" data-sitekey="6LeXdbQUAAAAANwLun1KOX4gHXmKBFXtjf3YBNXE" data-callback="notRobot"></div>
+  </div>
+</div>												
+<div class="form-row mt-2">
+  <div class="form-group col">
+    <input type="submit" name="submit" value="SEND MESSAGE" id="ss-submit" class="btn-rounded btn-4 font-weight-semibold text-0">
+  </div>
+</div>
+</center>
+<strong>
+<span id="status_msg" name="status_msg">
+</span>
+</strong>
+</form>
+<!-- End Jobs form -->
+
+
+<form method="POST" class="contact-form" id="contactForm" action="" onsubmit="return validateFormOnSubmit(this); event.preventDefault();"> <!-- action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>" --> 
+<input type="text" name="entry.31466821" placeholder="Enter Name">
 <br>
-<input type="text" name="email" placeholder="Enter Email">
+<input type="text" name="entry.1201581312" placeholder="Enter Email">
 <br>
-<input type="text" name="phone" placeholder="Enter Phone">
+<input type="text" name="entry.111373112" placeholder="Enter Phone">
 <br>
-<textarea name="msg" placeholder="Enter your msg">
+<textarea maxlength="1000" name="entry.776343649" placeholder="Enter your msg">
 </textarea>
 <br>
 <br>
-<input type="text" name="pos_loc" placeholder="Enter position location">
+<input type="text" name="entry.1526193799" placeholder="Enter position location">
 <br>
-<input type="text" name="pos_type" placeholder="Enter position type">
+<input type="text" name="entry.523789742" placeholder="Enter position type">
 <br>
-<input type="text" name="pos_pay" placeholder="Enter position pay">
+<input type="text" name="entry.1553113902" placeholder="Enter position pay">
 <br>
-<textarea name="pos_desc" placeholder="Enter position description">
+<textarea maxlength="10000" rows="5" name="entry.1922788147" placeholder="Enter position description">
 </textarea>
 <br>
-<input type="submit" name="submit_btn" value="Submit">
+<br>
+<center>
+<div class="g-recaptcha" data-sitekey="6LeXdbQUAAAAANwLun1KOX4gHXmKBFXtjf3YBNXE" data-callback="notRobot"></div>
+<input type="submit" name="submit_btn" value="SEND MESSAGE" id="ss-submit" class="btn-rounded btn-4 font-weight-semibold text-0">
+</div>
+</center>
+<strong>
+<span id="status_msg" name="status_msg">
+</span>
+</strong>
 </form>
 
 <br>
@@ -331,6 +444,69 @@ Postings Board
 <!-- End Postings Board -->
 
 </body>
+
+<!-- Jobs form script (updated 1/19/19) adapted from: Mario Vidov https://codepen.io/mel/pen/kHCvr?page=1&q=contact+form-->
+<script type="text/javascript">
+var submitted = false;
+var captchaPass = false;
+var name = '';
+var str = '';
+var n = -1;
+
+function _(id){ return document.getElementById(id); }
+
+var notRobot = function() {
+  var formdata = new FormData();
+  formdata.append( "name1", _("name1").value );
+  formdata.append( "name2", _("name2").value );
+  formdata.append( "email", _("email").value );
+  formdata.append( "phone", _("phone").value );
+  formdata.append( "address", _("addr").value );
+  
+  for (var [key, value] of formdata.entries()) {
+    console.log(key, value);
+  }
+  
+  name = $("#name1").val();
+  $.ajax({
+    url: 'php/contact-form-recaptcha.php',
+    type: "POST",
+    data: "name=" + name + "&g-recaptcha-response=" + grecaptcha.getResponse(),
+    success: function(data) {
+      //str = data;
+      //console.log(data);
+      //n = str.indexOf("[success] => 1");
+      str = grecaptcha.getResponse();
+      console.log(grecaptcha.getResponse());
+      //document.getElementById("status_msg").innerHTML = n;
+      n = str.indexOf("03A");
+      if (n >= 0 && formdata.has('name1') && formdata.has('name2') && formdata.has('email') && formdata.has('phone') && formdata.has('address')) {
+        $('#contactForm').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSet-bBBZI1AKQCF3tzlMY5fBbwp6TooZxkE2drW023vpCZ9jQ/formResponse');
+          captchaPass = true;
+        } else {
+          document.getElementById("status_msg").innerHTML = "Error: Form or reCaptcha check NOT complete!";
+        }
+    }
+    })
+};
+
+function validateFormOnSubmit(contactForm) { // takes contactForm var as input  onsubmit="return validateFormOnSubmit(this)"
+  if (captchaPass) {
+    _("status_msg").innerHTML = "Got it! Thank you, " + name + ", for your message! Someone will get back to you shortly!"
+    submitted = true;
+    _("ss-submit").disabled = true;
+    return true;
+    } else {
+      _("status_msg").innerHTML = "Error: reCaptcha check failed for " + name;
+      document.getElementById("status_msg").innerHTML = "Error: Form or reCaptcha check NOT complete!";
+    }
+}
+if (submitted) {
+  _("contactForm").reset();	
+}
+
+</script>
+<!-- End Jobs form script -->
 
 <!-- Postings board script -->
 <script type="text/javascript">
