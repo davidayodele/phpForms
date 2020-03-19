@@ -111,15 +111,15 @@ if(isset($_POST['submit_btn'])) {
   
     $i++;
 
-    $_SESSION['name_g'] = htmlentities($_POST['entry31466821']); // creates global server-side var 
-    $_SESSION['email_g'] = htmlentities($_POST['entry.1201581312']);
-    $_SESSION['phone_g'] = htmlentities($_POST['entry.111373112']);
-    $_SESSION['msg_g'] = htmlentities($_POST['entry.776343649']);
+    $_SESSION['name_g'] = htmlentities($_POST['entry_1734281767']); // creates global server-side var. PHP converts "." to "_" in var names
+    $_SESSION['email_g'] = htmlentities($_POST['entry_1201581312']);
+    $_SESSION['phone_g'] = htmlentities($_POST['entry_111373112']);
+    $_SESSION['msg_g'] = htmlentities($_POST['entry_776343649']);
 
-    $_SESSION['pos_loc_g'] = htmlentities($_POST['entry.1526193799']); // creates global server-side var 
-    $_SESSION['pos_type_g'] = htmlentities($_POST['entry.523789742']);
-    $_SESSION['pos_pay_g'] = htmlentities($_POST['entry.1553113902']);
-    $_SESSION['pos_desc_g'] = htmlentities($_POST['entry.1922788147']);
+    $_SESSION['pos_loc_g'] = htmlentities($_POST['entry_1734281767']); // creates global server-side var. PHP converts "." to "_" in var names
+    $_SESSION['pos_type_g'] = htmlentities($_POST["entry_1234567890"]);
+    $_SESSION['pos_pay_g'] = htmlentities($_POST['entry_1553113902']);
+    $_SESSION['pos_desc_g'] = htmlentities($_POST['entry_1922788147']);
     $_SESSION['pos_time_g'] = time();
 
     $name = $_SESSION['name_g'];
@@ -134,6 +134,7 @@ if(isset($_POST['submit_btn'])) {
     $pos_time[$i] = $_SESSION['pos_time_g'];
 
     //$_SESSION['i_g'] = $_SESSION['i_g'] + 1;
+    print_r($_POST);
     echo "name: ".$name.", email: ".$email.", phone: ".$phone."<br>";
     echo "pos_loc[$i]: ".$pos_loc[$i].", pos_type[$i]: ".$pos_type[$i].", pos_time[$i]: ".$pos_time[$i].", pos_pay[$i]: ".$pos_pay[$i].", pos_desc[$i]: ".$pos_desc[$i]."<br><br>";
 
@@ -199,7 +200,7 @@ if(isset($_POST['submit_btn'])) {
 <!-- Jobs form -->
 
 <form method="POST" class="contact-form" id="contactForm" action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>"> 
-<input type="text" name="entry31466821" placeholder="Enter Name">
+<input type="text" name="entry.1734281767" placeholder="Enter Name">
 <br>
 <input type="text" name="entry.1201581312" placeholder="Enter Email">
 <br>
@@ -209,9 +210,9 @@ if(isset($_POST['submit_btn'])) {
 </textarea>
 <br>
 <br>
-<input type="text" name="entry.1526193799" placeholder="Enter position location">
+<input type="text" name="entry.1734281767" placeholder="Enter position location">
 <br>
-<input type="text" name="entry.523789742" placeholder="Enter position type">
+<input type="text" name="entry.609998995" placeholder="Enter position type">
 <br>
 <input type="text" name="entry.1553113902" placeholder="Enter position pay">
 <br>
