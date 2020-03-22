@@ -34,7 +34,13 @@ if ($query1_result) {
     echo "rows: ".($i - $i + 3)."<br>";
     echo "query1_array[0]: ".$query1_array[3]['pos_pay']."<br>";
     
-    
+    /*
+    $pos_time[$i - $i] = $query1_array[$i - 1]['pos_time'];
+    $pos_loc[$i - $i] = $query1_array[$i - 1]['pos_loc'];
+    $pos_type[$i - $i] = $query1_array[$i - 1]['pos_type'];
+    $pos_pay[$i - $i] = $query1_array[$i - 1]['pos_pay'];
+    $pos_desc[$i - $i] = $query1_array[$i - 1]['pos_desc'];
+    */
     $pos_time[$i - $i] = $query1_array[$i - 1]['pos_time'];
     $pos_loc[$i - $i] = $query1_array[$i - 1]['pos_loc'];
     $pos_type[$i - $i] = $query1_array[$i - 1]['pos_type'];
@@ -117,7 +123,7 @@ if(isset($_POST['submit_btn'])) {
     $_SESSION['msg_g'] = htmlentities($_POST['entry_776343649']);
 
     $_SESSION['pos_loc_g'] = htmlentities($_POST['entry_1734281767']); // creates global server-side var. PHP converts "." to "_" in var names
-    $_SESSION['pos_type_g'] = htmlentities($_POST["entry_1234567890"]);
+    $_SESSION['pos_type_g'] = htmlentities($_POST["entry_609998995"]);
     $_SESSION['pos_pay_g'] = htmlentities($_POST['entry_1553113902']);
     $_SESSION['pos_desc_g'] = htmlentities($_POST['entry_1922788147']);
     $_SESSION['pos_time_g'] = time();
@@ -190,16 +196,18 @@ if(isset($_POST['submit_btn'])) {
     
     <!-- Links -->
     <script type="text/javascript" src="js/sorttable.js"></script> <!-- Thanks Stuart! -->
+    <script src="js/jquery.min.js"></script><!-- jQuery load -->
     <!-- End Links -->
 
     <title>Postings Main</title>
 </head>
 <body>
 
-
 <!-- Jobs form -->
 
-<form method="POST" class="contact-form" id="contactForm" action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>"> 
+<!-- End AJAX display script -->
+
+<form method="POST" class="contact-form" id="contactForm" action="<?php echo($_SERVER['PHP_SELF']); /*Post to this page*/ ?>" event.preventDefault();> 
 <input type="text" name="entry.1734281767" placeholder="Enter Name">
 <br>
 <input type="text" name="entry.1201581312" placeholder="Enter Email">
@@ -219,17 +227,42 @@ if(isset($_POST['submit_btn'])) {
 <textarea maxlength="10000" rows="5" name="entry.1922788147" placeholder="Enter position description">
 </textarea>
 <br>
-<input type="submit" name="submit_btn" id="ss-submit" class="submit_btn" tabindex=5></input>
+<input type="submit" name="submit_btn" id="submit_btn" class="submit_btn" tabindex=5></input>
 </form>
 
 <!-- End Jobs form -->
+
+<!-- AJAX display script -->
+<script>
+$(document).ready(function() {
+  function _(id){ return document.getElementById(id); }
+  console.log("document ready");
+  _("submit_btn").addEventListener("click", function() {
+    console.log("submit clicked");
+    var name = $("name").val();
+    var email = $("email").val();
+    $.post("<?php echo($_SERVER['PHP_SELF']); ?>", {name: name, email: email}, function(data, status) {
+      $("loc0").html("<?php echo($pos_loc[0]); ?>");
+      $("type0").html("<?php echo($pos_type[0]); ?>");
+      _("time0").innerHTML = "<?php echo($pos_time[0]); ?>";
+      _("pay0").innerHTML = "<?php echo($pos_pay[0]); ?>";
+      _("desc0").innerHTML = "<?php echo($pos_desc[0]); ?>";
+    });
+  });
+  
+  <?php 
+  header("Location:index.php");
+  ?>
+});
+</script>
 
 <br>
 <br>
 <hr>
 <br>
 <br>
-<?php echo($_SESSION['i_g']); ?>
+<?php echo($_SESSION['i_g']); 
+?>
 <!-- 
 ==============
 Postings Board
@@ -288,41 +321,41 @@ Postings Board
             </hr>
         </thead>
         <tbody>
-            <tr>
-                <td><?php echo($pos_loc[0]); ?></td>
-                <td><?php echo($pos_type[0]); ?></td>
-                <td><?php echo($pos_time[0]); ?></td>
-                <td><?php echo($pos_pay[0]); ?></td>
-                <td><?php echo($pos_desc[0]); ?></td>
-            </tr>
-            <tr>
-                <td><?php echo($pos_loc[1]); ?></td>
-                <td><?php echo($pos_type[1]); ?></td>
-                <td><?php echo($pos_time[1]); ?></td>
-                <td><?php echo($pos_pay[1]); ?></td>
-                <td><?php echo($pos_desc[1]); ?></td>
-            </tr>
-            <tr>
-                <td><?php echo($pos_loc[2]); ?></td>
-                <td><?php echo($pos_type[2]); ?></td>
-                <td><?php echo($pos_time[2]); ?></td>
-                <td><?php echo($pos_pay[2]); ?></td>
-                <td><?php echo($pos_desc[2]); ?></td>
-            </tr>
-            <tr>
-                <td><?php echo($pos_loc[3]); ?></td>
-                <td><?php echo($pos_type[3]); ?></td>
-                <td><?php echo($pos_time[3]); ?></td>
-                <td><?php echo($pos_pay[3]); ?></td>
-                <td><?php echo($pos_desc[3]); ?></td>
-            </tr> <!--
-            <tr>
-                <td>Kansas City, MO</td>
-                <td>For Sale</td>
-                <td>02/25/2016</td>
-                <td>$300</td>
-                <td>Real Estate | <a href="">Item title viverra tortor nec condimentum nunc sem eget arcu</a></td>
-            </tr> -->
+          <tr>
+						<td id="loc0"><?php echo($pos_loc[0]); ?></td>
+						<td id="type0"><?php echo($pos_type[0]); ?></td>
+						<td id="time0"><?php echo($pos_time[0]); ?></td>
+						<td id="pay0"><?php echo($pos_pay[0]); ?></td>
+						<td id="desc0"><?php echo($pos_desc[0]); ?></td>
+					</tr>
+          <tr>
+              <td><?php echo($pos_loc[1]); ?></td>
+              <td><?php echo($pos_type[1]); ?></td>
+              <td><?php echo($pos_time[1]); ?></td>
+              <td><?php echo($pos_pay[1]); ?></td>
+              <td><?php echo($pos_desc[1]); ?></td>
+          </tr>
+          <tr>
+              <td><?php echo($pos_loc[2]); ?></td>
+              <td><?php echo($pos_type[2]); ?></td>
+              <td><?php echo($pos_time[2]); ?></td>
+              <td><?php echo($pos_pay[2]); ?></td>
+              <td><?php echo($pos_desc[2]); ?></td>
+          </tr>
+          <tr>
+              <td><?php echo($pos_loc[3]); ?></td>
+              <td><?php echo($pos_type[3]); ?></td>
+              <td><?php echo($pos_time[3]); ?></td>
+              <td><?php echo($pos_pay[3]); ?></td>
+              <td><?php echo($pos_desc[3]); ?></td>
+          </tr> <!--
+          <tr>
+              <td>Kansas City, MO</td>
+              <td>For Sale</td>
+              <td>02/25/2016</td>
+              <td>$300</td>
+              <td>Real Estate | <a href="">Item title viverra tortor nec condimentum nunc sem eget arcu</a></td>
+          </tr> -->
         </tbody>
     </table>
     <div class="bb-pagination">
