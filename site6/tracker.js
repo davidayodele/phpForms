@@ -1,27 +1,30 @@
- 
-  // Build Log Table:
- /* function build_log(){
-    //tally_log(); // Retally
-    $('#log').load('log.php');
-  }
- 
-  // Build Log Table:
-  function build_restore(){
-    tally_log(); // Retally
-    $('#log').load('log.php?mode=restore');
-  }
-  
-  // Tally all active Task Times:
-  function tally_log(){
-    $('#tally').load('log.php?mode=tally');
-  }
- */
+/* #### Caching of JS file may occur ##### */ 
 
   function build_table() {
     $('#log').load('log.php');
   }
 
+  // Build Log Table:
+  /* function build_log(){
+      //tally_log(); // Retally
+      $('#log').load('log.php');
+    }
+  
+    // Build Log Table:
+    function build_restore(){
+      tally_log(); // Retally
+      $('#log').load('log.php?mode=restore');
+    }
+    
+    // Tally all active Task Times:
+    function tally_log(){
+      $('#tally').load('log.php?mode=tally');
+    }
+  */
+
+
   $(document).ready(function(){
+    console.log("tracker.js loaded");
     build_table();
 
     /*
@@ -36,12 +39,12 @@
 		}, 30000);   // Refresh every 30 seconds
 		
     var url = 'log.php'; // Ajax file
-
     */
 
     // New Task Form:    
     $('#form-new').submit(function(e){
       e.preventDefault(); // Stop from submitting a form
+      console.log("submission control success");
       var form = $(this);
       var task = $('#task').val();
       console.log(task);
@@ -58,6 +61,9 @@
       }); // END ajax
       
     }); // END #form-new on submit
+
+
+    
 
     /*
     // Restore Task:    

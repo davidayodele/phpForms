@@ -5,6 +5,7 @@ include_once('functions.php');
 
 $db_data = file_get_contents('data.json');
 $db_array = json_decode($db_data, 1); // 1 for ASSOC = TRUE
+krsort($db_array); // reverse key sort lib function
 
 if (isset($_POST['form_input'])) {
     $time = time();

@@ -16,7 +16,7 @@ if (!function_exists('icon')) {
   }
 }
 
-# Make the date look nice:
+# Make the date pretty:
 if (!function_exists('date_disp')) {
   function date_disp($date) {
     return date('M j Y g:i A', $date);
@@ -24,7 +24,7 @@ if (!function_exists('date_disp')) {
 }
 
 
-# Make the time look nice:
+# Make the time pretty:
 if (!function_exists('time_disp')) {
   function time_disp($seconds){
     $h = floor(($seconds/60)/60); // Hours
