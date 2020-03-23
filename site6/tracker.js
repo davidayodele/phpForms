@@ -16,8 +16,15 @@
     $('#tally').load('log.php?mode=tally');
   }
  */
+
+  function build_table() {
+    $('#log').load('log.php');
+  }
+
   $(document).ready(function(){
-  /*
+    build_table();
+
+    /*
     build_log(); // Inital log table build
 		setInterval(function(){
 			
@@ -36,24 +43,22 @@
     $('#form-new').submit(function(e){
       e.preventDefault(); // Stop from submitting a form
       var form = $(this);
-      //var task = $('#task').val();
-      //console.log(task);
+      var task = $('#task').val();
+      console.log(task);
       var data_s = form.serialize(); // Seriale form data
       $.ajax({
-          url : 'log.php' /*url+'?mode=new&'+data */,
+          url : 'log.php', /*url+'?mode=new&'+data */
           data: data_s, // set ajax request to serialized data
-          type: 'POST', /*
-          success:function(result) {
-            if(result != 2){ //If no error
-              build_log(); // Rebuild log table
-              $('#task').val('');  // Empty task input Field
-            } // END if
-          } // END success */
+          type: 'POST', 
+          success: function() {
+            console.log("ajax request success");
+            build_table(); // Rebuild log table
+            task = "";  // Empty input Field
+          } // END success
       }); // END ajax
       
     }); // END #form-new on submit
 
-    $('#log').load('log.php');
     /*
     // Restore Task:    
     $('#log').on('click', '.btn-restore', function(e){

@@ -6,6 +6,17 @@ include_once('functions.php');
 $db_data = file_get_contents('data.json');
 $db_array = json_decode($db_data, 1); // 1 for ASSOC = TRUE
 
+if (isset($_POST['form_input'])) {
+    $time = time();
+    $db_array[$time]['id'] = $time;
+    $db_array[$time]['task'] = $_POST['form_input'];
+	$db_array[$time]['date_start'] = $time;
+	$db_array[$time]['date_entered'] = $time;
+    $db_array[$time]['date_end'] = $time;
+    $db_array[$time]['status'] = 1;
+    save($db_array);
+}
+
 foreach($db_array as $item) { ?>
     <tr>
     <td><?php echo($item['task']); ?></td>

@@ -1,16 +1,16 @@
 <?php
 # Save the data:
-if (!function_exists('date_disp')) {
+if (!function_exists('save')) {
   function save($data){
-    $json = json_encode($data); // Convert data array back to json
-    $myfile = fopen("data.json", "w") or die("Unable to open file!"); // Open file
-    fwrite($myfile, $json); // Save file
+    $json_data = json_encode($data); // Convert data array back to json
+    $file = fopen("data.json", "w") or die("Unable to open file!"); // Open file
+    fwrite($file, $json_data); // Save file with jsaon data
   }
 }
 
 # Return a FontAwesome icon:
-if (!function_exists('date_disp')) {
-  function i($code){
+if (!function_exists('icon')) {
+  function icon($code){
     $icon = '<i class="fa fa-'.$code.'"></i>';
     return $icon;
   }
