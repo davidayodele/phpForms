@@ -522,10 +522,11 @@ By: David Ayodele
     </script>
     <!-- End script-->
     
-    <!-- Begin google maps script -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfHjaHcyb_H21BLeYTrMopUq79g0rJYa0&callback=initMap" type="text/javascript">
+    <!-- Begin google maps script ->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" type="text/javascript">
     </script>
-    <!-- End google maps script --><script src="js/datetime.js"></script><!-- datetime load -->
+    <!-- End google maps script -->
+    <script src="js/datetime.js"></script><!-- datetime load -->
     
     <!-- Begin floating header Script -->
     <script>
