@@ -318,13 +318,13 @@ By: David Ayodele
 			<table class="sortable table table-bordered">
 				<thead>
 					<tr>
-                        <th class="no-sort">Phone No.</th>
-                        <th>Job Location</th>
+            <th class="no-sort">Phone No.</th>
+            <th>Job Location</th>
 						<th>Job Type</th>
 						<th>Job Pay</th>
 						<th>Posting Date</th>
 						<th>Job Description</th>
-                    </tr>					
+          </tr>					
 				</thead>
 				<tbody id="log"></tbody>
 			</table>
@@ -339,25 +339,24 @@ By: David Ayodele
 			</div>
 		</div>	
 	
-
 		<!-- End Postings Board -->
 		
-        </article>
-        </main>
-        <aside class="fl_oneThird">
-        <section class="aside_classes">
-        <h3 style="font-family: Arial, sans-serif;">Our Location
-        </h3>
-        <div id="map">
-        </div>
-        <br>
-        <p>
-        &bull; We're conveniently located along city bus routes on Central Avenue &amp; Dunlap Road.
-        <br>
-        <br>
-        </p>
-        </section>
-        <section id="tax_form">
+    </article>
+    </main>
+    <aside class="fl_oneThird">
+    <section class="aside_classes">
+    <h3 style="font-family: Arial, sans-serif;">Our Location
+    </h3>
+    <div id="map">
+    </div>
+    <br>
+    <p>
+    &bull; We're conveniently located along city bus routes on Central Avenue &amp; Dunlap Road.
+    <br>
+    <br>
+    </p>
+    </section>
+    <section id="tax_form">
 		<h4>
 		Résumé Building
 		</h4>
@@ -365,15 +364,15 @@ By: David Ayodele
 		</p>
 		<!--
 		<span id = "taxframe_span">
-        <iframe id="tax_frame" src="tax_form_front.php" style="border-width:0" width="100%" height="600px" frameborder="0" scrolling="yes">
-        </iframe>
-        </span>
-        -->
-        <br>
-        <br>
-        </section>        
+    <iframe id="tax_frame" src="tax_form_front.php" style="border-width:0" width="100%" height="600px" frameborder="0" scrolling="yes">
+    </iframe>
+    </span>
+    -->
+    <br>
+    <br>
+    </section>        
         
-        <!-- Contact Form (edited 7/07/18)-->
+    <!-- Contact Form (edited 7/07/18)-->
 		<section id="contact_form">
 		<h3>
 		Hiring CNAs/LNAs/Caregivers?
@@ -383,52 +382,47 @@ By: David Ayodele
 		<br>
 		<br>
 		</h4>
+      
+    <script>
+    var submitted=false;
+    </script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" frameborder="0"> <!-- onload="if(submitted){this.style.display='block';}" // Will display form confirmation in iframe above form --> 
+    </iframe>
+    <center>
+    <div class="content">
+      <div id="form">
 
-	    <center>
-	    <div class="content">
-	    	<div id="form">
-				<form method="POST" class="contact-form" id="contactForm"> <!-- event.preventDefault(); onsumbit="return validateFormOnSubmit(this);"    onsubmit="submitted=true;" -->
-    				
-                    <!-- <label class="preferred_class" for="entry_898269100">Best time:</label>
-                    <select name="entry.898269100" id="entry_898269100" class="preferred_class_select">
-                    <option value=""></option>
-                    <option value="Day">Day</option> 
-                    <option value="Eve">Eve</option>
-                    </select>
-                    -->
-	    			<!--<input type="text" name="captcha" class="captcha" maxlength="4" size="4" placeholder="Enter captcha code" tabindex=3 required/> -->
-	    			<!--<span>Message</span>-->
-    				<input maxlength="1000" type="text" name="catcher" id="catcher_id" class="catcher_class" value="" />
-    				<!-- <span>Name</span> -->
-	    			<input maxlength="1000" type="text" name="entry.321910209" id="name" class="name" placeholder="Employer/Agent name:" tabindex=1 required/>
-	    			<!--<span>Email</span>-->
-	    			<input maxlength="1000" type="text" name="entry.1847339881" id="email" class="email" placeholder="Employer email:" tabindex=2 required/>
-	    			<!--<span>Phone</span>-->
-					<input maxlength="1000" type="text" name="entry.1710439998" id="phone" class="phone fas fa-phone" placeholder="Employer phone: use (XXX) XXX-XXXX format" tabindex=2 required/>
-					<input maxlength="1000" type="text" id="msg" name="entry.1111273474" placeholder="Special notes (optional)" class="message2" tabindex=2 />
-					<!--
-					<textarea class="message" maxlength="1000" rows="1" id="msg" name="entry.1111273474" placeholder="A message about for us (optional)" tabindex=0 required>
-					</textarea>
-					-->
-					<br>
-					<input id="input_loc" maxlength="1000" class="city" type="text" name="entry.1734281767" placeholder="Job location" tabindex=2 required/>
-					
-					<input id="input_typ" maxlength="1000" class="course_date" type="text" name="entry.609998995" placeholder="Job type (e.g. CNA/LNA/Caregiver)" tabindex=2 required/>
-					
-					<input id="input_pay" maxlength="1000" class="payment" type="text" name="entry.842548913" placeholder="Job pay" tabindex=2 required/>
-					
-					<textarea tabindex=""" class="message" maxlength="10000" rows="5" id="input_desc" name="entry.1128242642" placeholder="Job description" tabindex=2 required></textarea> <!-- TEXTAREA TAGS MUST BE ON ONE LINE!! -->
-                    
-	    			<button type="submit" name="submit_btn" id="submit_btn" class="submit_btn" tabindex=5>Submit</button>
-	    			<span style="font: bold normal 12px/80% Arial, Helvetica, sans-serif; line-height: 10px;">To submit, please click the captcha below <br>(may take a few seconds)</span>
-	    			<br>
-	    			<div class="g-recaptcha jobs_captcha" id="captchabox" data-sitekey="6LfWbN8UAAAAALUon3XBSFs-fMmm0GNVXGlNDq6s" data-callback="imNotARobot">
-	    			</div>
-	    			<span class="" id="status_msg" name="msg"></span>
-					<!-- <span id="captcha">Captcha Code:</span> -->					
-	    		</form>
-        </div>
-	</div>
+      <form action="" method="POST" target="hidden_iframe" class="contact-form" id="contactForm" name="form1"> <!-- onsubmit="return validateFormOnSubmit(this); event.preventDefault(); -->
+      <input maxlength="1000" type="text" name="catcher" id="catcher_id" class="catcher_class" value="" />
+      
+      <input maxlength="1000" type="text" name="entry.321910209" id="name" class="name" placeholder="Employer/Agent name:" tabindex=1 required/>
+      
+      <input maxlength="1000" type="text" name="entry.1847339881" id="email" class="email" placeholder="Employer email:" tabindex=2 required/>
+      
+      <input maxlength="1000" type="text" name="entry.1710439998" id="phone" class="phone fas fa-phone" placeholder="Employer phone: use (XXX) XXX-XXXX format" tabindex=2 required/>
+      
+      <input maxlength="1000" type="text" id="msg" name="entry.1111273474" placeholder="Special notes (optional)" class="message2" tabindex=2 />
+      
+      <br>
+      <input id="input_loc" maxlength="1000" class="city" type="text" name="entry.1734281767" placeholder="Job location" tabindex=2 required/>
+      
+      <input id="input_typ" maxlength="1000" class="course_date" type="text" name="entry.609998995" placeholder="Job type (e.g. CNA/LNA/Caregiver)" tabindex=2 required/>
+      
+      <input id="input_pay" maxlength="1000" class="payment" type="text" name="entry.842548913" placeholder="Job pay" tabindex=2 required/>
+      
+      <textarea tabindex=""" class="message" maxlength="10000" rows="5" id="input_desc" name="entry.1128242642" placeholder="Job description" tabindex=2 required></textarea> <!-- TEXTAREA TAGS MUST BE ON ONE LINE!! -->
+                
+      <button type="submit" name="submit_btn" id="submit_btn" class="submit_btn" tabindex=5>Submit</button>
+      <span style="font: bold normal 12px/80% Arial, Helvetica, sans-serif; line-height: 10px;">To submit, please click the captcha below <br>(may take a few seconds)</span>
+      <br>
+      <div class="g-recaptcha jobs_captcha" id="captchabox" data-sitekey="6LfWbN8UAAAAALUon3XBSFs-fMmm0GNVXGlNDq6s" data-callback="imNotARobot">
+      </div>
+      <span class="" id="status_msg" name="msg"></span>
+      <!-- <span id="captcha">Captcha Code:</span> -->					
+      </form>
+
+      </div>
+	  </div>
     </center>
     </section>
     <!-- End contact form -->
