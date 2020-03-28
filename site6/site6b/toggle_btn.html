@@ -26,25 +26,53 @@
 </div>
 
 &nbsp; &nbsp; 
-<div class="switch">
-<input id="switch-1" type="checkbox" class="switch-input" />
-<label for="switch-1" class="switch-label">Switch</label>
-</div>
 
+<div class="switch4">
+<input id="switch-4" type="checkbox" class="switch4-input" />
+<label for="table-check" class="switch4-label">Switch</label>
+</div>
+<input id="switch-0" type="checkbox" name="table-check" class="switch4-input" style="display: block;"/>
+
+<table>
+    <tr>
+    <td>C1R1</td>
+    <td>C2R1</td>
+    </tr>
+</table>
+<table>
+    <tbody>
+    <tr>
+    <td>C1R2</td>
+    <td>C2R2</td>
+    </tr>
+    </tbody>
+</table>
+<table id="adj_row">
+    <tbody>
+    <tr>
+    <td>C1R3</td>
+    <td>C2R3</td>
+    </tr>
+    </tbody>
+</table>
 </html>
 
 
 <style>
 
-/* ----- Switch 3 ----- */
-.switch {
+/* ----- Switch 4 ----- */
+
+#switch-0:checked ~ #adj_row {
+  display: none;
+}
+.switch4 {
   position: relative;
   display: inline-block;
 }
-.switch-input {
+.switch4-input {
   display: none;
 }
-.switch-label {
+.switch4-label {
   display: block;
   width: 48px;
   height: 24px;
@@ -53,14 +81,14 @@
   color: transparent;
   user-select: none;
 }
-.switch-label::before,
-.switch-label::after {
+.switch4-label::before,
+.switch4-label::after {
   content: "";
   display: block;
   position: absolute;
   cursor: pointer;
 }
-.switch-label::before {
+.switch4-label::before {
   width: 100%;
   height: 100%;
   background-color: #dedede;
@@ -68,7 +96,7 @@
   -webkit-transition: background-color 0.25s ease;
   transition: background-color 0.25s ease;
 }
-.switch-label::after {
+.switch4-label::after {
   top: 0;
   left: 0;
   width: 24px;
@@ -79,10 +107,10 @@
   -webkit-transition: left 0.25s ease;
   transition: left 0.25s ease;
 }
-.switch-input:checked + .switch-label::before {
+.switch4-input:checked + .switch4-label::before {
   background-color: #89c12d;
 }
-.switch-input:checked + .switch-label::after {
+.switch4-input:checked + .switch4-label::after {
   left: 24px;
 }
 /* ----- End Switch 3 ----- */
