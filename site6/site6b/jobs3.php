@@ -58,7 +58,8 @@ By: David Ayodele
     </title>        
     <!--Begin Priority scripts/sheets -->
     <link rel="stylesheet" href="style.css" media="all"><!--?<?php echo date('l jS \of F Y h:i:s A'); ?>-->
-	<link rel="stylesheet" href="css/bootstrap.min_3_0_3.css">
+  <link rel="stylesheet" href="css/bootstrap.min_3_0_3.css">
+  <link rel="stylesheet" href="../css/jobs_board.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" media="all">
 	<!--<link rel="stylesheet" href="clock.css" media="all">-->
     
 	<script src="js/jquery.min.js"></script><!-- jQuery load -->
@@ -314,31 +315,146 @@ By: David Ayodele
 						</select>
 					</div>
 				</div>
-			</div>
-			<table class="sortable table table-bordered">
-				<thead>
-					<tr>
-            <th class="no-sort">Phone No.</th>
-            <th>Job Location</th>
-						<th>Job Type</th>
-						<th>Job Pay</th>
-						<th>Posting Date</th>
-						<th>Job Description</th>
-          </tr>					
-				</thead>
-				<tbody id="log"></tbody>
-			</table>
-			<div class="bb-pagination">
+      </div>
+      
+      
+      <!--
+      <div class="bb-pagination">
 				<span>Page:</span>
-				<ul>
-					<li><a href="">1 - 10</a></li>
-					<li><a href="">11 - 20</a></li>
-					<li><a href="">More &raquo&raquo</a></li>
-					<li><a href="">View All</a></li>
-				</ul>
-			</div>
-		</div>	
-	
+				<div class="buttons-container">
+          
+					<li id="tab0_btn"><button onclick="document.getElementById('tab_0').style.display=''; document.getElementById('tab_1').style.display='none'; document.getElementById('tab_2').style.display='none'; document.getElementById('tab_3').style.display='none'; document.getElementById('tab_all').style.display='none';">1 - 10</button></li>
+					<li id="tab1_btn"><button onclick="document.getElementById('tab_1').style.display=''; document.getElementById('tab_0').style.display='none'; document.getElementById('tab_2').style.display='none'; document.getElementById('tab_3').style.display='none'; document.getElementById('tab_all').style.display='none';">11 - 20</button></li>
+					<li id="tab2_btn"><button onclick="document.getElementById('tab_2').style.display=''; document.getElementById('tab_0').style.display='none'; document.getElementById('tab_1').style.display='none'; document.getElementById('tab_3').style.display='none'; document.getElementById('tab_all').style.display='none';">21-30</button></li>
+          <li id="tab3_btn"><button onclick="document.getElementById('tab_3').style.display=''; document.getElementById('tab_0').style.display='none'; document.getElementById('tab_1').style.display='none'; document.getElementById('tab_2').style.display='none'; document.getElementById('tab_all').style.display='none';">31-40</button></li>
+          <li id="tabAll_btn"><button onclick="document.getElementById('tab_all').style.display=''; document.getElementById('tab_0').style.display='none'; document.getElementById('tab_1').style.display='none'; document.getElementById('tab_2').style.display='none'; document.getElementById('tab_3').style.display='none';">View All</button></li>
+          ->
+          <ul>
+					<li>&nbsp; 1 - 10 &nbsp;</li>
+					<li>&nbsp; 11 - 20 &nbsp;</li>
+					<li>&nbsp; 21 - 30 &nbsp;</li>
+          <li>&nbsp; 31 - 40 &nbsp;</li>
+          <li>&nbsp; View All &nbsp;</li>
+				  </ul>
+          <input id="switch-0" type="checkbox" name="table-check" class="switch4-input" style="display: block;"/>
+          <div class="toggle-switch0">
+          <input type="checkbox" id="switch0" name="chkTest0">
+          <label for="chkTest0">
+          <span class="toggle-track0"></span>
+          </label>          
+          </div>
+          <!-
+          <div class="toggle-switch1">
+          <input type="checkbox" id="chkTest1" name="chkTest1">
+          <label for="chkTest1">
+          <span class="toggle-track1"></span>
+          </label>
+          </div>
+
+          <div class="toggle-switch2">
+          <input type="checkbox" id="chkTest2" name="chkTest2">
+          <label for="chkTest2">
+          <span class="toggle-track2"></span>
+          </label>
+          </div>
+         
+          <div class="toggle-switch3">
+          <input type="checkbox" id="chkTest3" name="chkTest3">
+          <label for="chkTest3">
+          <span class="toggle-track3"></span>
+          </label>
+          </div>
+          
+          <div class="toggle-switch4">
+          <input type="checkbox" id="chkTest4" name="chkTest4">
+          <label for="chkTest4">
+          <span class="toggle-track4"></span>
+          </label>
+          </div>          
+          
+        </div>
+      </div> -->
+
+      <!-- ##### Pagination Area ##### -->
+      <div class="bb-pagination">
+      <span>Page:</span>
+      <div class="buttons-container">
+      <ul>
+      <li>&nbsp; 1 - 10 &nbsp;</li>
+      <li>&nbsp; 11 - 20 &nbsp;</li>
+      <li>&nbsp; 21 - 30 &nbsp;</li>
+      <li>&nbsp; 31 - 40 &nbsp;</li>
+      <li>&nbsp; View All &nbsp;</li>
+      </ul>
+      <!-- <input id="switch-0" type="checkbox" name="table-check" class="switch0-input" style="display: block;"/> -->
+      
+      <!-- ##### Toggle buttons ##### -->
+      <div class="button_container">
+      <span class="page_text">Listings: &nbsp;</span>
+
+      <div class="toggle-switch0">
+      <!-- <input id="switch-0" type="checkbox" name="table-check" class="switch0-input"> -->
+      <label for="switch-0" class="switch0-label">
+      <span class="toggle-track0"> <center class="pagination_text">1 - 10</center> </span>
+      </label>          
+      </div>
+
+      <div class="toggle-switch1">
+      <!-- <input id="switch-1" type="checkbox" name="table-check" class="switch0-input"> -->
+      <label for="switch-1" class="switch1-label">
+      <span class="toggle-track1"> <center class="pagination_text">11 - 20</center> </span>
+      </label>          
+      </div>
+
+      <div class="toggle-switch2">
+      <!-- <input id="switch-1" type="checkbox" name="table-check" class="switch0-input"> -->
+      <label for="switch-2" class="switch2-label">
+      <span class="toggle-track2"> <center class="pagination_text">21 - 30</center> </span>
+      </label>          
+      </div>
+      
+      <div class="toggle-switch3">
+      <!-- <input id="switch-1" type="checkbox" name="table-check" class="switch0-input"> -->
+      <label for="switch-3" class="switch3-label">
+      <span class="toggle-track3"> <center class="pagination_text">31 - 40</center> </span>
+      </label>          
+      </div>
+
+      <div class="toggle-switch4">
+      <!-- <input id="switch-1" type="checkbox" name="table-check" class="switch0-input"> -->
+      <label for="switch-4" class="switch4-label">
+      <span class="toggle-track4"> <center class="pagination_text">41 - 100</center> </span>
+      </label>          
+      </div>
+
+      </div>
+      <!-- ##### End Toggle buttons ##### -->
+
+      </div>
+      </div>
+      <!-- ##### End Pagination Area ##### -->
+      
+
+      <div class="divTable">
+      <div class="divTableBody">
+          <div class="divTableRow">
+          <div class="divTableCell divTableHead">Phone No.</div>
+          <div class="divTableCell divTableHead">Job Location</div>
+          <div class="divTableCell divTableHead">Job Type</div>
+          <div class="divTableCell divTableHead">Job Pay</div>
+          <div class="divTableCell divTableHead">Posting Date</div>
+          <div class="divTableCell divTableHead">Job Description</div>
+          </div>          
+      </div>
+      </div>
+      
+      <div class="divTable">
+        <div class="divTableBody" id="log">     
+        </div>
+      </div>
+      <!-- DivTable.com -->
+     
+    </div>
 		<!-- End Postings Board -->
 		
     </article>
@@ -553,18 +669,539 @@ By: David Ayodele
 	</script>
 	<!-- End Postings board & flyers Script -->
     
-    <!-- Postings tracker script -->
-    <script src="js/tracker.js"></script>
+  <!-- Postings tracker script -->
+  <script src="js/tracker.js"></script>
+  <script>
+    /*
+  $(document).ready(function(){
+    var display0 =  $("#tab_0").css("display");
+    var display1 =  $("#tab_1").css("display");
+    var display2 =  $("#tab_2").css("display");
+    var display3 =  $("#tab_3").css("display");
+    var displayAll =  $("#tab_all").css("display");
+
+    if(display1 !="none") {
+        $("#tab_1").attr("style", "display:none");
+    }
+    if(display2 !="none") {
+        $("#tab_2").attr("style", "display:none");
+    }
+    if(display3 !="none") {
+        $("#tab_3").attr("style", "display:none");
+    }
+    if(displayAll !="none") {
+        $("#tab_all").attr("style", "display:none");
+    }
+  });
+  */
+  </script>
     
 
 </body>
 </html>
 
 <style type="text/css">
-@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+center.pagination_text {
+  padding-top: 2px;
+}
 
-#input_pay::-webkit-input-placeholder {
-    font-family: FontAwesome;
+span.page_text {
+  padding-top: 8px;
+}
+
+
+
+
+.toggle-switch2 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 170px;
+}
+
+.toggle-switch3 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 220px;
+}
+
+.toggle-switch4 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 270px;
+}
+
+.button_container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+
+/* ----- Button 0 -----*/ 
+.toggle-switch0 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 48px;
+}
+
+#switch-0:checked ~ #table_0 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
+  display: none;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+}
+
+input#switch-0 {
+  display: none;
+}
+/*
+.toggle-switch1 input[type=checkbox] {
+  display:none;
+}
+*/
+
+.toggle-switch0 label {
+  cursor: pointer;
+}
+
+.toggle-switch0 input[type="checkbox"]:checked + label .toggle-track0:before {
+  background:green !important;
+  right:25px !important;
+}
+
+.toggle-switch0 label .toggle-track0 {
+  display:inline;
+  height:20px; /*15*/
+  width:50px; /*40*/
+  margin-top: 5px;
+  margin-left: 0px;
+  background:#dadada;
+  border-radius:5px; /*20*/
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+/* ----- End Button 0 ----- */
+
+/* ----- Button 1 -----*/ 
+.toggle-switch1 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 110px;
+}
+
+#switch-1:checked ~ #table_1 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
+  display: none;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+}
+
+input#switch-1 {
+  display: none;
+}
+/*
+.toggle-switch1 input[type=checkbox] {
+  display:none;
+}
+*/
+
+.toggle-switch1 label {
+  cursor: pointer;
+}
+
+.toggle-switch1 input[type="checkbox"]:checked + label .toggle-track1:before {
+  background:green !important;
+  right:25px !important;
+}
+
+.toggle-switch1 label .toggle-track1 {
+  display:inline;
+  height:20px; /*15*/
+  width:50px; /*40*/
+  margin-top: 5px;
+  margin-left: 0px;
+  background:#dadada;
+  border-radius:5px; /*20*/
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+/* ----- End Button 1 ----- */
+
+
+/* ----- Button 2 -----*/ 
+.toggle-switch2 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 170px;
+}
+
+#switch-2:checked ~ #table_2 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
+  display: none;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+}
+
+input#switch-2 {
+  display: none;
+}
+/*
+.toggle-switch1 input[type=checkbox] {
+  display:none;
+}
+*/
+
+.toggle-switch2 label {
+  cursor: pointer;
+}
+
+.toggle-switch2 input[type="checkbox"]:checked + label .toggle-track2:before {
+  background:green !important;
+  right:25px !important;
+}
+
+.toggle-switch2 label .toggle-track2 {
+  display:inline;
+  height:20px; /*15*/
+  width:50px; /*40*/
+  margin-top: 5px;
+  margin-left: 0px;
+  background:#dadada;
+  border-radius:5px; /*20*/
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+/* ----- End Button 2 ----- */
+
+
+/* ----- Button 3 -----*/ 
+.toggle-switch3 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 240px;
+}
+
+#switch-3:checked ~ #table_3 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
+  display: none;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+}
+
+input#switch-3 {
+  display: none;
+}
+/*
+.toggle-switch1 input[type=checkbox] {
+  display:none;
+}
+*/
+
+.toggle-switch3 label {
+  cursor: pointer;
+}
+
+.toggle-switch3 input[type="checkbox"]:checked + label .toggle-track3:before {
+  background:green !important;
+  right:25px !important;
+}
+
+.toggle-switch3 label .toggle-track3 {
+  display:inline;
+  height:20px; /*15*/
+  width:50px; /*40*/
+  margin-top: 5px;
+  margin-left: 0px;
+  background:#dadada;
+  border-radius:5px; /*20*/
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+/* ----- End Button 3 ----- */
+
+
+/* ----- Button 4 -----*/ 
+.toggle-switch4 {
+  width: 50px;
+  margin: 0px;
+  position: absolute;
+  left: 310px;
+}
+
+#switch-4:checked ~ #table_4 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
+  display: none;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+}
+
+input#switch-4 {
+  display: none;
+}
+/*
+.toggle-switch1 input[type=checkbox] {
+  display:none;
+}
+*/
+
+.toggle-switch4 label {
+  cursor: pointer;
+}
+
+.toggle-switch4 input[type="checkbox"]:checked + label .toggle-track4:before {
+  background:green !important;
+  right:25px !important;
+}
+
+.toggle-switch4 label .toggle-track4 {
+  display:inline;
+  height:20px; /*15*/
+  width:50px; /*40*/
+  margin-top: 5px;
+  margin-left: 0px;
+  background:#dadada;
+  border-radius:5px; /*20*/
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+/* ----- End Button 4 ----- */
+
+
+/* ----- Div table ----- */
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+/* ----- End Div table ----- */
+
+/*
+.toggle-switch0 .toggle-track0:before {
+  content:'';
+  display:inline-block;
+  height:17px;
+  width:17px;
+  background:red;
+  border-radius:20px;
+  position:absolute;
+  top: -2px;
+  right:0px;
+  transition:right .2s ease-in;
+}
+*/
+
+/*
+.toggle-switch0 input[type=checkbox], .toggle-switch1 input[type=checkbox], .toggle-switch2 input[type=checkbox], .toggle-switch3 input[type=checkbox], .toggle-switch4 input[type=checkbox] {
+  display:none;
+}
+
+.toggle-switch0 label, .toggle-switch1 label, .toggle-switch2 label, .toggle-switch3 label, .toggle-switch4 label {
+  cursor:pointer;
+  display: inline !important;
+}
+
+.toggle-switch0 label .toggle-track0, .toggle-switch1 label .toggle-track1, .toggle-switch2 label .toggle-track2, .toggle-switch3 label .toggle-track3, .toggle-switch4 label .toggle-track4 {
+  display:inline !important;
+  height:15px;
+  width:40px;
+  margin-top: 5px;
+  margin-left: 33px;
+  background:#dadada;
+  border-radius:20px;
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+
+.toggle-switch0 .toggle-track0:before, .toggle-switch1 .toggle-track1:before, .toggle-switch2 .toggle-track2:before, .toggle-switch3 .toggle-track3:before, .toggle-switch4 .toggle-track4:before {
+  content:'';
+  display:inline-block;
+  height:15px;
+  width:15px;
+  background:red;
+  border-radius:20px;
+  position:absolute;
+  top:-1px;
+  right:0px;
+  transition:right .2s ease-in;
+}
+
+.toggle-switch0 input[type="checkbox"]:checked + label .toggle-track0:before, .toggle-switch1 input[type="checkbox"]:checked + label .toggle-track1:before, .toggle-switch2 input[type="checkbox"]:checked + label .toggle-track2:before, .toggle-switch3 input[type="checkbox"]:checked + label .toggle-track3:before, .toggle-switch4 input[type="checkbox"]:checked + label .toggle-track4:before {
+  background:green;
+  right:25px;
+  display: inline-block;
+}
+
+.toggle-switch0 input[type="checkbox"]:checked + label #tab_0 { /* when the checkbox element with class "toggle-switch0" is checked ADJACENT TO a label with id "tab0" do this: 
+  display:  none;
+}
+*/
+
+
+/* ----- Button 2 -----/ 
+.toggle-switch2 input[type=checkbox] {
+  display: none;
+} 
+
+.toggle-switch2 label {
+  cursor:pointer;
+  display: inline !important;
+}
+
+.toggle-switch2 label .toggle-track2 {
+  display:inline !important;
+  height:15px;
+  width:40px;
+  margin-top: 5px;
+  margin-left: -16px;
+  background:#dadada;
+  border-radius:20px;
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+
+.toggle-switch2 .toggle-track2:before {
+  content:'';
+  display:inline-block;
+  height:17px;
+  width:17px;
+  background:red;
+  border-radius:20px;
+  position:absolute;
+  top:-1px;
+  right:0px;
+  transition:right .2s ease-in;
+}
+
+.toggle-switch2 input[type="checkbox"]:checked + label .toggle-track2:before{
+  background:green;
+  right:25px;
+  display: inline-block;
+}
+
+
+
+/* ----- Button 3 ----- / 
+.toggle-switch3 input[type=checkbox] {
+  display: none;
+}
+
+.toggle-switch3 label {
+  cursor:pointer;
+  display: inline !important;
+}
+
+.toggle-switch3 label .toggle-track3 {
+  display:inline !important;
+  height:15px;
+  width:40px;
+  margin-top: 5px;
+  margin-left: -16px;
+  background:#dadada;
+  border-radius:20px;
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+
+.toggle-switch3 .toggle-track3:before {
+  content:'';
+  display:inline-block;
+  height:17px;
+  width:17px;
+  background:red;
+  border-radius:20px;
+  position:absolute;
+  top:-1px;
+  right:0px;
+  transition:right .2s ease-in;
+}
+
+.toggle-switch3 input[type="checkbox"]:checked + label .toggle-track3:before{
+  background:green;
+  right:25px;
+  display: inline-block;
+}
+
+/* ----- Button 4 ----- / 
+.toggle-switch4 input[type=checkbox] {
+  display: none;
+}
+
+.toggle-switch4 label {
+  cursor:pointer;
+  display: inline !important;
+}
+
+.toggle-switch4 label .toggle-track4 {
+  display:inline !important;
+  height:15px;
+  width:40px;
+  margin-top: 5px;
+  margin-left: -16px;
+  background:#dadada;
+  border-radius:20px;
+  position:relative;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+}
+
+.toggle-switch4 .toggle-track4:before {
+  content:'';
+  display:inline-block;
+  height:17px;
+  width:17px;
+  background:red;
+  border-radius:20px;
+  position:absolute;
+  top:-1px;
+  right:0px;
+  transition:right .2s ease-in;
+}
+
+.toggle-switch4 input[type="checkbox"]:checked + label .toggle-track4:before{
+  background:green;
+  right:25px;
+  display: inline-block;
+}
+
+/* ----- End Buttons ----- */ 
+
+
+#tab0_btn, #tab1_btn, #tab2_btn, #tab3_btn, #tabAll_btn {
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .jobs_captcha {
@@ -578,7 +1215,7 @@ By: David Ayodele
     max-width: 1280px;
 }
 /*##### Postings Board #####*/
-th.no-sort:after {
+th.no-sort:after, .divTableHead.no-sort:after {
     display: none !important;
     content: "" !important;
 }
@@ -617,59 +1254,81 @@ th.no-sort:after {
 .bb-wrapper .bb-filter-options select:hover {
   cursor: pointer;
 }
-.bb-wrapper table.sortable {
+
+.bb-wrapper table.sortable, .bb-wrapper .divTable.sortable {
   border-collapse: collapse;
   margin-top: 20px;
 }
-.bb-wrapper table.sortable th, .bb-wrapper table.sortable td {
+.bb-wrapper table.sortable th, .bb-wrapper table.sortable td, .bb-wrapper .divTable.sortable .divTableHead, .bb-wrapper .divTable.sortable .divTableCell {
   border: 1px solid #dedede;
   padding: 10px;
   vertical-align: top;
 }
-.bb-wrapper table.sortable th {
+.bb-wrapper table.sortable th, .bb-wrapper .divTable.sortable .divTableHead {
   text-align: left;
 }
-.bb-wrapper table.sortable th:hover {
+.bb-wrapper table.sortable th:hover, .bb-wrapper .divTable.sortable .divTableHead:hover {
   cursor: pointer;
 }
 .bb-wrapper table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
   content: " \25B4\25BE";
 }
+
+.bb-wrapper .divTable.sortable .divTableHead:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+  content: " \25B4\25BE";
+}
+
 .bb-wrapper table.sortable th:after, .bb-wrapper table.sortable th.sorttable_sorted:after, .bb-wrapper table.sortable th.sorttable_sorted_reverse:after {
   content: " ";
   width: 24px;
   height: 24px;
 }
-.bb-wrapper table.sortable th.sorttable_sorted:after {
+
+.bb-wrapper div.sortable .divTableHead:after, .bb-wrapper .divTable.sortable .divTableHead.sorttable_sorted:after, .bb-wrapper .divTable.sortable .divTableHead.sorttable_sorted_reverse:after {
+  content: " ";
+  width: 24px;
+  height: 24px;
+}
+
+.bb-wrapper table.sortable th.sorttable_sorted:after, .bb-wrapper .divTable.sortable .divTableHead.sorttable_sorted:after {
   background: url(my-sorted-icon.png);
   background-size: contain;
 }
-.bb-wrapper table.sortable th.sorttable_sorted_reverse:after {
+
+.bb-wrapper table.sortable th.sorttable_sorted_reverse:after, .bb-wrapper .divTable.sortable .divTableHeader.sorttable_sorted_reverse:after {
   background: url(my-sorted-reversed-icon.png);
   background-size: cover;
 }
-.bb-wrapper table.sortable tbody tr:nth-child(2n) td {
+
+.bb-wrapper table.sortable tbody tr:nth-child(2n) td, .bb-wrapper .divTable.sortable .divTableBody .divTableRow:nth-child(2n) .divTableCell {
   background: #fff;
 }
-.bb-wrapper table.sortable tbody tr:nth-child(2n + 1) td {
+
+.bb-wrapper table.sortable tbody tr:nth-child(2n + 1) td, .bb-wrapper .divTable.sortable .divTableBody .divTableRow:nth-child(2n + 1) .divTableCell {
   background: #f0f0f0;
 }
-.bb-wrapper table.sortable tbody tr td {
+
+.bb-wrapper table.sortable tbody tr td, .bb-wrapper .divTable.sortable .divTableBody .divTableRow .divTableCell {
   vertical-align: top;
   min-width: 50px;
 }
-.bb-wrapper table.sortable tbody tr td:first-child {
+
+.bb-wrapper table.sortable tbody tr td:first-child, .bb-wrapper .divTable.sortable .divTableBody .divTableRow .divTableCell:first-child {
   width: 10%;
 }
-.bb-wrapper table.sortable tbody tr td:nth-child(2) {
+
+.bb-wrapper table.sortable tbody tr td:nth-child(2), .bb-wrapper .divTable.sortable .divTableBody .divTableRow .divTableCell:nth-child(2) {
   width: 15%;
 }
-.bb-wrapper table.sortable tbody tr td span .category-title {
+
+.bb-wrapper table.sortable tbody tr td span .category-title, .bb-wrapper .divTable.sortable .divTableBody .divTableRow .divTableCell span .category-title {
   font-style: italic;
 }
-.bb-wrapper table.sortable tbody tr td span .divider {
+
+.bb-wrapper table.sortable tbody tr td span .divider, .bb-wrapper .divTable.sortable .divTableBody .divTableRow .divTableCell span .divider {
   margin: 5px;
 }
+
 .bb-wrapper .bb-pagination {
   width: 50%;
   margin: 0 auto;
@@ -679,7 +1338,7 @@ th.no-sort:after {
   float: left;
 }
 .bb-wrapper .bb-pagination ul {
-  float: left;
+  /*float: left;*/
   margin: 0;
   margin-left: 15px;
   padding: 0;
@@ -699,7 +1358,7 @@ th.no-sort:after {
 
 /*#### Flyers Carosuel ####*/
 .row-eq-height {
- 
+  
 }
 .no-gutter > [class*='col-'] {
     padding-right:0;
@@ -726,19 +1385,19 @@ th.no-sort:after {
   line-height:1.2;
 }
 .video-container {
-	position:relative;
-	padding-bottom:56.25%;
-	padding-top:30px;
-	height: 100%;
-	overflow:hidden;
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height: 100%;
+    overflow:hidden;
 }
 
 .video-container iframe, .video-container object, .video-container embed {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }
 
 .mb80 {
@@ -761,6 +1420,38 @@ th.no-sort:after {
 .carousel-control { 
 }
 /*#### End Flyers Carousel ####*/
+
+/* ----- Div table ----- */
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+/* ----- End Div table ----- */
 </style>
 
 

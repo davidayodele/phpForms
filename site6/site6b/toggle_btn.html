@@ -113,6 +113,56 @@
 .switch4-input:checked + .switch4-label::after {
   left: 24px;
 }
+
+/* ----- Switch 3 ----- */
+.switch3 {
+  position: relative;
+  display: inline-block;
+}
+.switch3-input {
+  display: none;
+}
+.switch3-label {
+  display: block;
+  width: 48px;
+  height: 24px;
+  text-indent: -150%;
+  clip: rect(0 0 0 0);
+  color: transparent;
+  user-select: none;
+}
+.switch3-label::before,
+.switch3-label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+.switch3-label::before {
+  width: 100%;
+  height: 100%;
+  background-color: #dedede;
+  border-radius: 9999em;
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+}
+.switch3-label::after {
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+  -webkit-transition: left 0.25s ease;
+  transition: left 0.25s ease;
+}
+.switch3-input:checked + .switch3-label::before {
+  background-color: #89c12d;
+}
+.switch3-input:checked + .switch3-label::after {
+  left: 24px;
+}
 /* ----- End Switch 3 ----- */
 
 
