@@ -276,47 +276,52 @@ By: David Ayodele
 		-->
 		<!-- Postings board (Adapted from Cindy Lee: https://codepen.io/cindylee/pen/eZgJgw) -->
 		<div class="bb-wrapper">
-		<div class="bb-title"><h2>Job Openings</h2></div>
+    <div class="bb-title"><h2>Job Openings</h2>
+    </div>
+      <!--
 			<div class="bb-filter">
-				<div class="bb-filter-options bb-filter-options__location">
-					<span class="bb-filter-options__label">Location</span>
-					<select>
-						<option>Select a Location</option>
-						<option>Kansas City, MO</option>
-						<option>Institute, WV</option>
-						<option>Muskegon, MI</option>
-						<option>West Sacramento, CA</option>
-						<option>Shakopee, MN</option>
-					</select>
-				</div>
-				<div class="bb-filter-options bb-filter-options__posting">
-					<span class="bb-filter-options__label">Posting Type</span>
-					<select>
-						<option>Select a Posting Type</option>
-						<option data-name="forsale">For Sale</option>
-						<option data-name="event">Event</option>
-						<option data-name="announcement">Announcement</option>
-						<option data-name="bartertrade">Barter/Trade</option>
-						<option data-name="services">Services</option>
-					</select>
-					<div class="bb-filter-options__forsale">
-						<span class="bb-filter-options__label">Item Type</span>
-						<select>
-							<option>Select a Posting Type</option>
-							<option data-name="realestate">Real Estate</option>
-							<option data-name="electronics">Electronics</option>
-							<option data-name="homegoods">Home Goods</option>
-							<option data-name="furniture">Furniture</option>
-							<option data-name="vehicles">Vehicles</option>
-							<option data-name="clothes">Clothes & Accessories</option>
-							<option data-name="appliances">Appliances</option>
-							<option data-name="wanted">Wanted</option>
-							<option data-name="other">Other</option>
-						</select>
-					</div>
-				</div>
+
+      <div class="bb-filter-options bb-filter-options__location">
+        <span class="bb-filter-options__label">Location</span>
+        <select>
+          <option>Select a Location</option>
+          <option>Kansas City, MO</option>
+          <option>Institute, WV</option>
+          <option>Muskegon, MI</option>
+          <option>West Sacramento, CA</option>
+          <option>Shakopee, MN</option>
+        </select>
       </div>
-      
+      <div class="bb-filter-options bb-filter-options__posting">
+        
+      <span class="bb-filter-options__label">Posting Type</span>
+        <select>
+          <option>Select a Posting Type</option>
+          <option data-name="forsale">For Sale</option>
+          <option data-name="event">Event</option>
+          <option data-name="announcement">Announcement</option>
+          <option data-name="bartertrade">Barter/Trade</option>
+          <option data-name="services">Services</option>
+        </select>
+        <div class="bb-filter-options__forsale">
+          <span class="bb-filter-options__label">Item Type</span>
+          <select>
+            <option>Select a Posting Type</option>
+            <option data-name="realestate">Real Estate</option>
+            <option data-name="electronics">Electronics</option>
+            <option data-name="homegoods">Home Goods</option>
+            <option data-name="furniture">Furniture</option>
+            <option data-name="vehicles">Vehicles</option>
+            <option data-name="clothes">Clothes & Accessories</option>
+            <option data-name="appliances">Appliances</option>
+            <option data-name="wanted">Wanted</option>
+            <option data-name="other">Other</option>
+          </select>
+        </div>        
+      </div> 
+
+      </div>
+      -->
       
       <!--
       <div class="bb-pagination">
@@ -376,9 +381,11 @@ By: David Ayodele
       </div> -->
 
       <!-- ##### Pagination Area ##### -->
+      
       <div class="bb-pagination">
-      <span>Page:</span>
+      <!-- <span>Page:</span> -->
       <div class="buttons-container">
+      <!-- 
       <ul>
       <li>&nbsp; 1 - 10 &nbsp;</li>
       <li>&nbsp; 11 - 20 &nbsp;</li>
@@ -386,16 +393,17 @@ By: David Ayodele
       <li>&nbsp; 31 - 40 &nbsp;</li>
       <li>&nbsp; View All &nbsp;</li>
       </ul>
+      -->
       <!-- <input id="switch-0" type="checkbox" name="table-check" class="switch0-input" style="display: block;"/> -->
       
       <!-- ##### Toggle buttons ##### -->
       <div class="button_container">
-      <span class="page_text">Listings: &nbsp;</span>
+      <span class="page_text">Display: &nbsp;</span>
 
       <div class="toggle-switch0">
       <!-- <input id="switch-0" type="checkbox" name="table-check" class="switch0-input"> -->
       <label for="switch-0" class="switch0-label">
-      <span class="toggle-track0"> <center class="pagination_text">1 - 10</center> </span>
+      <span class="toggle-track0 active_toggle"> <center class="pagination_text">1 - 10</center> </span>
       </label>          
       </div>
 
@@ -438,12 +446,12 @@ By: David Ayodele
       <div class="divTable">
       <div class="divTableBody">
           <div class="divTableRow">
-          <div class="divTableCell divTableHead">Phone No.</div>
-          <div class="divTableCell divTableHead">Job Location</div>
-          <div class="divTableCell divTableHead">Job Type</div>
-          <div class="divTableCell divTableHead">Job Pay</div>
-          <div class="divTableCell divTableHead">Posting Date</div>
-          <div class="divTableCell divTableHead">Job Description</div>
+          <div class="divTableCell divTableHead phone_col">Phone Number</div>
+          <div class="divTableCell divTableHead loc_col">Job Location</div>
+          <div class="divTableCell divTableHead type_col">Job Type</div>
+          <div class="divTableCell divTableHead pay_col">Job Pay</div>
+          <div class="divTableCell divTableHead date_col">Post Date</div>
+          <div class="divTableCell divTableHead desc_col">Job Description</div>
           </div>          
       </div>
       </div>
@@ -654,7 +662,16 @@ By: David Ayodele
     });
     </script>
     <!-- End floating header Script -->
-
+  <!-- Toggle buttons script -->
+  <script>
+  $(function(){
+    $('.toggle-track4, .toggle-track3, .toggle-track2, .toggle-track1, .toggle-track0').on('click', function(event){
+      //event.preventDefault();
+      $(this).toggleClass('active_toggle');
+    });
+  });
+  </script>
+  <!-- End toggle buttons script -->
 	<!-- Postings sort & flyers Script -->
 	<script type="text/javascript">
 	$('.carousel').carousel({
@@ -701,6 +718,13 @@ By: David Ayodele
 </html>
 
 <style type="text/css">
+.active_toggle {
+  transform: translateY(5px) !important;
+  box-shadow: 0px -5px 0 #eeeeee !important;
+  background: #dadada !important;
+  border: 2px solid #dddddd !important;
+}
+
 center.pagination_text {
   padding-top: 2px;
 }
@@ -709,42 +733,45 @@ span.page_text {
   padding-top: 8px;
 }
 
-
-
-
-.toggle-switch2 {
-  width: 50px;
-  margin: 0px;
-  position: absolute;
-  left: 170px;
-}
-
-.toggle-switch3 {
-  width: 50px;
-  margin: 0px;
-  position: absolute;
-  left: 220px;
-}
-
-.toggle-switch4 {
-  width: 50px;
-  margin: 0px;
-  position: absolute;
-  left: 270px;
-}
-
 .button_container {
   position: relative;
   margin-bottom: 40px;
+  padding-bottom: 20px;
 }
 
+.divTableHead {
+    font-weight: 600;
+}
 
+.phone_col {
+    width: 100px !important;
+}
+
+.loc_col {
+    width: 100px !important;
+}
+
+.type_col {
+    width: 75px !important;
+}
+
+.pay_col {
+    width: 83px !important;
+}
+
+.date_col {
+    width: 80px !important;
+}
+
+.desc_col {
+    width: 250px !important;
+}
 /* ----- Button 0 -----*/ 
 .toggle-switch0 {
   width: 50px;
   margin: 0px;
   position: absolute;
-  left: 48px;
+  left: 50px;
 }
 
 #switch-0:checked ~ #table_0 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
@@ -777,11 +804,14 @@ input#switch-0 {
   width:50px; /*40*/
   margin-top: 5px;
   margin-left: 0px;
-  background:#dadada;
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border:1px solid #ccc;
+  border: 1px solid #dddddd;
+  background: #efefef;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 #dddddd;
+  transition-duration: 0.01s;
 }
 /* ----- End Button 0 ----- */
 
@@ -823,11 +853,14 @@ input#switch-1 {
   width:50px; /*40*/
   margin-top: 5px;
   margin-left: 0px;
-  background:#dadada;
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border:1px solid #ccc;
+  border: 1px solid #dddddd;
+  background: #efefef;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 #dddddd;
+  transition-duration: 0.01s;
 }
 /* ----- End Button 1 ----- */
 
@@ -870,11 +903,14 @@ input#switch-2 {
   width:50px; /*40*/
   margin-top: 5px;
   margin-left: 0px;
-  background:#dadada;
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border:1px solid #ccc;
+  border: 1px solid #dddddd;
+  background: #efefef;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 #dddddd;
+  transition-duration: 0.01s;
 }
 /* ----- End Button 2 ----- */
 
@@ -884,7 +920,7 @@ input#switch-2 {
   width: 50px;
   margin: 0px;
   position: absolute;
-  left: 240px;
+  left: 230px;
 }
 
 #switch-3:checked ~ #table_3 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
@@ -917,11 +953,14 @@ input#switch-3 {
   width:50px; /*40*/
   margin-top: 5px;
   margin-left: 0px;
-  background:#dadada;
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border:1px solid #ccc;
+  border: 1px solid #dddddd;
+  background: #efefef;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 #dddddd;
+  transition-duration: 0.01s;
 }
 /* ----- End Button 3 ----- */
 
@@ -931,13 +970,8 @@ input#switch-3 {
   width: 50px;
   margin: 0px;
   position: absolute;
-  left: 310px;
-}
-
-#switch-4:checked ~ #table_4 { /* #switch0 maybe referencing the hidded checkbox as this is adjacent #table_0 */
-  display: none;
-  transition: opacity 1s ease-out;
-  opacity: 0;
+  left: 290px;
+  font-size: 12px;
 }
 
 input#switch-4 {
@@ -964,14 +998,17 @@ input#switch-4 {
   width:50px; /*40*/
   margin-top: 5px;
   margin-left: 0px;
-  background:#dadada;
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border:1px solid #ccc;
+  border: 1px solid #dddddd;
+  background: #efefef;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 5px 0 #dddddd;
+  transition-duration: 0.01s;
 }
 /* ----- End Button 4 ----- */
-
 
 /* ----- Div table ----- */
 .divTable{
@@ -1420,38 +1457,6 @@ th.no-sort:after, .divTableHead.no-sort:after {
 .carousel-control { 
 }
 /*#### End Flyers Carousel ####*/
-
-/* ----- Div table ----- */
-.divTable{
-	display: table;
-	width: 100%;
-}
-.divTableRow {
-	display: table-row;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-}
-.divTableCell, .divTableHead {
-	border: 1px solid #999999;
-	display: table-cell;
-	padding: 3px 10px;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
-}
-.divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
-}
-.divTableBody {
-	display: table-row-group;
-}
-/* ----- End Div table ----- */
 </style>
 
 

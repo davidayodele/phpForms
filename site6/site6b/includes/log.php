@@ -10,7 +10,8 @@ $db_array = json_decode($db_data, 1); // 1 for ASSOC = TRUE
 //echo("<script>$('#contactForm').attr('action', 'https://docs.google.com/forms/d/e/1FAIpQLSet-bBBZI1AKQCF3tzlMY5fBbwp6TooZxkE2drW023vpCZ9jQ/formResponse')</script>");
 
 if (is_array($db_array)) { // error handling if no data
-	krsort($db_array); // reverse key sort lib function
+    krsort($db_array); // reverse key sort lib function
+    $db_length = sizeof($db_array);
 } else {
     echo("<script>console.log('db_array is NOT set');</script>");
 }
@@ -32,19 +33,44 @@ if (isset($_POST['entry_1734281767'])) {
 } else {
     //echo("<script>console.log('POST var (location) is NOT set');</script>");
 }
+?>
 
+<link rel="stylesheet" href="../css/jobs_board.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" media="all">
+<input id="switch-0" type="checkbox" name="table-check" class="switch0-input">
+<input id="switch-1" type="checkbox" name="table-check" class="switch1-input" checked="false">
+<input id="switch-2" type="checkbox" name="table-check" class="switch2-input" checked="false">
+<input id="switch-3" type="checkbox" name="table-check" class="switch3-input" checked="false">
+<input id="switch-4" type="checkbox" name="table-check" class="switch4-input" checked="false">
+
+<?php
+$count = 0;
 if (is_array($db_array)) {
-	foreach($db_array as $item) { ?>
-		<tr>
-		<td><?php echo($item['phone']); ?></td>
-        <td><?php echo($item['pos_loc']); ?></td>
-		<td><?php echo($item['pos_type']); ?></td>
-        <td><?php echo($item['pos_pay']); ?></td>
-		<td><?php echo(date_disp($item['pos_date'])); ?></td>
-		<td><?php echo($item['pos_desc']); ?></td>
-		</tr>
-	<?php 
-	} 
+    foreach($db_array as $item) {
+        $count++;
+        if ($count < 41) {          
+            ?>
+            <div class="divTableRow table_<?php echo(floor($count/11)); ?>" name="table_<?php echo(floor($count/11)); ?>" id="table_<?php echo(floor($count/11)); ?>">
+                <div class="divTableCell phone_col"><?php echo($item['phone']); ?></div>
+                <div class="divTableCell loc_col"><?php echo($item['pos_loc']); ?></div>
+                <div class="divTableCell type_col"><?php echo($item['pos_type']); ?></div>
+                <div class="divTableCell pay_col"><?php echo($item['pos_pay']); ?></div>
+                <div class="divTableCell date_col"><?php echo(date_disp($item['pos_date'])); ?></div>
+                <div class="divTableCell desc_col"><?php echo($item['pos_desc']); ?></div>
+            </div>                
+            <?php 
+        } elseif ($count >= 41 && $count < 101) {
+            ?>
+            <div class="divTableRow table_all" name="table_all" id="table_all">
+                <div class="divTableCell phone_col"><?php echo($item['phone']); ?></div>
+                <div class="divTableCell loc_col"><?php echo($item['pos_loc']); ?></div>
+                <div class="divTableCell type_col"><?php echo($item['pos_type']); ?></div>
+                <div class="divTableCell pay_col"><?php echo($item['pos_pay']); ?></div>
+                <div class="divTableCell date_col"><?php echo(date_disp($item['pos_date'])); ?></div>
+                <div class="divTableCell desc_col"><?php echo($item['pos_desc']); ?></div>
+            </div>         
+            <?php 
+        }          
+    }
 } else {
     //echo("<script>console.log('$db_array is NOT set');</script>");
 }
