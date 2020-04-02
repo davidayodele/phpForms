@@ -23,7 +23,7 @@ $query1 = "SELECT * FROM postings4;";
 $query1_result = mysqli_query($conn, $query1);
 
 if ($query1_result) {
-    echo "QUERY #1 SUCCESSFUL<br>";
+    //echo "QUERY #1 SUCCESSFUL<br>";
     $query1_array = mysqli_fetch_all($query1_result, MYSQLI_ASSOC);
     //echo "post_id: ".$i."<br>";
     //print_r($query1_array);
@@ -31,11 +31,11 @@ if ($query1_result) {
     
 
 } else {
-    echo "QUERY #1 ERROR: ".mysqli_error($conn)."<br>";
+    //echo "QUERY #1 ERROR: ".mysqli_error($conn)."<br>";
 }
 
 if ($i > 0) {
-    echo "post_id: ".$i."<br><br>";
+    //echo "post_id: ".$i."<br><br>";
 } else {
     $i = 0;
 }
@@ -57,9 +57,9 @@ By: David Ayodele
     Star Canyon School of Nursing
     </title>        
     <!--Begin Priority scripts/sheets -->
-    <link rel="stylesheet" href="style.css" media="all"><!--?<?php echo date('l jS \of F Y h:i:s A'); ?>-->
+    <link rel="stylesheet" href="style.css" media="all"><!--?<?php //echo date('l jS \of F Y h:i:s A'); ?>-->
   <link rel="stylesheet" href="css/bootstrap.min_3_0_3.css">
-  <link rel="stylesheet" href="../css/jobs_board.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" media="all">
+  <link rel="stylesheet" href="../css/jobs_board.css?<?php //echo date('l jS \of F Y h:i:s A'); ?>" media="all">
 	<!--<link rel="stylesheet" href="clock.css" media="all">-->
     
 	<script src="js/jquery.min.js"></script><!-- jQuery load -->
@@ -165,13 +165,17 @@ By: David Ayodele
         <li>
         <a href="faq.html">Questions/Info</a>
         </li>
+        <li>
+        <a href="jobs.php">Jobs</a>
+        </li>
         </ul>
         </nav>
     </div>
     <div class="wrapperMain clearfix">
         <div class="fl_fullwidth">
-        <div class="banner_faq">
+        <div class="banner_jobs">
         <h1 class="banner_text">
+        Jobs &amp; Careers
         <br>
         </h1>
         <br>
@@ -184,67 +188,10 @@ By: David Ayodele
         <div class="layer2">
         </div>
         -->
-        <h2>Flyers/Promos</h2>
+        <h2 class="flyers_header">Flyers/Promos</h2>
 		<br>
-		<!-- Begin Flyers -->
-		<div class="carousel_container"> <!-- Adapted from: https://codepen.io/vraajesh/pen/EZQGJO -->
-
-		<div id="carousel-example-generic" class="carousel carousel_slide" data-ride="carousel">
-		
-		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-			<div class='carouselCont row no-gutter row-eq-height'>
-			<div class='col-md-4 infoCont'>
-			<!-- Hooked Up. Homes are made by people, not places. We produced an 8 part travel series produced and hosted by influencer Kylie Flavell as she discovers destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
-			</div>
-			<div class='col-md-12'>
-			<div class="video-container">
-			<iframe src="https://docs.google.com/viewer?url=https://starcanyonschoolofnursing.com/img/caregiver_flyers_urgent_homecare_1-2020.pdf&amp;embedded=true" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-			</div>
-			</div>
-			</div>
-			<div class="item">
-			<div class='carouselCont row no-gutter row-eq-height'>
-			<div class='col-md-4 infoCont'>
-			<!-- Hooked Up. Homes are made by people, not places. We produced an 8 part travel series produced and hosted by influencer Kylie Flavell as she discovers destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
-			</div>
-			<div class='col-md-12'>
-			<div class="video-container">
-			<iframe src="img/caregiver_flyers_urgent_homecare_1-2020.pdf" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-			</div>
-			</div>
-			</div>
-		
-			<div class="item">
-			<div class='carouselCont row no-gutter row-eq-height'>
-			<div class='col-md-4 infoCont'>
-			<!-- Hooked Up. Homes are made by people, not places. We produced an 8 part travel series produced and hosted by influencer Kylie Flavell as she discovers destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
-			</div>
-			<div class='col-md-12'>
-			<div class="video-container">
-			<iframe src="https://player.vimeo.com/video/49309096?color=00ff66" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-			</div>
-			</div>
-			</div>
-		
-			<div class="item">
-			<div class='carouselCont row no-gutter row-eq-height'>
-			<div class='col-md-4 infoCont'>
-			<!-- Hooked Up. Homes are made by people, not places. We produced an 8 part travel series produced and hosted by influencer Kylie Flavell as she discovers destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
-			</div>
-			<div class='col-md-12'>
-			<div class="video-container">
-			<iframe src="https://player.vimeo.com/video/35944117" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-			</div>
-			</div>
-			</div>
-		</div>
-		
-		<!-- Controls -->
+    <!-- Begin Flyers -->
+    <!-- Controls -->
 		<div class='ctrls'>
 			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 			<i class="fas fa-angle-left" aria-hidden="true" title="Previous"></i>
@@ -252,6 +199,64 @@ By: David Ayodele
 			<a class="right carousel-control swiper-button-next" href="#carousel-example-generic" role="button" data-slide="next">
 			<i class="fas fa-angle-right" aria-hidden="true" title="Next"></i>
 			</a>
+    </div>
+    <br>
+    <br>
+    <div class="carousel_container"> <!-- Adapted from: https://codepen.io/vraajesh/pen/EZQGJO -->		
+
+		<div id="carousel-example-generic" class="carousel carousel_slide" data-ride="carousel">
+		
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+			<div class='carouselCont row no-gutter row-eq-height'>
+			<div class='col-md-4 infoCont'>
+			<!-- destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
+			</div>
+			<div class='col-md-12'>
+			<div class="video-container" style="--aspect-ratio: 16/9;">
+			<iframe src="https://docs.google.com/viewer?url=https://starcanyonschoolofnursing.com/img/caregiver_flyers_urgent_homecare_1-2020.pdf&amp;embedded=true" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="item">
+			<div class='carouselCont row no-gutter row-eq-height'>
+			<div class='col-md-4 infoCont'>
+			<!-- destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
+			</div>
+			<div class='col-md-12'>
+			<div class="video-container" style="--aspect-ratio: 16/9;">
+			<iframe src="img/caregiver_flyers_urgent_homecare_1-2020.pdf" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			</div>
+			</div>
+			</div>
+		
+			<div class="item">
+			<div class='carouselCont row no-gutter row-eq-height'>
+			<div class='col-md-4 infoCont'>
+			<!-- discovers destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
+			</div>
+			<div class='col-md-12'>
+			<div class="video-container" style="--aspect-ratio: 16/9;">
+			<iframe src="https://player.vimeo.com/video/49309096?color=00ff66" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			</div>
+			</div>
+			</div>
+		
+			<div class="item">
+			<div class='carouselCont row no-gutter row-eq-height'>
+			<div class='col-md-4 infoCont'>
+			<!-- Hooked Up. Homes are made by people, not places. We produced an 8 part travel series produced and hosted by influencer Kylie Flavell as she discovers destinations through the folks that live there. It achieved over 3 min average view time per episode. -->
+			</div>
+			<div class='col-md-12'>
+			<div class="video-container" style="--aspect-ratio: 16/9;">
+			<iframe src="https://player.vimeo.com/video/35944117" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			</div>
+			</div>
+			</div>
 		</div>
 		
 		</div>
@@ -268,7 +273,7 @@ By: David Ayodele
 
 		<br>
 		<br>
-		<?php echo($_SESSION['i_g']); ?>
+		<?php //echo($_SESSION['i_g']); ?>
 		<!-- 
 		--------------
 		Postings Board
@@ -276,7 +281,7 @@ By: David Ayodele
 		-->
 		<!-- Postings board (Adapted from Cindy Lee: https://codepen.io/cindylee/pen/eZgJgw) -->
 		<div class="bb-wrapper">
-    <div class="bb-title"><h2>Job Openings</h2>
+    <div class="bb-title"><h2 class="openings_header">Job Openings</h2>
     </div>
       <!--
 			<div class="bb-filter">
@@ -398,7 +403,7 @@ By: David Ayodele
       
       <!-- ##### Toggle buttons ##### -->
       <div class="button_container">
-      <span class="page_text">Display: &nbsp;</span>
+      <strong><span class="page_text">Display &nbsp; &nbsp;</span></strong>
 
       <div class="toggle-switch0">
       <!-- <input id="switch-0" type="checkbox" name="table-check" class="switch0-input"> -->
@@ -442,47 +447,47 @@ By: David Ayodele
       </div>
       <!-- ##### End Pagination Area ##### -->
       
-
-      <div class="divTable">
-      <div class="divTableBody">
-          <div class="divTableRow">
-          <div class="divTableCell divTableHead phone_col">Phone Number</div>
-          <div class="divTableCell divTableHead loc_col">Job Location</div>
-          <div class="divTableCell divTableHead type_col">Job Type</div>
-          <div class="divTableCell divTableHead pay_col">Job Pay</div>
-          <div class="divTableCell divTableHead date_col">Post Date</div>
-          <div class="divTableCell divTableHead desc_col">Job Description</div>
-          </div>          
-      </div>
-      </div>
+      <center>
+      <div class="db_container" id="log">    
       
-      <div class="divTable">
-        <div class="divTableBody" id="log">     
-        </div>
+      <!-- DivTable.com -->     
       </div>
-      <!-- DivTable.com -->
-     
-    </div>
-		<!-- End Postings Board -->
-		
-    </article>
-    </main>
-    <aside class="fl_oneThird">
-    <section class="aside_classes">
-    <h3 style="font-family: Arial, sans-serif;">Our Location
+      </center>
+    <!-- End Postings Board -->
+    <br>
+    <br>
+    <hr class="divider3">
+    <h3 class="location_header" style="font-family: Arial, sans-serif;">Our Location
     </h3>
-    <div id="map">
-    </div>
+    <br>
     <br>
     <p>
-    &bull; We're conveniently located along city bus routes on Central Avenue &amp; Dunlap Road.
+    &bull; We're conveniently located along city bus routes on Central Avenue &amp; Dunlap Road. Plan a trip <a class="scrubs_link" href="https://www.valleymetro.org/trip-planner" target="_blank" style="text-decoration:none;">
+		<u>here</u></a>!
+    <br>
+    <br>
+    <div id="map">
+    </div>
+    </article>
+    </main>
+    <!-- End Main Area -->
+
+    <!-- Begin Side Area -->
+    <aside class="fl_oneThird">
+    <section class="aside_classes">
+    
+    <h3 class="resume_header" style="font-family: Arial, sans-serif;">Résumé Help
+    </h3>
+    <div class="resume">
+    <img class="resume" src="img/scsn_resume_508x729.jpg">
+    </div>
     <br>
     <br>
     </p>
     </section>
     <section id="tax_form">
 		<h4>
-		Résumé Building
+		<strong>Need some work on your résumé?</strong> <br><br> We're here to help! We offer professional résumé building sessions in private or in group settings to all students. 
 		</h4>
 		<p>
 		</p>
@@ -498,12 +503,13 @@ By: David Ayodele
         
     <!-- Contact Form (edited 7/07/18)-->
 		<section id="contact_form">
-		<h3>
+		<h3 class="hiring_header">
 		Hiring CNAs/LNAs/Caregivers?
 		</h3>
-		<h4>
-		Post a job opening here!
-		<br>
+		<h4 class="post_form_header">
+		Post a job opening below!
+    <br>
+    <span class="post_form_sub">We'll get the word to our students ASAP.</span>
 		<br>
 		</h4>
       
@@ -640,8 +646,8 @@ By: David Ayodele
     </script>
     <!-- End script-->
     
-    <!-- Begin google maps script ->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" type="text/javascript">
+    <!-- Begin google maps script -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfHjaHcyb_H21BLeYTrMopUq79g0rJYa0&callback=initMap" type="text/javascript">
     </script>
     <!-- End google maps script -->
     <script src="js/datetime.js"></script><!-- datetime load -->
@@ -718,11 +724,214 @@ By: David Ayodele
 </html>
 
 <style type="text/css">
+/*
+.carousel_container iframe {
+  -ms-zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
+}
+
+.carousel_container .video-container {
+  height: 700px;
+}
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: auto;
+} 
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+*/
+
+.post_form_sub {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.post_form_header {
+  margin-top: 20px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+div#log {
+    overflow-x: scroll;
+}
+
+.hiring_header::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: -10px;
+  top: 0px;
+  height: 45px;
+  width: 20px;
+  background-color: inherit;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.hiring_header {
+  color: #fff;
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.33);
+  background: rgba(104, 59, 114, 1);
+  width: 352px;
+  padding-left: 15px;
+  margin-left: 10px;
+  position: relative;
+  ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: drop-shadow(0px 4px 7px rgba(0,0,0,0.33));
+}
+
+.resume_header::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: -10px;
+  top: 0px;
+  height: 45px;
+  width: 20px;
+  background-color: inherit;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.resume_header {
+  color: #fff;
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.33);
+  background: rgba(104, 59, 114, 1);
+  width: 185px;
+  padding-left: 20px;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 10px;
+  ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: drop-shadow(0px 4px 7px rgba(0,0,0,0.33));
+}
+
+.location_header::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: -10px;
+  top: 0px;
+  height: 45px;
+  width: 20px;
+  background-color: inherit;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.location_header {
+  color: #fff;
+  background: rgba(104, 59, 114, 1);
+  width: 185px;
+  padding-left: 20px;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 10px;
+  ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: drop-shadow(0px 4px 7px rgba(0,0,0,0.33));
+}
+
+.flyers_header::after, .openings_header::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: -10px;
+  top: 0px;
+  height: 52px;
+  width: 20px;
+  background-color: inherit;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.flyers_header, .openings_header {
+  color: #fff;
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.33);
+  background: rgba(104, 59, 114, 1);
+  width: 243px;
+  padding-left: 20px;
+  margin-left: 10px;
+  position: relative;
+  ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=4, Color='#000')";
+    filter: drop-shadow(0px 4px 7px rgba(0,0,0,0.33));
+}
+
+img.resume {
+  box-shadow: 0px 3px 7px 0.5px rgba(0, 0, 0, 0.33);
+  margin-top: 10px;
+}
+
+hr.divider {
+  border: 0;
+  margin-top: 30px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+hr.divider3 {
+  border: 0;
+  margin-top: 30px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+#contact_form #form textarea {
+  border-radius: 5px;
+}
+
+#contact_form #form input {
+  border-radius: 5px;
+}
+
+#contact_form {
+  padding-bottom: 10px;
+}
+
 .active_toggle {
   transform: translateY(5px) !important;
-  box-shadow: 0px -5px 0 #eeeeee !important;
-  background: #dadada !important;
-  border: 2px solid #dddddd !important;
+  box-shadow: 0px 0px 0px #ccc !important;
+  background: #efefef !important;
+  border: 2px solid #ddd !important;
 }
 
 center.pagination_text {
@@ -737,34 +946,43 @@ span.page_text {
   position: relative;
   margin-bottom: 40px;
   padding-bottom: 20px;
+  width: 375px;
 }
 
+/*
 .divTableHead {
-    font-weight: 600;
+  font-weight: 600;
 }
 
+*/
 .phone_col {
-    width: 100px !important;
+  width: 6.5rem;
+  padding: 5px;
 }
 
 .loc_col {
-    width: 100px !important;
+  width: 7.5rem;
+  padding: 5px;
 }
 
 .type_col {
-    width: 75px !important;
+  width: 5rem;
+  padding: 5px;
 }
 
 .pay_col {
-    width: 83px !important;
+  width: 4rem;
+  padding: 5px;
 }
 
 .date_col {
-    width: 80px !important;
+  width: 9rem;
+  padding: 5px;
 }
 
 .desc_col {
-    width: 250px !important;
+  width: 12rem;
+  padding: 5px;
 }
 /* ----- Button 0 -----*/ 
 .toggle-switch0 {
@@ -807,10 +1025,10 @@ input#switch-0 {
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border: 1px solid #dddddd;
+  border: 1px solid #d0d0d0;
   background: #efefef;
   border-radius: 5px;
-  box-shadow: 0 5px 0 #dddddd;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.33);
   transition-duration: 0.01s;
 }
 /* ----- End Button 0 ----- */
@@ -856,10 +1074,10 @@ input#switch-1 {
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border: 1px solid #dddddd;
+  border: 1px solid #d0d0d0;
   background: #efefef;
   border-radius: 5px;
-  box-shadow: 0 5px 0 #dddddd;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.33);
   transition-duration: 0.01s;
 }
 /* ----- End Button 1 ----- */
@@ -906,10 +1124,10 @@ input#switch-2 {
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border: 1px solid #dddddd;
+  border: 1px solid #d0d0d0;
   background: #efefef;
   border-radius: 5px;
-  box-shadow: 0 5px 0 #dddddd;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.33);
   transition-duration: 0.01s;
 }
 /* ----- End Button 2 ----- */
@@ -956,10 +1174,10 @@ input#switch-3 {
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border: 1px solid #dddddd;
+  border: 1px solid #d0d0d0;
   background: #efefef;
   border-radius: 5px;
-  box-shadow: 0 5px 0 #dddddd;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.33);
   transition-duration: 0.01s;
 }
 /* ----- End Button 3 ----- */
@@ -1001,45 +1219,215 @@ input#switch-4 {
   border-radius:5px; /*20*/
   position:relative;
   margin-bottom:15px;
-  border: 1px solid #dddddd;
+  border: 1px solid #d0d0d0;
   background: #efefef;
   border-radius: 5px;
-  font-size: 12px;
-  box-shadow: 0 5px 0 #dddddd;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.33);
   transition-duration: 0.01s;
 }
 /* ----- End Button 4 ----- */
 
 /* ----- Div table ----- */
-.divTable{
-	display: table;
-	width: 100%;
-}
-.divTableRow {
-	display: table-row;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-}
-.divTableCell, .divTableHead {
-	border: 1px solid #999999;
-	display: table-cell;
-	padding: 3px 10px;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
-}
-.divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
-}
-.divTableBody {
-	display: table-row-group;
-}
+.divTable {
+    display: table;
+    text-align: center;
+    width: 60%;
+    margin: 10% auto 0;
+    border-collapse: separate;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  .divTableRow {
+    display: table-row;
+  }
+  
+  .divTableHeading {
+    display: table-row;
+  }
+  
+  .divTableHead {
+    display: table-cell;
+    border-bottom: #ccc 1px solid;
+    border-top: #ccc 1px solid;
+    background: #888;
+    color: #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .divTableHead:first-child {
+    border-left: #ccc 1px solid;
+    border-top-left-radius: 5px;
+  }
+  
+  .divTableHead:last-child {
+    border-right: #ccc 1px solid;
+    border-top-right-radius: 5px;
+  }
+  
+  .table_small {
+    display: table-cell;
+  }
+  
+  .divTableRow > .table_small > .divTableCell:nth-child(odd) {
+    display: none;
+    background: #888; /*#bdbdbd*/
+    color: #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .divTableRow > .table_small > .divTableCell {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: #5b5b5b;
+    /*border-bottom: #ccc 1px solid;*/
+  }
+  
+  .divTableRow > .table_small:first-child > .divTableCell {
+    border-left: #ccc 1px solid;
+  }
+  
+  .divTableRow > .table_small:last-child > .divTableCell {
+    border-right: #ccc 1px solid;
+  }
+  
+  .divTableRow:last-child > .table_small:last-child > .divTableCell:last-child {
+    border-bottom-right-radius: 5px;
+  }
+  
+  .divTableRow:last-child > .table_small:first-child > .divTableCell:last-child {
+    border-bottom-left-radius: 5px;
+  }
+  
+  .divTableRow:nth-child(2n+3) {
+    background: #e9e9e9;
+  }
+
+  @media screen and (max-width: 515px) {
+    .banner_jobs {
+      background-position: -265px 0px;
+    }
+  }
+
+  @media screen and (max-width: 771px) {
+    .hiring_header {
+      font-size: 24px;
+      width: 352px;
+    }
+    .hiring_header::after {      
+      height: 45px;      
+    }
+  }
+
+  @media screen and (max-width: 967px) {
+    .hiring_header {
+      font-size: 12px;
+      width: 185px;
+    }
+    .hiring_header::after {      
+      height: 33px;      
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .hiring_header::after {      
+      height: 36px;      
+    }
+
+    .hiring_header {
+      font-size: 16px;      
+      width: 250px;      
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .divTable {
+      width: 90%
+    }
+  }
+  
+  @media screen and (max-width: 748px) { /*650px*/
+
+    .hiring_header {
+      font-size: 12px;
+      width: 185px;
+    }
+    .hiring_header::after {      
+      height: 32px;      
+    }
+    .page_text {
+        top: -55px;
+        left: 155px;
+        position: relative;
+        padding-top: 30px !important;        
+    }
+    .button_container {
+      margin-left: -100px;
+      margin-top: 45px;
+      margin-bottom: 0px;
+    }
+    .page_text {
+      margin-top: 0px;
+    }
+    .divTable {
+      display: block;
+    }
+    .divTableRow:nth-child(2n+3) {
+      background: none;
+    }
+    .divTableHeading {
+      display: none;
+    }
+    .divTableRow > .table_small > .divTableCell:nth-child(odd) {
+      display: table-cell;
+      width: 50%;
+    }
+    .divTableCell {
+      display: table-cell;
+      width: 50%;
+    }
+    .divTableRow {
+      display: table;
+      width: 100%;
+      border-collapse: separate;
+      padding-bottom: 20px;
+      margin: 5% auto 0;
+      text-align: center;
+    }
+    .table_small {
+      display: table-row;
+    }
+    .divTableRow > .table_small:first-child > .divTableCell:last-child {
+      border-left: none;
+    }
+    .divTableRow > .table_small > .divTableCell:first-child {
+      border-left: #ccc 1px solid;
+    }
+    .divTableRow > .table_small:first-child > .divTableCell:first-child {
+      border-top-left-radius: 5px;
+      border-top: #ccc 1px solid;
+    }
+    .divTableRow > .table_small:first-child > .divTableCell:last-child {
+      border-top-right-radius: 5px;
+      border-top: #ccc 1px solid;
+    }
+    .divTableRow > .table_small:last-child > .divTableCell:first-child {
+      border-right: none;
+    }
+    .divTableRow > .table_small > .divTableCell:last-child {
+      border-right: #ccc 1px solid;
+    }
+    .divTableRow > .table_small:last-child > .divTableCell:first-child {
+      border-bottom-left-radius: 5px;
+    }
+    .divTableRow > .table_small:last-child > .divTableCell:last-child {
+      border-bottom-right-radius: 5px;
+    }
+  }
+ 
 /* ----- End Div table ----- */
 
 /*
@@ -1405,11 +1793,6 @@ th.no-sort:after, .divTableHead.no-sort:after {
   background:#fff;
 }
 
-.divider {
-    margin-top: 25px;
-    border: dashed 0.5px;
-}
-
 .infoCont {
   padding:10px 20px !important;
   position:relative;
@@ -1423,10 +1806,10 @@ th.no-sort:after, .divTableHead.no-sort:after {
 }
 .video-container {
     position:relative;
-    padding-bottom:56.25%;
-    padding-top:30px;
+    padding-top: 130% !important; /*56.25%*/
+    /*padding-top:30px;*/
     height: 100%;
-    overflow:hidden;
+    /*overflow:hidden;*/
 }
 
 .video-container iframe, .video-container object, .video-container embed {
