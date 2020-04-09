@@ -1,71 +1,15 @@
 <style type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
 /* ====== Notes ===== [rev_slider alias="slider-1"][/rev_slider]
 
 #top #main .avia-section .template-page {
     margin-top: -35px;
 }
 Responsive Iframes:
-<div class="iframe-container">
-  <iframe width="1425" height="559" src="https://www.youtube.com/embed/BS4ojxHC1EM"></iframe>
-</div>
-
-.iframe-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%;
-}
-.iframe-container iframe {
-  position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-OR
-
-<div style="--aspect-ratio: 16/9;">
-  <iframe 
-    src="https://css-tricks.com"
-    width="1600"
-    height="900"
-    frameborder="0"
-  >
-  </iframe>
-</div>
-
-[style*="--aspect-ratio"] > :first-child {
-  width: 100%;
-}
-[style*="--aspect-ratio"] > img {  
-  height: auto;
-} 
-@supports (--custom:property) {
-  [style*="--aspect-ratio"] {
-    position: relative;
-  }
-  [style*="--aspect-ratio"]::before {
-    content: "";
-    display: block;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
-  }  
-  [style*="--aspect-ratio"] > :first-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }  
-}
-
-
 https://benmarshall.me/responsive-iframes/
 
 https://www.flaticon.com/authors/neungstockr
 https://www.flaticon.com/search?word=badge
-
-https://thenounproject.com/term/chevron/11891/   
-wzx7jrmzpg@montokop.pw, No...!
 
 clipboard, pampplet, satchell, brochure
 
@@ -105,8 +49,6 @@ AMTI Bookmark! -->
 
 5) canyons-382549197 (short-fading: 392367627) 1) downtown-384405427 2) entrance-384669026 3) actv-384674057 4) floor-384675996,384908547
 6) applause-384689797 
-
-Format: https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0
 -->
 */
 
@@ -232,6 +174,22 @@ div#av_section_2 {
 
 .av-inner-masonry-content, #top .main_color .container .av-masonry-load-more, #top .main_color .container .av-masonry-sort, .main_color .container .av-masonry-entry .avia-arrow {
     background-color: rgba(0, 0, 0, 0.65) !important;
+}
+
+a[href="http://victoriasteeleforsenate.com/"] figcaption.av-inner-masonry-content.site-background {
+    background-color: rgba(39, 60, 104, 0.65) !important;
+}
+
+a[href="https://lindapatterson4azstatesenate2020.com/"] figcaption.av-inner-masonry-content.site-background {
+    background-color: rgba(39, 60, 104, 0.65) !important;
+}
+
+a[href="http://dalessandroforaz.com"] figcaption.av-inner-masonry-content.site-background {
+    background-color: rgba(39, 60, 104, 0.65) !important;
+}
+
+.site-background .avia-arrow {
+    opacity: 0 !important;
 }
 
 /*==== End Endorsements ====*/
