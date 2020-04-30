@@ -21,12 +21,27 @@
 
 tinymce.init({
     selector: 'textarea',
-    plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+    plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker, jbimages',
     toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
     toolbar_mode: 'floating',
     tinycomments_mode: 'embedded',
     tinycomments_author: 'Author name',
 });
+/*
+tinymce.init({
+    imageupload_url: "uploads/",
+    selector: "textarea",
+    theme: "modern",
+    language: "en",
+    plugins: [
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+         "save table contextmenu directionality emoticons template paste textcolor imageupload"
+    ],
+    content_css: "css/content.css",
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons imageupload", 
+    relative_urls: false
+}); */
 </script>
 
 </head>
