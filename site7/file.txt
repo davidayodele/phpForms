@@ -1,5 +1,36 @@
-Hi I am admin content.
-<br>
-I am more admin content.
-<br>
-I am a <a href="http://google.com">link</a>
+<p>Below is a table</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 33.3333%;">test</td>
+<td style="width: 33.3333%;">test2</td>
+<td style="width: 33.3333%;">test3</td>
+</tr>
+<tr>
+<td style="width: 33.3333%;">1</td>
+<td style="width: 33.3333%;">2</td>
+<td style="width: 33.3333%;">3</td>
+</tr>
+<tr>
+<td style="width: 33.3333%;">4</td>
+<td style="width: 33.3333%;">5</td>
+<td style="width: 33.3333%;">6</td>
+</tr>
+<tr>
+<td style="width: 33.3333%;">7</td>
+<td style="width: 33.3333%;">8</td>
+<td style="width: 33.3333%;">9</td>
+</tr>
+<tr>
+<td style="width: 33.3333%;">10</td>
+<td style="width: 33.3333%;">11</td>
+<td style="width: 33.3333%;">12</td>
+</tr>
+<tr>
+<td style="width: 33.3333%;">&nbsp;</td>
+<td style="width: 33.3333%;">&nbsp;</td>
+<td style="width: 33.3333%;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Hi I am admin content. <br />I am more admin content. <br />I am a <a href="http://google.com">link</a></p>

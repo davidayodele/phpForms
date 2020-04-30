@@ -7,12 +7,34 @@
 
 <style type="text/css">
 </style> 
+
+<script src="https://cdn.tiny.cloud/1/13ijok7yx7shpshmj50c4kryl4r5ga5k8loqovuq48fejqfb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script type="text/javascript" src="tinymce\js\tinymce\tinymce.js"></script>
+
+<script type="text/javascript">
+/*tinyMCE.init({
+    theme:"advanced",
+    mode:"textareas",
+    plugins:"fullpage",
+    theme_advanced_buttons3_add:"fullpage"
+});*/
+
+tinymce.init({
+    selector: 'textarea',
+    plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+    toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+    toolbar_mode: 'floating',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+});
+</script>
+
 </head>
 
 <body>
 <a href="usr_pg.php">User Page</a> &nbsp;
 <a href="adm_pg.php">Admin Page</a>
-
+<!-- tinymce api_key: 13ijok7yx7shpshmj50c4kryl4r5ga5k8loqovuq48fejqfb -->
 <h2>Admin Panel</h2>
 <p>Edit page here:</p>
 <br>
