@@ -1,0 +1,115 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+
+
+	"HTML Base": {
+	"prefix": "<html",
+	"body": [
+		"<!doctype html>",
+		"<html lang='zxx'>",
+		"<head>",
+		"<meta charset=\"UTF-8\">",
+		"<title>Hello World$1</title>",
+		"<style type=\"text/css\">",
+		"</style> ",
+		"</head>",
+		"<body>",
+		"<h2>Hello World</h2>",
+		"</body>",
+		"</html>"
+	],
+	"description": "HTML Base"
+	},
+
+	"HTML Form": {
+	"prefix": "<form",
+	"body": [
+		"<form id=\"form\" method=\"post\" action=\"post_content.php\">",
+		"<input id=\"input1\" type=\"text\" value=\"\" placeholder=\"input 1\"/>",
+		"<textarea name=\"content\" id=\"text_area\"></textarea> <!-- leave on same line to avoid space insertion -->",
+		"<input id=\"submit\" type=\"submit\" value=\"Submit\"/>",
+		"</form>"
+	],
+	"description": "HTML Form"
+	},
+
+	"Paragraph tag": {
+	"prefix": "<p",
+	"body": [
+		"<p>$1</p>"
+	],
+	"description": "Paragraph tag"
+	},
+
+	"Header1 tag": {
+	"prefix": "<h1",
+	"body": [
+		"<h1>$1</h1>"
+	],
+	"description": "Header1 tag"
+	},
+
+	"Link tag": {
+	"prefix": "<a",
+	"body": [
+		"<a href=\"$1\">$2</a>"
+	],
+	"description": "Link tag"
+	},
+
+	"Div tag": {
+	"prefix": "<div",
+	"body": [
+		"<div class=\"$2\">$1</div>"
+	],
+	"description": "Div tag"
+	},
+
+	"Unordered List tag": {
+	"prefix": "<ul",
+	"body": [
+		"<ul class=\"$2\">",
+		"<li>$1</li>",
+		"<li></li>",
+		"</ul>"
+	],
+	"description": "Unordered List tag"
+	},
+
+	"Ordered List tag": {
+	"prefix": "<ol",
+	"body": [
+		"<ol class=\"$2\">",
+		"<li>$1</li>",
+		"<li>$3</li>",
+		"</ol>"
+	],
+	"description": "Ordered List tag"
+	},
+
+	"Span tag": {
+	"prefix": "<span",
+	"body": [
+		"<span class=\"$2\">$1</span>"
+	],
+	"description": "Span tag"
+	}
+
+}
+
